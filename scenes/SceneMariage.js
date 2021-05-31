@@ -7,5 +7,9 @@ class SceneMariage extends Phaser.Scene {
     let boutonOui = this.add.text(480, 500, 'oui');
     boutonOui.setInteractive();
     boutonOui.on('pointerdown', () => this.scene.start('enfants'));
+
+    let boutonNon = this.add.text(480, 500, 'non');
+    boutonNon.setInteractive();
+    boutonNon.on('pointerdown', () => this.scene.start('enfants'));
   }
 }
