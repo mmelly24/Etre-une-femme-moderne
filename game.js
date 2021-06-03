@@ -4,6 +4,7 @@ const config = {
   type: Phaser.WEBGL,
   //backgroundColor : 'white', //ne fonctionne pas...?
   scene: [
+    SceneMenu,
     SceneAbout,
     SceneCredits,
     SceneDenonciation,
@@ -11,7 +12,6 @@ const config = {
     SceneEnfants,
     SceneInstructions,
     SceneMariage,
-    SceneMenu,
     SceneMobilite,
     ScenePromotion,
     SceneReprise,
