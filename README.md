@@ -3,3 +3,9 @@ Projet de jeu vidéo 2D dans le cadre d'un cours dispensé par l'UNIL et dirigé
 But du jeu:
 
 #Section 1
+
+
+#Credits (garder une trace avant la mise en page adéquate)
+
+Jauge de désillusion : 
+- sprite : https://kenney.nl/assets/ui-pack-space-expansion (utilisaiton autorisée, pas besoin de le mentionné mais fortement apprécié si on le fait)
