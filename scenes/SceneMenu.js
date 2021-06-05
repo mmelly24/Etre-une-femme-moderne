@@ -8,7 +8,8 @@ class SceneMenu extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(400, 100, 'ETRE UNE FEMME MODERNE');
+    let text = this.add.text(250, 100, 'ETRE UNE FEMME MODERNE', { fontSize : '40px'});
+
     this.add.image(500,300, 'femme').setScale(0.7)
     let boutonPlay = this.add.text(480, 500, 'PLAY');
     boutonPlay.setInteractive();
