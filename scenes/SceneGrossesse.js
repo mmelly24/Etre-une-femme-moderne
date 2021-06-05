@@ -8,10 +8,14 @@ class SceneGrossesse extends Phaser.Scene {
     let text;
     let count = 0;
 
-    text = this.add.text(380, 300, 'annonce: blablabla');
+    text = this.add.text(400, 300, 'annonce: blablabla');
 
-    let boutonAnnonce = this.add.text(380, 500, 'NEXT');
+    //centrer le text
+    Phaser.Display.Align.In.Center(text, this.add.zone(400, 300, 800, 600));
+
+    let boutonAnnonce = this.add.text(700, 500, 'NEXT');
     boutonAnnonce.setInteractive();
+
     //exemple d'une fonctionnalité NEXT
     boutonAnnonce.on('pointerdown', () => {
       count++;
