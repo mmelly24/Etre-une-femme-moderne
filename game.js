@@ -9,13 +9,15 @@ const config = {
     SceneCredits,
     SceneDenonciation,
     SceneDepart,
-    SceneEnfants,
     SceneInstructions,
     SceneMariage,
+    SceneEnfants,
     SceneMobilite,
     ScenePromotion,
     SceneReprise,
     SceneRetour,
+    ScenePression,
+    SceneGrossesse,
   ], //ajouter les autres scènes au fur et à mesure
 };
 

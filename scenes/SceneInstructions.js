@@ -5,6 +5,9 @@ class SceneInstructions extends Phaser.Scene{
 
 
     create() {
+
+        this.add.text(380, 300, "Instructions: blablabla")
+
         let boutonNext = this.add.text(700, 500, 'NEXT');
         boutonNext.setInteractive();
         boutonNext.on('pointerdown', () => this.scene.start('mariage'));
