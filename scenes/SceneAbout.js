@@ -4,12 +4,16 @@ class SceneAbout extends Phaser.Scene {
   }
 
   create() {
+    let text = "Projet créé dans le cadre d'un cours intitulé 'Jeu vidéo 2d'\n et dispensé à l'Université de Lausanne par le professeur Isaac Pante." 
+    this.add.text(
+      200,
+      300,
+      text,
+      { fontSize: '20px' }
+    );
 
-    const text = "Projet créé dans le cadre d'un cours donné à l'Université de Lausanne.";
 
-    const contenu = this.add.text(0, 0, text)
 
-    Phaser.Display.Align.In.Center(contenu, this.add.zone(600, 300, 800, 600));
 
     let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
     boutonMenu.setInteractive();
