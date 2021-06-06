@@ -1,8 +1,15 @@
+
 const config = {
   width: 1000,
   height: 600,
   type: Phaser.WEBGL,
   backgroundColor : '#653592', //couleur test
+  physics: {
+    default: 'arcade',
+    arcade: {
+      debug: false
+    }
+  },
 
   //ajouter les autres scènes au fur et à mesure
   scene: [
