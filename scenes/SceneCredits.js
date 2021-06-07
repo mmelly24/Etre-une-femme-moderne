@@ -72,7 +72,7 @@ class SceneCredits extends Phaser.Scene {
     
     });
   }
-    this.load.audio('outro', 'assets/sounds/jazz_besound.mp3');
+    this.load.audio('outro', 'assets/sounds/outro_besound.mp3');
     this.load.image('enceinte', 'assets/sprite_pregnant_woman.png');
     this.load.image('travailleuse', 'assets/sprite_working_woman1.png');
 
@@ -81,7 +81,8 @@ class SceneCredits extends Phaser.Scene {
     /*let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
     boutonMenu.setInteractive();
     boutonMenu.on('pointerdown', () => this.scene.start('accueil'));*/
-    this.add.image(100, 200, 'enceinte').setScale(0.7)
+    this.add.image(200, 200, 'enceinte').setScale(0.7);
+    this.add.image(800, 200, 'travailleuse').setScale(0.7);
 
     this.music = this.sound.add('outro');
     let musicConfig = {
@@ -103,19 +104,21 @@ class SceneCredits extends Phaser.Scene {
     this.madeByText = this.add.text(
       0,
       0,
-      'Créé par: Nadège Pio et Marie Melly',
+      'Jeu vidéo créé par:\nNadège Pio et Marie Melly',
       {
         fontSize: '20px',
         fill: '#fff',
+        textAlign: 'center',
       }
     );
     this.spriteByText = this.add.text(
       0,
       0,
-      'Sprite de la personnage principale :\n\nNadège Pio et Marie Melly',
+      'Sprite de la personnage principale:\nNadège Pio et Marie Melly',
       {
         fontSize: '20px',
         fill: '#fff',
+        textAlign: 'center'
       }
     );
 
