@@ -3,7 +3,8 @@ const COLOR_LIGHT = 000000;
 const COLOR_DARK = 000000;
 
 let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
-Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.`;
+Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
+C’est désormais à vous de prendre les bonnes décisions, pour atteindre une vie de rêve… A vous de jouer !`;
 
 class SceneInstructions extends Phaser.Scene{
     constructor(){
