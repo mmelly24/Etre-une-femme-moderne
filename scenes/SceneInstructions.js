@@ -129,7 +129,7 @@ function getBuiltInText (scene, wrapWidth, fixedWidth, fixedHeight) {
             wordWrap: {
                 width: wrapWidth
             },
-            maxLines: 5
+            maxLines: 6
         })
         .setFixedSize(fixedWidth, fixedHeight);
 }
@@ -144,7 +144,7 @@ function getBBcodeText (scene, wrapWidth, fixedWidth, fixedHeight) {
             mode: 'word',
             width: wrapWidth
         },
-        maxLines: 5
+        maxLines: 6
     })
 
 
