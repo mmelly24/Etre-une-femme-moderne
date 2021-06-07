@@ -104,7 +104,7 @@ class SceneCredits extends Phaser.Scene {
     this.madeByText = this.add.text(
       0,
       0,
-      'Jeu vidéo créé par:\nNadège Pio et Marie Melly',
+      'Jeu vidéo créé par: Nadège Pio et Marie Melly',
       {
         fontSize: '20px',
         fill: '#fff',
@@ -114,11 +114,12 @@ class SceneCredits extends Phaser.Scene {
     this.spriteByText = this.add.text(
       0,
       0,
-      'Sprite de la personnage principale:\nNadège Pio et Marie Melly',
+      'Sprite de la personnage principale: Nadège Pio et Marie Melly',
       {
         fontSize: '20px',
         fill: '#fff',
-        textAlign: 'center'
+        textAlign: 'center',
+        width: '10px'
       }
     );
 
