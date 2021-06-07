@@ -11,6 +11,7 @@ class SceneInstructions extends Phaser.Scene{
     }
 
     preload() { 
+        this.load.image('happyFace', 'assets/sprite_happy_face.png')
         this.load.scenePlugin({
             key: 'rexuiplugin',
             url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
@@ -21,6 +22,7 @@ class SceneInstructions extends Phaser.Scene{
     }
 
     create() {
+        this.add.image(700, 150, 'happyFace').setScale(0.5)
 
         /*let boutonNext = this.add.text(700, 500, 'NEXT');
         boutonNext.setInteractive();
@@ -33,7 +35,7 @@ class SceneInstructions extends Phaser.Scene{
         boutonMenu.on('pointerdown', () => this.scene.start('accueil'));
 
         createTextBox(this, 200, 200, {
-                wrapWidth: 500,
+                wrapWidth: 400,
             })
             .start(content, 50);
 
