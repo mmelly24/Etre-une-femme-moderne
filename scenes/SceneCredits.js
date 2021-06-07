@@ -3,10 +3,26 @@ class SceneCredits extends Phaser.Scene {
     super('credits');
   }
 
+  preload () {
+    this.load.audio('outro',"assets/sounds/jazz_besound.mp3" )
+  }
   create() {
     /*let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
     boutonMenu.setInteractive();
     boutonMenu.on('pointerdown', () => this.scene.start('accueil'));*/
+
+    this.music = this.sound.add("outro");
+    let musicConfig = {
+      mute: false,
+      volume: 0.3,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: true,
+      delay: 0
+    }
+
+    this.music.play(musicConfig);
 
     this.creditsText = this.add.text(0, 0, 'Credits', {
       fontSize: '32px',
@@ -77,6 +93,7 @@ class SceneCredits extends Phaser.Scene {
       delay: 1500,
       onComplete: function () {
         this.destroy;
+        this.music.stop(musicConfig);
         this.scene.start('accueil');
       }.bind(this)
     });
