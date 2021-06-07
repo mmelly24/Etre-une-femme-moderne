@@ -105,10 +105,10 @@ function createTextBox(scene, x, y, config) {
                 return;
             }
 
-            var icon = this.getElement('action').setVisible(true);
+            let icon = this.getElement('action').setVisible(true);
             this.resetChildVisibleState(icon);
             icon.y -= 30;
-            var tween = scene.tweens.add({
+            let tween = scene.tweens.add({
                 targets: icon,
                 y: '+=30', // '+=100'
                 ease: 'Bounce', // 'Cubic', 'Elastic', 'Bounce', 'Back'
