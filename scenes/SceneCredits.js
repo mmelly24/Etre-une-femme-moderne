@@ -21,6 +21,7 @@ class SceneCredits extends Phaser.Scene {
       fill: '#fff',
     })
 
+    //zone game object 
     this.zone = this.add.zone(
       config.width / 2,
       config.height / 2,
@@ -35,16 +36,23 @@ class SceneCredits extends Phaser.Scene {
     Phaser.Display.Align.In.Center(this.spriteByText, this.zone);
 
 
-
+    //setY methode place le texte en dehors de l'écran, et le fait 
+    //ensuite défilé en temps voulu
     this.madeByText.setY(1000);
     this.spriteByText.setY(1000);
 
+    
     this.creditsTween = this.tweens.add({
       targets: this.creditsText,
+      //posiiton de notre objet game à laquelle nous voulons qu'il se termine
       y: -100,
+      //ease : fonction de tween
       ease: 'Power1',
+      //durée du tween
       duration: 3000,
+      //durée d'attente avant que le tween commence
       delay: 1000,
+      //callback appelé une fois que le tween est complété
       onComplete: function () {
         this.destroy;
       }
@@ -68,7 +76,7 @@ class SceneCredits extends Phaser.Scene {
       duration: 12000,
       delay: 1500,
       onComplete: function () {
-        this.madeByTween.destroy;
+        this.destroy;
         this.scene.start('accueil');
       }.bind(this)
     });
