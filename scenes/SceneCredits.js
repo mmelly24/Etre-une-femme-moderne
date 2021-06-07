@@ -119,7 +119,6 @@ class SceneCredits extends Phaser.Scene {
         fontSize: '20px',
         fill: '#fff',
         textAlign: 'center',
-        width: '10px'
       }
     );
 
