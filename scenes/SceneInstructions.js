@@ -3,7 +3,8 @@ const COLOR_LIGHT = 000000;
 const COLOR_DARK = 000000;*/
 
 let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
-Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.`;
+Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
+C’est désormais à vous de prendre les bonnes décisions, pour atteindre une vie de rêve… A vous de jouer !`;
 
 class SceneInstructions extends Phaser.Scene {
   constructor() {
@@ -48,7 +49,9 @@ class SceneInstructions extends Phaser.Scene {
        */
   }
 
-  update() {}
+    update() {
+        changerPage(this, 700, 500, 'NEXT');
+    }
 }
 
 function changerPage(scene, x, y, contenu) {
@@ -104,10 +107,9 @@ function createTextBox(scene, x, y, config) {
         }, textBox)
         .on('pageend', function () {
             if (this.isLastPage) {
-                
                 return;
             }
-
+            
             let icon = this.getElement('action').setVisible(true);
             this.resetChildVisibleState(icon);
             icon.y -= 30;
@@ -139,18 +141,6 @@ function getBBcodeText (scene, wrapWidth, fixedWidth, fixedHeight) {
         },
         maxLines: 6
     })
+
+}
 */
-
-/*  create() {
-
-        this.add.text(380, 300, "Instructions: blablabla")
-
-        let boutonNext = this.add.text(700, 500, 'NEXT');
-        boutonNext.setInteractive();
-        boutonNext.on('pointerdown', () => this.scene.start('mariage'));
-
-        let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
-        boutonMenu.setInteractive();
-        boutonMenu.on('pointerdown', () => this.scene.start('accueil'));
-        
-    }*/

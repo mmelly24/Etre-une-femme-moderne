@@ -9,9 +9,14 @@ But du jeu:
 
 Jauge de désillusion : 
 - sprite : https://kenney.nl/assets/ui-pack-space-expansion (utilisaiton autorisée, pas besoin de le mentionné mais fortement apprécié si on le fait)
+- https://github.com/terebentina/VisualTimer
 
 Aides : 
 - mise en page text : https://rexrainbow.github.io/phaser3-rex-notes/docs/site/text/ 
 
 plugin : 
 - https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-textbox/
+
+installation de : https://www.npmjs.com/package/browserify
+
+Pour le son : https://www.bensound.com/royalty-free-music/track/inspire
