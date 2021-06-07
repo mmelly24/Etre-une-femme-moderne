@@ -22,13 +22,8 @@ class SceneInstructions extends Phaser.Scene{
     }
 
     create() {
-        this.add.image(700, 150, 'happyFace').setScale(0.5)
 
-        /*let boutonNext = this.add.text(700, 500, 'NEXT');
-        boutonNext.setInteractive();
-        boutonNext.setVisible(false);
-        boutonNext.on('pointerdown', () => this.scence.start('mariage'));
-        */
+        this.add.image(700, 150, 'happyFace').setScale(0.5)
 
         let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
         boutonMenu.setInteractive();
@@ -40,7 +35,7 @@ class SceneInstructions extends Phaser.Scene{
             .start(content, 50);
 
         
-        changerPage(this, 700, 500, 'NEXT');
+       changerPage(this, 700, 500, 'NEXT');
     }
 
     update() {
@@ -123,16 +118,6 @@ function createTextBox(scene, x, y, config) {
     return textBox;
 }
 
-function getBuiltInText (scene, wrapWidth, fixedWidth, fixedHeight) {
-    return scene.add.text(0, 0, '', {
-            fontSize: '20px',
-            wordWrap: {
-                width: wrapWidth
-            },
-            maxLines: 6
-        })
-        .setFixedSize(fixedWidth, fixedHeight);
-}
 
 function getBBcodeText (scene, wrapWidth, fixedWidth, fixedHeight) {
     return scene.rexUI.add.BBCodeText(0, 0, '', {
