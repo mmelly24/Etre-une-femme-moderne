@@ -1,3 +1,30 @@
 Problèmes à résoudre
 ---------------------
 
+- visibilité des boutons NEXT
+    dans la fonction createtextbox?
+
+- affichage de la page ABOUT
+    Page html 
+    js texte 
+    sous page accueil
+    Readme
+
+- SceneMariage : 
+    création deux sous-scènes ou event on.click ?
+    
+
+Création des sprites:
+    - petit ami 
+    - parents
+    - beaux-parents
+    - collègues
+    - chefs
+    - bébé
+    - frère/soeur
+
+Background : 
+    - Bureau
+    - intérieur appartement 
+    - 
+    

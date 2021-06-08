@@ -14,7 +14,7 @@ Jauge de désillusion :
 Aides : 
 - mise en page text : https://rexrainbow.github.io/phaser3-rex-notes/docs/site/text/ 
 
-plugin : 
+plugin pour text box: 
 - https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-textbox/
 
 installation de : https://www.npmjs.com/package/browserify
