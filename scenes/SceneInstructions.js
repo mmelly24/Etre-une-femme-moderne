@@ -33,19 +33,6 @@ class SceneInstructions extends Phaser.Scene {
     changerPage(this, 700, 500, 'NEXT');
     new TextBox(this, content);
 
-    /*
-        this.add.image(700, 150, 'happyFace').setScale(0.5)
-
-        let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
-        boutonMenu.setInteractive();
-        boutonMenu.on('pointerdown', () => this.scene.start('accueil'));
-
-        createTextBox(this, 200, 200, {
-                wrapWidth: 400,
-            })
-            .start(content, 50);
-      
-       */
   }
 
     update() {
@@ -59,87 +46,3 @@ function changerPage(scene, x, y, contenu) {
   boutonNext.on('pointerdown', () => scene.scene.start('mariage'));
   return boutonNext;
 }
-/*
-const GetValue = Phaser.Utils.Objects.GetValue;
-
-function createTextBox(scene, x, y, config) {
-    let wrapWidth = GetValue(config, 'wrapWidth', 0);
-    let fixedWidth = GetValue(config, 'fixedWidth', 0);
-    let fixedHeight = GetValue(config, 'fixedHeight', 0);
-    let textBox = scene.rexUI.add.textBox({
-            x: x,
-            y: y,
-
-            background: scene.rexUI.add.roundRectangle(0, 0, 2, 2, 20, COLOR_PRIMARY)
-                .setStrokeStyle(2, COLOR_LIGHT),
-               
-
-            icon: scene.rexUI.add.roundRectangle(0, 0, 2, 2, 20, COLOR_DARK),
-
-            // text: getBuiltInText(scene, wrapWidth, fixedWidth, fixedHeight),
-            text: getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight),
-
-            action: scene.add.image(0, 0, 'nextPage').setTint(COLOR_LIGHT).setVisible(false), 
-
-            space: {
-                left: 20,
-                right: 20,
-                top: 20,
-                bottom: 20,
-                icon: 10,
-                text: 10,
-            }
-        })
-        .setOrigin(0)
-        .layout();
-
-    textBox
-        .setInteractive()
-        .on('pointerdown', function () {
-            let icon = this.getElement('action').setVisible(false);
-            this.resetChildVisibleState(icon);
-            if (this.isTyping) {
-                this.stop(true);
-            } else {
-                this.typeNextPage();
-            }
-        }, textBox)
-        .on('pageend', function () {
-            if (this.isLastPage) {
-                return;
-            }
-            
-            let icon = this.getElement('action').setVisible(true);
-            this.resetChildVisibleState(icon);
-            icon.y -= 30;
-            let tween = scene.tweens.add({
-                targets: icon,
-                y: '+=30', // '+=100'
-                ease: 'Bounce', // 'Cubic', 'Elastic', 'Bounce', 'Back'
-                duration: 500,
-                repeat: 0, // -1: infinity
-                yoyo: false
-            });
-        }, textBox)
-    //.on('type', function () {
-    //})
-
-    return textBox;
-}
-
-
-function getBBcodeText (scene, wrapWidth, fixedWidth, fixedHeight) {
-    return scene.rexUI.add.BBCodeText(0, 0, '', {
-        fixedWidth: fixedWidth,
-        fixedHeight: fixedHeight,
-
-        fontSize: '20px',
-        wrap: {
-            mode: 'word',
-            width: wrapWidth
-        },
-        maxLines: 6
-    })
-
-}
-*/
