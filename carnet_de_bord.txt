@@ -2,16 +2,16 @@ Problèmes à résoudre
 ---------------------
 
 - visibilité des boutons NEXT
-    dans la fonction createtextbox?
+    dans la fonction createtextbox? //Nadège
 
-- affichage de la page ABOUT
+- affichage de la page ABOUT //About
     Page html 
     js texte 
     sous page accueil
     Readme
 
 - SceneMariage : 
-    création deux sous-scènes ou event on.click ?
+    création deux sous-scènes ou event on.click ? //Nadège
 
 
    
@@ -34,9 +34,9 @@ GAME DESIGN
         - scène avion (évoque le déménagement)
     
     Pop-up informationnel : 
-        - voir doc "pop up phaser"
+        - voir doc "pop up phaser" //Marie --> class
 
-    Faire Gauge :
-        - chronologie
+    Faire Jauge : //Marie --> atlas
+        - chronologie 
         - désillusion
     
