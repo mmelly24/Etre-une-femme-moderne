@@ -22,24 +22,17 @@ class SceneInstructions extends Phaser.Scene {
     let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
     Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
     C’est désormais à vous de prendre les bonnes décisions, pour permettre à Julie de vivre une vie... extraordinaire !`;
+
     this.add.image(700, 150, 'happyFace').setScale(0.5);
 
-    let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
-    boutonMenu.setInteractive();
-    boutonMenu.on('pointerdown', () => this.scene.start('accueil'));
-    changerPage(this, 700, 500, 'NEXT');
+    new Bouton(this, true, 'BACK TO MENU', 200, 100, 'accueil');
+    new Bouton (this, true, 'NEXT', 700, 500, 'mariage');
     new TextBox(this, content, 6);
+
+    
 
   }
 
-    update() {
-        changerPage(this, 700, 500, 'NEXT');
-    }
 }
 
-function changerPage(scene, x, y, contenu) {
-  let boutonNext = scene.add.text(x, y, contenu);
-  boutonNext.setInteractive();
-  boutonNext.on('pointerdown', () => scene.scene.start('mariage'));
-  return boutonNext;
-}
+
