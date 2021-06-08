@@ -1,5 +1,4 @@
 
-
 class SceneInstructions extends Phaser.Scene {
   constructor() {
     super('instructions');
@@ -7,16 +6,6 @@ class SceneInstructions extends Phaser.Scene {
 
   preload() {
     new SceneDesign(this, 'mariage', 'happyFace');
-    /*this.load.image('happyFace', 'assets/sprite_happy_face.png');
-    this.load.scenePlugin({
-      key: 'rexuiplugin',
-      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
-      sceneKey: 'rexUI',
-    });
-    this.load.image(
-      'nextPage',
-      'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
-    );*/
   }
 
   create() {
@@ -29,22 +18,9 @@ class SceneInstructions extends Phaser.Scene {
 
     new Bouton(this, true, 200, 100, 'BACK TO MENU', 'accueil');
     new Bouton (this, true, 700, 500, 'NEXT', 'mariage');
-    /*let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
-    boutonMenu.setInteractive();
-    boutonMenu.on('pointerdown', () => this.scene.start('accueil'));
-    changerPage(this, 700, 500, 'NEXT');*/
     new TextBox(this, content, 6);
-
-    
 
   }
 
 }
 
-
-/*function changerPage(scene, x, y, contenu) {
-  let boutonNext = scene.add.text(x, y, contenu);
-  boutonNext.setInteractive();
-  boutonNext.on('pointerdown', () => scene.scene.start('mariage'));
-  return boutonNext;
-}*/
