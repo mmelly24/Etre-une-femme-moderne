@@ -138,4 +138,34 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
   });
 }
 
+class SceneDesign extends Phaser.Scene {
+  constructor(scene) {
+    super(scene);
+
+    scene.load.image('happyFace', 'assets/sprite_happy_face.png');
+    scene.load.scenePlugin({
+      key: 'rexuiplugin',
+      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+      sceneKey: 'rexUI',
+    });
+    scene.load.image(
+      'nextPage',
+      'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
+    );
+
+    let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
+    boutonMenu.setInteractive();
+    boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
+    changerPage(scene, 700, 500, 'NEXT');
+
+  }
+}
+
+function changerPage(scene, x, y, contenu) {
+  let boutonNext = scene.add.text(x, y, contenu);
+  boutonNext.setInteractive();
+  boutonNext.on('pointerdown', () => scene.scene.start('mariage'));
+  return boutonNext;
+}
+
 let jeu = new Phaser.Game(config);
