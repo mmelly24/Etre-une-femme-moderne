@@ -29,6 +29,14 @@ const config = {
   ],
 };
 
+class Bouton extends Phaser.GameObjects.Container {
+  constructor(name, visibilité, content, x, y, nomScene) {
+    super (name);
+
+    creerBouton(name, visibilité, content, x, y, nomScene);
+  }
+}
+
 class TextBox extends Phaser.GameObjects.Container {
   constructor(scene, content, maxLines) {
     super(scene);
@@ -137,5 +145,14 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
     maxLines: maxLines,
   });
 }
+
+function creerBouton(name, visibilité, content, x, y, nomScene){
+  let bouton = name.add.text(x, y, content)
+  bouton.setInteractive();
+  bouton.setVisible(visibilité);
+  bouton.on('pointerdown', () => name.scene.start(nomScene));
+  return bouton;
+}
+
 
 let jeu = new Phaser.Game(config);
