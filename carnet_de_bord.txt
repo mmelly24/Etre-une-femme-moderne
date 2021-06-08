@@ -12,19 +12,27 @@ Problèmes à résoudre
 
 - SceneMariage : 
     création deux sous-scènes ou event on.click ?
+
+
+   
+GAME DESIGN
+    Création des sprites:
+        - petit ami 
+        - parents
+        - beaux-parents
+        - collègues
+        - chefs
+        - bébé
+        - frère/soeur
+
+    Background : 
+        - Bureau
+        - intérieur appartement 
+        - intérieur appartement précaire 
+        - hopital
+        - bureau de consultation psychologique
+        - scène avion (évoque le déménagement)
     
-
-Création des sprites:
-    - petit ami 
-    - parents
-    - beaux-parents
-    - collègues
-    - chefs
-    - bébé
-    - frère/soeur
-
-Background : 
-    - Bureau
-    - intérieur appartement 
-    - 
+    Pop-up informationnel : 
+        - voir doc "pop up phaser"
     
