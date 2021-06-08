@@ -6,7 +6,7 @@ class SceneInstructions extends Phaser.Scene {
   }
 
   preload() {
-    new SceneDesign(this);
+    new SceneDesign(this, 'mariage', 'happyFace');
     /*this.load.image('happyFace', 'assets/sprite_happy_face.png');
     this.load.scenePlugin({
       key: 'rexuiplugin',

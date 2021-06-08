@@ -156,10 +156,10 @@ function creerBouton(name, visibilité, x, y, content, nomScene){
 }
 
 class SceneDesign extends Phaser.Scene {
-  constructor(scene, sceneSuivante) {
+  constructor(scene, sceneSuivante, image) {
     super(scene);
 
-    scene.load.image('happyFace', 'assets/sprite_happy_face.png');
+    scene.load.image(image, 'assets/sprite_happy_face.png');
     scene.load.scenePlugin({
       key: 'rexuiplugin',
       url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
