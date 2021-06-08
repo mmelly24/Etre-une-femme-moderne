@@ -19,7 +19,7 @@ class SceneInstructions extends Phaser.Scene {
     new Bouton(this, true, 200, 100, 'BACK TO MENU', 'accueil');
     new Bouton (this, true, 700, 500, 'NEXT', 'mariage');
     new TextBox(this, content, 6);
-
+    //new PopUp (this, 'Le Mariage', 'En Suisse, plus de 30% de femmes sont célibataires.', 400, 200);
   }
 
 }

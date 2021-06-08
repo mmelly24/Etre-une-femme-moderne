@@ -33,7 +33,7 @@ const config = {
 
 class Bouton extends Phaser.GameObjects.Container {
   constructor(name, visibilité, x, y, content, nomScene) {
-    super (name);
+    super(name);
     creerBouton(name, visibilité, x, y, content, nomScene);
   }
 }
@@ -58,7 +58,7 @@ function createTextBox(scene, x, y, config) {
   let wrapWidth = GetValue(config, 'wrapWidth', 0);
   let fixedWidth = GetValue(config, 'fixedWidth', 0);
   let fixedHeight = GetValue(config, 'fixedHeight', 0);
-  let maxLines = GetValue(config, 'maxLines', 0)
+  let maxLines = GetValue(config, 'maxLines', 0);
   console.log(scene.rexUI);
   let textBox = scene.rexUI.add
     .textBox({
@@ -147,12 +147,141 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
   });
 }
 
-function creerBouton(name, visibilité, x, y, content, nomScene){
-  let bouton = name.add.text(x, y, content)
+function creerBouton(name, visibilité, x, y, content, nomScene) {
+  let bouton = name.add.text(x, y, content);
   bouton.setInteractive();
   bouton.setVisible(visibilité);
   bouton.on('pointerdown', () => name.scene.start(nomScene));
   return bouton;
+}
+
+class PopUp extends Phaser.GameObjects.Container {
+  constructor(scene, titre, content, x, y) {
+    super(scene);
+
+    scene.load.scenePlugin({
+      key: 'reyuiplugin',
+      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+      sceneKey: 'rexUI',
+    });
+    
+    Alert(scene, titre, content, x,);
+  }
+}
+
+function CreateAlertDialog(scene) {
+  let dialog = scene.rexUI.add
+    .dialog({
+      width: 300,
+      background: scene.rexUI.add
+        .roundRectangle(0, 0, 100, 100, 20, 0x003c8f)
+        .setStrokeStyle(5, 0x003c8f),
+
+      title: scene.rexUI.add.label({
+        background: scene.rexUI.add
+          .roundRectangle(0, 0, 100, 40, 20, 0x003c8f)
+          .setStrokeStyle(2, 0x003c8f),
+        text: scene.add.text(0, 0, '', {
+          fontSize: '24px',
+        }),
+
+        space: {
+          left: 15,
+          right: 15,
+          top: 10,
+          bottom: 10,
+        },
+      }),
+
+      content: scene.add.text(0, 0, '', {
+        fontSize: '24px',
+      }),
+
+      actions: [
+        scene.rexUI.add.label({
+          background: scene.rexUI.add.roundRectangle(0, 0, 0, 0, 20, 0x5e92f3),
+
+          text: scene.add.text(0, 0, 'OK', {
+            fontSize: '24px',
+          }),
+
+          space: {
+            left: 10,
+            right: 10,
+            top: 10,
+            bottom: 10,
+          },
+        }),
+      ],
+
+      space: {
+        title: 25,
+        content: 25,
+        action: 15,
+
+        left: 20,
+        right: 20,
+        top: 20,
+        bottom: 20,
+      },
+
+      align: {
+        actions: 'center', // 'center'|'left'|'right'
+      },
+
+      expand: {
+        content: false, // Content is a pure text object
+      },
+    })
+    .on('button.over', function (button) {
+      button.getElement('background').setStrokeStyle(1, 0x003c8f);
+    })
+    .on('button.out', function (button) {
+      button.getElement('background').setStrokeStyle();
+    });
+
+  return dialog;
+}
+
+function SetAlertDialog(dialog, title, content) {
+  if (title === undefined) {
+    title = '';
+  }
+  if (content === undefined) {
+    content = '';
+  }
+  dialog.getElement('title').text = title;
+  dialog.getElement('content').text = content;
+  return dialog;
+}
+
+let AlertDialog;
+function Alert(scene, title, content, x, y) {
+  if (x === undefined) {
+    x = 400;
+  }
+  if (y === undefined) {
+    y = 300;
+  }
+
+  if (!AlertDialog) {
+    AlertDialog = CreateAlertDialog(scene);
+  }
+  SetAlertDialog(AlertDialog, title, content);
+
+  AlertDialog.setPosition(x, y).setVisible(true).layout();
+
+  return AlertDialog.moveFromPromise(1000, undefined, '-400', 'Bounce')
+    .then(function () {
+      return scene.rexUI.waitEvent(AlertDialog, 'button.click');
+    })
+    .then(function () {
+      return AlertDialog.moveToPromise(1000, undefined, '-=400', 'Back');
+    })
+    .then(function () {
+      AlertDialog.setVisible(false);
+      return Promise.resolve();
+    });
 }
 
 class SceneDesign extends Phaser.Scene {
