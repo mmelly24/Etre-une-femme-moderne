@@ -1,10 +1,4 @@
-/*const COLOR_PRIMARY = 000000;
-const COLOR_LIGHT = 000000;
-const COLOR_DARK = 000000;*/
 
-let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
-Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
-C’est désormais à vous de prendre les bonnes décisions, pour atteindre une vie de rêve… A vous de jouer !`;
 
 class SceneInstructions extends Phaser.Scene {
   constructor() {
@@ -25,13 +19,16 @@ class SceneInstructions extends Phaser.Scene {
   }
 
   create() {
+    let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
+    Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
+    C’est désormais à vous de prendre les bonnes décisions, pour permettre à Julie de vivre une vie... extraordinaire !`;
     this.add.image(700, 150, 'happyFace').setScale(0.5);
 
     let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
     boutonMenu.setInteractive();
     boutonMenu.on('pointerdown', () => this.scene.start('accueil'));
     changerPage(this, 700, 500, 'NEXT');
-    new TextBox(this, content);
+    new TextBox(this, content, 6);
 
   }
 

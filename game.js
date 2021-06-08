@@ -30,11 +30,12 @@ const config = {
 };
 
 class TextBox extends Phaser.GameObjects.Container {
-  constructor(scene, content) {
+  constructor(scene, content, maxLines) {
     super(scene);
 
     createTextBox(scene, 200, 200, {
       wrapWidth: 400,
+      maxLines: maxLines,
     }).start(content, 50);
   }
 }
@@ -48,6 +49,7 @@ function createTextBox(scene, x, y, config) {
   let wrapWidth = GetValue(config, 'wrapWidth', 0);
   let fixedWidth = GetValue(config, 'fixedWidth', 0);
   let fixedHeight = GetValue(config, 'fixedHeight', 0);
+  let maxLines = GetValue(config, 'maxLines', 0)
   console.log(scene.rexUI);
   let textBox = scene.rexUI.add
     .textBox({
@@ -61,7 +63,7 @@ function createTextBox(scene, x, y, config) {
       icon: scene.rexUI.add.roundRectangle(0, 0, 2, 2, 20, COLOR_DARK),
 
       // text: getBuiltInText(scene, wrapWidth, fixedWidth, fixedHeight),
-      text: getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight),
+      text: getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines),
 
       action: scene.add
         .image(0, 0, 'nextPage')
@@ -122,7 +124,7 @@ function createTextBox(scene, x, y, config) {
   return textBox;
 }
 
-function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight) {
+function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
   return scene.rexUI.add.BBCodeText(0, 0, '', {
     fixedWidth: fixedWidth,
     fixedHeight: fixedHeight,
@@ -132,7 +134,7 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight) {
       mode: 'word',
       width: wrapWidth,
     },
-    maxLines: 6,
+    maxLines: maxLines,
   });
 }
 
