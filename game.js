@@ -156,7 +156,7 @@ function creerBouton(name, visibilité, x, y, content, nomScene){
 }
 
 class SceneDesign extends Phaser.Scene {
-  constructor(scene) {
+  constructor(scene, sceneSuivante) {
     super(scene);
 
     scene.load.image('happyFace', 'assets/sprite_happy_face.png');
@@ -173,15 +173,14 @@ class SceneDesign extends Phaser.Scene {
     let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
     boutonMenu.setInteractive();
     boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
-    changerPage(scene, 700, 500, 'NEXT');
-
+    changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
   }
 }
 
-function changerPage(scene, x, y, contenu) {
+function changerPage(scene, x, y, contenu, sceneSuivante) {
   let boutonNext = scene.add.text(x, y, contenu);
   boutonNext.setInteractive();
-  boutonNext.on('pointerdown', () => scene.scene.start('mariage'));
+  boutonNext.on('pointerdown', () => scene.scene.start(sceneSuivante));
   return boutonNext;
 }
 

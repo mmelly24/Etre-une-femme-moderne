@@ -35,4 +35,8 @@ GAME DESIGN
     
     Pop-up informationnel : 
         - voir doc "pop up phaser"
+
+    Faire Gauge :
+        - chronologie
+        - désillusion
     
