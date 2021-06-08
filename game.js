@@ -30,10 +30,9 @@ const config = {
 };
 
 class Bouton extends Phaser.GameObjects.Container {
-  constructor(name, visibilité, content, x, y, nomScene) {
+  constructor(name, visibilité, x, y, content, nomScene) {
     super (name);
-
-    creerBouton(name, visibilité, content, x, y, nomScene);
+    creerBouton(name, visibilité, x, y, content, nomScene);
   }
 }
 
@@ -146,7 +145,7 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
   });
 }
 
-function creerBouton(name, visibilité, content, x, y, nomScene){
+function creerBouton(name, visibilité, x, y, content, nomScene){
   let bouton = name.add.text(x, y, content)
   bouton.setInteractive();
   bouton.setVisible(visibilité);
