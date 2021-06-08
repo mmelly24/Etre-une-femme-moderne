@@ -25,12 +25,8 @@ class SceneMariage extends Phaser.Scene {
 
     new TextBox(this, content, 7);
 
-    let boutonOui = this.add.text(380, 500, 'OUI');
-    boutonOui.setInteractive();
-    boutonOui.on('pointerdown', () => this.scene.start('enfants'));
+    new Bouton(this, true, 380, 500, 'OUI', 'mariageOui');
+    new Bouton(this, true, 580, 500, 'NON', 'mariageNon');
 
-    let boutonNon = this.add.text(580, 500, 'NON');
-    boutonNon.setInteractive();
-    boutonNon.on('pointerdown', () => this.scene.start('enfants'));
   }
 }
