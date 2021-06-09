@@ -206,7 +206,7 @@ function CreateAlertDialog(scene) {
         fontSize: '24px',
       }),
 
-      actions: [
+      /*actions: [
         scene.rexUI.add.label({
           background: scene.rexUI.add.roundRectangle(0, 0, 0, 0, 20, 0x5e92f3),
 
@@ -221,7 +221,7 @@ function CreateAlertDialog(scene) {
             bottom: 10,
           },
         }),
-      ],
+      ],*/
 
       space: {
         title: 25,
@@ -349,13 +349,23 @@ function timeBar(scene, x, y, durée) {
 
 
 
-function choixJoueur( scene, nomBouton, décisionJoueur, textBoxQuestion, contenu, maxLines, autreBouton, sceneSuivante) {
+function choixJoueur( scene, nomBouton, décisionJoueur, textBoxQuestion, contenu, maxLines, autreBouton, sceneSuivante, popupTexte, popupTitre) {
   
   textBoxQuestion.destroy();
   reponseTextBox = creerTextBox (scene, contenu, maxLines)
   reponseTextBox.on('pageend', () => {
     if (reponseTextBox.isLastPage) {
-      changerPage(scene, 700, 500, 'NEXT', sceneSuivante, [décisionJoueur]); // VERIFIER LE PASSAGE DE LA VARIABLE A LA SCENE SUIVANTE
+      if (popupTexte != null) {
+        scene.time.addEvent({
+          delay: 5000,
+          callback: () => {
+            reponseTextBox.destroy();
+            Alert(scene, popupTitre, popupTexte, 500, 300);
+            changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+          },
+          loop: false,
+        });
+      } else changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
     }
   });
   nomBouton.setVisible(false);
