@@ -19,8 +19,6 @@ const config = {
     SceneDepart,
     SceneInstructions,
     SceneMariage,
-    SceneMariageOui,
-    SceneMariageNon,
     SceneEnfants,
     SceneMobilite,
     ScenePromotion,
