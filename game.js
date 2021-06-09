@@ -177,6 +177,7 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
 
 //--------- Fonctions pour les popUp ------------
 let AlertDialog;
+
 function CreateAlertDialog(scene) {
   let dialog = scene.rexUI.add
     .dialog({
