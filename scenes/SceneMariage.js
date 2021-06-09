@@ -37,7 +37,6 @@ class SceneMariage extends Phaser.Scene {
     let reponseNon = `Même si vous aimez profondément Mathieu, vous ne vous sentez pas prête à faire le grand pas. D’ailleurs, vous pensez même ne jamais vouloir le faire car le mariage n’a jamais été un but en soi pour vous.\n\n\n
       Vous refusez donc gentiment la proposition de votre petit-ami, tout en le rassurant sur votre amour : le mariage n’est pas une condition nécessaire à l’amour, et vos sentiments pour lui restent inchangés.\n Après quelques jours, Mathieu comprend et accepte votre choix, même si cela représente un sacrifice important pour lui, sa famille étant très attachée aux traditions.`;
 
-    //NB: les boutons apparaissent trop tôt
     let boutonOui = creerBouton(
       this,
       false,

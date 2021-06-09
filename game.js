@@ -348,8 +348,7 @@ function timeBar(scene, x, y, durée) {
 }
 
 
-
-function choixJoueur( scene, nomBouton, décisionJoueur, textBoxQuestion, contenu, maxLines, autreBouton, sceneSuivante, popupTexte, popupTitre) {
+function choixJoueur(scene, nomBouton, décisionJoueur, textBoxQuestion, contenu, maxLines, autreBouton, sceneSuivante, popupTexte, popupTitre) {
   
   textBoxQuestion.destroy();
   reponseTextBox = creerTextBox (scene, contenu, maxLines)
