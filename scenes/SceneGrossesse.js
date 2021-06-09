@@ -4,6 +4,8 @@ class SceneGrossesse extends Phaser.Scene {
   }
 
   create() {
+
+    /* -----RENDU INUTILE PAR LES TEXTBOXES
     //test
     let text;
     let count = 0;
@@ -24,6 +26,6 @@ class SceneGrossesse extends Phaser.Scene {
       } else if (count == 2) {
         text.setText('Vous commencez à vous sentir très fatiguée');
       }
-    });
+    });*/
   }
 }
