@@ -6,6 +6,12 @@ class SceneInstructions extends Phaser.Scene {
 
   preload() {
     //new SceneDesign(this, 'mariage', 'happyFace', 'assets/sprite_happy_face.png');
+    this.load.image('happyFace','assets/sprite_happy_face.png');
+    this.load.scenePlugin({
+      key: 'rexuiplugin',
+      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+      sceneKey: 'rexUI',
+    });
     this.load.image(
       'nextPage',
       'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
