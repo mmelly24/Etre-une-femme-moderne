@@ -31,12 +31,42 @@ const config = {
   ],
 };
 
+class SceneDesign extends Phaser.Scene {
+  constructor(scene, sceneSuivante, image, lien) {
+    super(scene);
+
+    scene.load.image(image, lien);
+    scene.load.scenePlugin({
+      key: 'rexuiplugin',
+      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+      sceneKey: 'rexUI',
+    });
+    scene.load.image(
+      'nextPage',
+      'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
+    );
+
+    let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
+    boutonMenu.setInteractive();
+    boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
+    changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+  }
+}
+
 class Bouton extends Phaser.GameObjects.Container {
   constructor(name, visibilité, x, y, content, nomScene) {
     super(name);
     creerBouton(name, visibilité, x, y, content, nomScene);
   }
 }
+
+class Images extends Phaser.GameObjects.Image {
+  constructor(scene, x, y, nomImage, scale) {
+    super(scene);
+    creerImage(scene, x, y, nomImage, scale);
+  }
+}
+
 
 class TextBox extends Phaser.GameObjects.Container {
   constructor(scene, content, maxLines) {
@@ -46,6 +76,20 @@ class TextBox extends Phaser.GameObjects.Container {
       wrapWidth: 400,
       maxLines: maxLines,
     }).start(content, 50);
+  }
+}
+
+class PopUp extends Phaser.GameObjects.Container {
+  constructor(scene, titre, content, x, y) {
+    super(scene);
+
+    scene.load.scenePlugin({
+      key: 'reyuiplugin',
+      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+      sceneKey: 'rexUI',
+    });
+
+    Alert(scene, titre, content, x);
   }
 }
 
@@ -145,28 +189,6 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
     },
     maxLines: maxLines,
   });
-}
-
-function creerBouton(name, visibilité, x, y, content, nomScene) {
-  let bouton = name.add.text(x, y, content);
-  bouton.setInteractive();
-  bouton.setVisible(visibilité);
-  bouton.on('pointerdown', () => name.scene.start(nomScene));
-  return bouton;
-}
-
-class PopUp extends Phaser.GameObjects.Container {
-  constructor(scene, titre, content, x, y) {
-    super(scene);
-
-    scene.load.scenePlugin({
-      key: 'reyuiplugin',
-      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
-      sceneKey: 'rexUI',
-    });
-    
-    Alert(scene, titre, content, x,);
-  }
 }
 
 function CreateAlertDialog(scene) {
@@ -284,35 +306,6 @@ function Alert(scene, title, content, x, y) {
     });
 }
 
-class SceneDesign extends Phaser.Scene {
-  constructor(scene, sceneSuivante, image) {
-    super(scene);
-
-    scene.load.image(image, 'assets/sprite_happy_face.png');
-    scene.load.scenePlugin({
-      key: 'rexuiplugin',
-      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
-      sceneKey: 'rexUI',
-    });
-    scene.load.image(
-      'nextPage',
-      'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
-    );
-
-    let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
-    boutonMenu.setInteractive();
-    boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
-    changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
-  }
-}
-
-/*class Image extends Phaser.GameObjects.Image {
-  constructor(scene, x, y, scale) {
-    super(scene, x, y, scale);
-    this.setPosition(x, y);
-    this.setScale(scale)
-  }
-}*/
 
 function changerPage(scene, x, y, contenu, sceneSuivante) {
   let boutonNext = scene.add.text(x, y, contenu);
@@ -320,5 +313,23 @@ function changerPage(scene, x, y, contenu, sceneSuivante) {
   boutonNext.on('pointerdown', () => scene.scene.start(sceneSuivante));
   return boutonNext;
 }
+
+function creerImage(scene, x, y, nomImage, scale) {
+  let image = scene.add.image(x, y, nomImage).setScale(scale);
+  return image;
+}
+
+function creerBouton(name, visibilité, x, y, content, nomScene) {
+  let bouton = name.add.text(x, y, content);
+  bouton.setInteractive();
+  bouton.setVisible(visibilité);
+  bouton.on('pointerdown', () => name.scene.start(nomScene));
+  return bouton;
+}
+
+/*function chargerImage(scene, key, lien) {
+  let imageChargee = scene.load.image(key, lien);
+  return imageChargee;
+}*/
 
 let jeu = new Phaser.Game(config);
