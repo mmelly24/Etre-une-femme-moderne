@@ -17,10 +17,12 @@ Problèmes à résoudre
     une nouvelle textbox avec la réponse
 
 - classe SceneDesign: ajout du paramètre image
+    -> OK, supprimé la classe; ajouter l'image direct dans la scène
 
 - les boutons oui/non apparaissent trop tôt
     les faire apparaitre à la fin du défilement de la textbox, mais les solutions actuelles ne
     fonctionnent pas... peut-être lié à un mauvais référencement à cause de la classe TextBox -_-
+    -> OK, c'était effectivement un problème de référence.
 
    
 GAME DESIGN

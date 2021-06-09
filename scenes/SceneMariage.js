@@ -21,7 +21,6 @@ class SceneMariage extends Phaser.Scene {
     Acceptez-vous sa demande ?`;
 
     this.add.image(700, 150, 'happyFace').setScale(0.5);
-    boutonMenu(this);
 
     let textBoxQuestion = creerTextBox(this, content, 7);
 
