@@ -55,12 +55,6 @@ class SceneDesign extends Phaser.Scene {
   }
 }
 
-class Images extends Phaser.GameObjects.Image {
-  constructor(scene, x, y, nomImage, scale) {
-    super(scene);
-    creerImage(scene, x, y, nomImage, scale);
-  }
-}
 
 class PopUp extends Phaser.GameObjects.Container {
   constructor(scene, titre, content, x, y) {
@@ -185,7 +179,7 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
 }
 
 //--------- Fonctions pour les popUp ------------
-
+let AlertDialog;
 function CreateAlertDialog(scene) {
   let dialog = scene.rexUI.add
     .dialog({
@@ -272,7 +266,7 @@ function SetAlertDialog(dialog, title, content) {
   return dialog;
 }
 
-let AlertDialog;
+
 function Alert(scene, title, content, x, y) {
   if (x === undefined) {
     x = 400;
