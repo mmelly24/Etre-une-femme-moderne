@@ -49,7 +49,9 @@ class SceneDesign extends Phaser.Scene {
     let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
     boutonMenu.setInteractive();
     boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
-    changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+    if (sceneSuivante !== null) {
+      changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+    } else return undefined;
   }
 }
 
@@ -67,7 +69,6 @@ class Images extends Phaser.GameObjects.Image {
   }
 }
 
-
 class TextBox extends Phaser.GameObjects.Container {
   constructor(scene, content, maxLines) {
     super(scene);
@@ -83,7 +84,7 @@ class TextBox extends Phaser.GameObjects.Container {
   {
     this.innerText.destroy();
   } -> dans le code: destroyMe(textbox);
-  */ 
+  */
 }
 
 function détruireTextBox(textBox) {
@@ -115,7 +116,7 @@ function createTextBox(scene, x, y, config) {
   let wrapWidth = GetValue(config, 'wrapWidth', 0);
   let fixedWidth = GetValue(config, 'fixedWidth', 0);
   let fixedHeight = GetValue(config, 'fixedHeight', 0);
-  let maxLines = GetValue(config, 'maxLines', 0)
+  let maxLines = GetValue(config, 'maxLines', 0);
   //console.log(scene.rexUI);
   let textBox = scene.rexUI.add
     .textBox({
@@ -204,7 +205,7 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
   });
 }
 
-function creerBouton(scene, visibilité, x, y, content/*, nomScene*/){
+function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
   let bouton = scene.add.text(x, y, content);
   bouton.setInteractive();
   bouton.setVisible(visibilité);
@@ -284,7 +285,6 @@ function CreateAlertDialog(scene) {
       button.getElement('background').setStrokeStyle();
     });
 
-    else {return undefined}
   return dialog;
 }
 
@@ -341,14 +341,6 @@ function changerPage(scene, x, y, contenu, sceneSuivante) {
 function creerImage(scene, x, y, nomImage, scale) {
   let image = scene.add.image(x, y, nomImage).setScale(scale);
   return image;
-}
-
-function creerBouton(name, visibilité, x, y, content, nomScene) {
-  let bouton = name.add.text(x, y, content);
-  bouton.setInteractive();
-  bouton.setVisible(visibilité);
-  bouton.on('pointerdown', () => name.scene.start(nomScene));
-  return bouton;
 }
 
 /*function chargerImage(scene, key, lien) {

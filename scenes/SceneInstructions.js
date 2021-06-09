@@ -19,11 +19,9 @@ class SceneInstructions extends Phaser.Scene {
     
     //this.add.image(700, 150, 'happyFace').setScale(0.5);
 
-    let texte = new TextBox(this, content, 6);
-    console.log(texte);
+    new TextBox(this, content, 6);
     //new Bouton(this, true, 200, 100, 'BACK TO MENU', 'accueil');
     //new Bouton (this, true, 700, 500, 'NEXT', 'mariage');
-    new TextBox(this, content, 6);
     //new PopUp (this, 'Le Mariage', 'En Suisse, plus de 30% de femmes sont célibataires.', 400, 200);
   }
 
