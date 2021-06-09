@@ -349,7 +349,7 @@ function timeBar(scene, x, y, durée) {
 
 
 
-function decisionBinaire( scene, nomBouton, décisionJoueur, textBoxQuestion, contenu, maxLines, autreBouton, sceneSuivante) {
+function choixJoueur( scene, nomBouton, décisionJoueur, textBoxQuestion, contenu, maxLines, autreBouton, sceneSuivante) {
   
   textBoxQuestion.destroy();
   reponseTextBox = creerTextBox (scene, contenu, maxLines)

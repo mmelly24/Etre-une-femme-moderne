@@ -98,10 +98,10 @@ class SceneMariage extends Phaser.Scene {
       boutonNon.disableInteractive();
     });*/
     boutonOui.on('pointerdown', () => {
-    decisionBinaire (this, boutonOui, true, textBoxQuestion, reponseOui, 10, boutonNon, 'enfants')
+    choixJoueur (this, boutonOui, true, textBoxQuestion, reponseOui, 10, boutonNon, 'enfants')
     });
     boutonNon.on('pointerdown', () => {
-        decisionBinaire (this, boutonNon, false, textBoxQuestion, reponseNon, 10, boutonOui, 'enfants')
+        choixJoueur (this, boutonNon, false, textBoxQuestion, reponseNon, 10, boutonOui, 'enfants')
       }) 
 
     
