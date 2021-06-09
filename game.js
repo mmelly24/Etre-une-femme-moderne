@@ -293,6 +293,16 @@ function Alert(scene, title, content, x, y) {
       return Promise.resolve();
     });
 }
+//--------- PLUGIN REXUI --------->
+
+function chargerPlugin(scene) {
+  scene.load.scenePlugin({
+    key: 'rexuiplugin',
+    url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+    sceneKey: 'rexUI',
+  });
+  scene.load.image('nextPage','https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png')
+}
 
 //--------- Autres fonctions -----------
 
