@@ -306,6 +306,14 @@ class SceneDesign extends Phaser.Scene {
   }
 }
 
+/*class Image extends Phaser.GameObjects.Image {
+  constructor(scene, x, y, scale) {
+    super(scene, x, y, scale);
+    this.setPosition(x, y);
+    this.setScale(scale)
+  }
+}*/
+
 function changerPage(scene, x, y, contenu, sceneSuivante) {
   let boutonNext = scene.add.text(x, y, contenu);
   boutonNext.setInteractive();
