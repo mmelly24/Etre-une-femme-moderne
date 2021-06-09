@@ -24,22 +24,26 @@ class SceneInstructions extends Phaser.Scene {
   }
 
   create() {
-
-    timeBar(this, 500, 400)
+    timeBar(this, 500, 400);
 
     let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
     Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
     C’est désormais à vous de prendre les bonnes décisions, pour permettre à Julie de vivre une vie... extraordinaire !`;
 
-    Alert(this, 'salut', 'salut ca va', 500, 300).then(() => {
+    /*Alert(this, 'salut', 'salut ca va', 500, 300).then(() => {
       return Alert(this, 'chainage', 'test chainage', 500, 300);
-    });
+    });*/
 
     this.add.image(700, 150, 'happyFace').setScale(0.5);
     boutonMenu(this);
-    changerPage(this, 700, 500, 'NEXT', 'mariage');
+    //changerPage(this, 700, 500, 'NEXT', 'mariage');
 
-    //creerTextBox(this, content, 6);
+    let textBoxInstructions = creerTextBox(this, content, 6);
+    textBoxInstructions.on('pageend', () => {
+      if (textBoxInstructions.isLastPage) {
+        changerPage(this, 700, 500, 'NEXT', 'mariage');
+      }
+    });
 
     //new Bouton(this, true, 200, 100, 'BACK TO MENU', 'accueil');
     //new Bouton (this, true, 700, 500, 'NEXT', 'mariage');
