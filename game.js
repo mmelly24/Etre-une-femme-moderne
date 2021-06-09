@@ -181,7 +181,7 @@ let AlertDialog;
 function CreateAlertDialog(scene) {
   let dialog = scene.rexUI.add
     .dialog({
-      width: 300,
+      width: 600,
       background: scene.rexUI.add
         .roundRectangle(0, 0, 100, 100, 20, 0x003c8f)
         .setStrokeStyle(5, 0x003c8f),
@@ -279,7 +279,7 @@ function Alert(scene, title, content, x, y) {
 
   AlertDialog.setPosition(x, y).setVisible(true).layout();
 
-  return AlertDialog.moveFromPromise(1000, undefined, '-400', 'Bounce')
+  return AlertDialog.moveFromPromise(1000, undefined, '-=400', 'Bounce')
     .then(function () {
       return scene.rexUI.waitEvent(AlertDialog, 'button.click');
     })
@@ -330,24 +330,20 @@ function boutonMenu(scene) {
   boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
 }
 
-function timeBar(scene, x, y, durée ) {
-  scene.zone = scene.add.zone(
-    x = config.width / 2,
-    y = 400,
-  );
+function timeBar(scene, x, y, durée) {
+  scene.zone = scene.add.zone((x = config.width / 2), (y = 400));
   let barContainer = scene.add.image(x, y, 'containerBar');
 
-  let bar = scene.add.image(barContainer.x, barContainer.y, 'blueBar').setScale(0.5);
-  
+  let bar = scene.add
+    .image(barContainer.x, barContainer.y, 'blueBar')
+    .setScale(0.5);
+
   /*
   scene.barMask = scene.add.sprite(bar.x, bar.y, 'blueBar');
   scene.barMask.visible = false;
   bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);*/
-  
-  return bar + barContainer
-  
 
+  return bar + barContainer;
 }
-
 
 let jeu = new Phaser.Game(config);
