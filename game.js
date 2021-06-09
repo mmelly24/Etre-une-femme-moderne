@@ -98,6 +98,8 @@ const COLOR_PRIMARY = 000000;
 const COLOR_LIGHT = 000000;
 const COLOR_DARK = 000000;
 
+//---------- Fonctions pour les textBoxes -------------
+
 function createTextBox(scene, x, y, config) {
   let wrapWidth = GetValue(config, 'wrapWidth', 0);
   let fixedWidth = GetValue(config, 'fixedWidth', 0);
@@ -190,6 +192,8 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
     maxLines: maxLines,
   });
 }
+
+//--------- Fonctions pour les popUp ------------
 
 function CreateAlertDialog(scene) {
   let dialog = scene.rexUI.add
@@ -306,6 +310,7 @@ function Alert(scene, title, content, x, y) {
     });
 }
 
+//--------- Autres fonctions -----------
 
 function changerPage(scene, x, y, contenu, sceneSuivante) {
   let boutonNext = scene.add.text(x, y, contenu);
