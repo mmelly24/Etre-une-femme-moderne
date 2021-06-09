@@ -5,8 +5,11 @@ class SceneInstructions extends Phaser.Scene {
   }
 
   preload() {
-    new SceneDesign(this, 'mariage', 'happyFace', 'assets/sprite_happy_face.png');
-    
+    //new SceneDesign(this, 'mariage', 'happyFace', 'assets/sprite_happy_face.png');
+    this.load.image(
+      'nextPage',
+      'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
+    );
   }
 
   create() {
