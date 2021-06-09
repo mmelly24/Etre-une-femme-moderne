@@ -29,44 +29,6 @@ const config = {
   ],
 };
 
-/*class SceneDesign extends Phaser.Scene {
-  constructor(scene, sceneSuivante, image, lien) {
-    super(scene);
-
-    scene.load.image(image, lien);
-    scene.load.scenePlugin({
-      key: 'rexuiplugin',
-      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
-      sceneKey: 'rexUI',
-    });
-    scene.load.image(
-      'nextPage',
-      'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
-    );
-
-    let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
-    boutonMenu.setInteractive();
-    boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
-    if (sceneSuivante !== null) {
-      changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
-    } else return undefined;
-  }
-}*/
-
-/*class PopUp extends Phaser.GameObjects.Container {
-  constructor(scene, titre, content, x, y) {
-    super(scene);
-
-    scene.load.scenePlugin({
-      key: 'rexuiplugin',
-      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
-      sceneKey: 'rexUI',
-    });
-
-    Alert(scene, titre, content, x,y);
-  }
-}*/
-
 const GetValue = Phaser.Utils.Objects.GetValue;
 const COLOR_PRIMARY = 000000;
 const COLOR_LIGHT = 000000;
@@ -330,19 +292,14 @@ function boutonMenu(scene) {
   boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
 }
 
-
-let countBar = 10; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION 
-function timeBar(scene, x, y) {
-  
+let countBar = 10; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+function timeBar(scene, x, y, nom) {
+  scene.add.image(250, 450, nom).setScale(0.4)
   countBar = countBar / 2;
-  scene.zone = scene.add.zone(
-    x = config.width / 2,
-    y = 450,
-  );
+  scene.zone = scene.add.zone((x = config.width / 2), (y = 450));
   let barContainer = scene.add.image(x, y, 'containerBar');
-  let bar = scene.add.image(x, y, 'blueBar')
+  let bar = scene.add.image(x, y, 'blueBar');
 
-  
   scene.barMask = scene.add.sprite(bar.x, bar.y, 'blueBar');
   scene.barMask.visible = false;
   bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);
@@ -352,15 +309,23 @@ function timeBar(scene, x, y) {
   scene.barMask.x -= stepWidth;
   //bar.x = stepWidth
 
-  
-  return bar + barContainer
+  return bar + barContainer;
 }
 
-
-function choixJoueur(scene, nomBouton, décisionJoueur, textBoxQuestion, contenu, maxLines, autreBouton, sceneSuivante, popupTexte, popupTitre) {
-  
+function choixJoueur(
+  scene,
+  nomBouton,
+  décisionJoueur,
+  textBoxQuestion,
+  contenu,
+  maxLines,
+  autreBouton,
+  sceneSuivante,
+  popupTexte,
+  popupTitre
+) {
   textBoxQuestion.destroy();
-  reponseTextBox = creerTextBox (scene, contenu, maxLines)
+  reponseTextBox = creerTextBox(scene, contenu, maxLines);
   reponseTextBox.on('pageend', () => {
     if (reponseTextBox.isLastPage) {
       if (popupTexte != null) {

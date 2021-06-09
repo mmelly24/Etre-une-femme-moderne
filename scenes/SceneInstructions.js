@@ -8,6 +8,7 @@ class SceneInstructions extends Phaser.Scene {
     this.load.image('happyFace', 'assets/sprite_happy_face.png');
     this.load.image('blueBar', 'assets/blueBar.png');
     this.load.image('containerBar', 'assets/containerBar.png');
+    this.load.image('oldWoman', 'assets/sprite_old_woman_happy.png');
 
     chargerPlugin(this);
 
@@ -24,7 +25,7 @@ class SceneInstructions extends Phaser.Scene {
   }
 
   create() {
-    timeBar(this, 500, 400);
+    timeBar(this, 500, 400, 'oldWoman');
     //Alert(this, 'test', 'test premier', 500, 300)
 
     let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
