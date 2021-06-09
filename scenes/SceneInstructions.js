@@ -7,6 +7,9 @@ class SceneInstructions extends Phaser.Scene {
   preload() {
     //new SceneDesign(this, 'mariage', 'happyFace', 'assets/sprite_happy_face.png');
     this.load.image('happyFace','assets/sprite_happy_face.png');
+    this.load.image('blueBar','assets/blueBar.png');
+    this.load.image('containerBar','assets/containerBar.png');
+
     chargerPlugin(this);
 
     /*
@@ -22,6 +25,8 @@ class SceneInstructions extends Phaser.Scene {
   }
 
   create() {
+
+    timeBar(this, 500, 400, 500)
 
     let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
     Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
