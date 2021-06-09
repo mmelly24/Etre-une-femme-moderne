@@ -330,19 +330,28 @@ function boutonMenu(scene) {
   boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
 }
 
-function timeBar(scene, x, y, durée) {
+
+let countBar = 10; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION 
+function timeBar(scene, x, y) {
+  
+  countBar = countBar / 2;
   scene.zone = scene.add.zone(
     x = config.width / 2,
-    y = 400,
+    y = 450,
   );
   let barContainer = scene.add.image(x, y, 'containerBar');
+  let bar = scene.add.image(x, y, 'blueBar')
 
-  let bar = scene.add.image(barContainer.x, barContainer.y, 'blueBar').setScale(0.6);
   
-  /*
   scene.barMask = scene.add.sprite(bar.x, bar.y, 'blueBar');
   scene.barMask.visible = false;
-  bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);*/
+  bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);
+
+  let stepWidth = scene.barMask.displayWidth / countBar;
+
+  scene.barMask.x -= stepWidth;
+  //bar.x = stepWidth
+
   
   return bar + barContainer
 }
