@@ -331,19 +331,39 @@ function boutonMenu(scene) {
 }
 
 function timeBar(scene, x, y, durée) {
-  scene.zone = scene.add.zone((x = config.width / 2), (y = 400));
+  scene.zone = scene.add.zone(
+    x = config.width / 2,
+    y = 400,
+  );
   let barContainer = scene.add.image(x, y, 'containerBar');
 
-  let bar = scene.add
-    .image(barContainer.x, barContainer.y, 'blueBar')
-    .setScale(0.5);
-
+  let bar = scene.add.image(barContainer.x, barContainer.y, 'blueBar').setScale(0.6);
+  
   /*
   scene.barMask = scene.add.sprite(bar.x, bar.y, 'blueBar');
   scene.barMask.visible = false;
   bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);*/
+  
+  return bar + barContainer
+}
 
-  return bar + barContainer;
+
+
+function choixJoueur( scene, nomBouton, décisionJoueur, textBoxQuestion, contenu, maxLines, autreBouton, sceneSuivante) {
+  
+  textBoxQuestion.destroy();
+  reponseTextBox = creerTextBox (scene, contenu, maxLines)
+  reponseTextBox.on('pageend', () => {
+    if (reponseTextBox.isLastPage) {
+      changerPage(scene, 700, 500, 'NEXT', sceneSuivante, [décisionJoueur]); // VERIFIER LE PASSAGE DE LA VARIABLE A LA SCENE SUIVANTE
+    }
+  });
+  nomBouton.setVisible(false);
+  autreBouton.setVisible(false);
+  nomBouton.disableInteractive();
+  autreBouton.disableInteractive();
+
+  return;
 }
 
 let jeu = new Phaser.Game(config);
