@@ -5,7 +5,8 @@ class SceneInstructions extends Phaser.Scene {
   }
 
   preload() {
-    new SceneDesign(this, 'mariage', 'happyFace');
+    new SceneDesign(this, 'mariage', 'happyFace', 'assets/sprite_happy_face.png');
+    
   }
 
   create() {
@@ -14,10 +15,16 @@ class SceneInstructions extends Phaser.Scene {
     Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
     C’est désormais à vous de prendre les bonnes décisions, pour permettre à Julie de vivre une vie... extraordinaire !`;
 
-    this.add.image(700, 150, 'happyFace').setScale(0.5);
+    new Images(this, 700, 150, 'happyFace', 0.5)
+    
+    //this.add.image(700, 150, 'happyFace').setScale(0.5);
 
     let texte = new TextBox(this, content, 6);
     console.log(texte);
+    //new Bouton(this, true, 200, 100, 'BACK TO MENU', 'accueil');
+    //new Bouton (this, true, 700, 500, 'NEXT', 'mariage');
+    new TextBox(this, content, 6);
+    //new PopUp (this, 'Le Mariage', 'En Suisse, plus de 30% de femmes sont célibataires.', 400, 200);
   }
 
 }

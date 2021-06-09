@@ -47,4 +47,7 @@ GAME DESIGN
     Faire Jauge : //Marie --> atlas
         - chronologie 
         - désillusion
+
+    Loading Credits : 
+        - aligner les box au centre
     

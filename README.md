@@ -20,3 +20,5 @@ plugin pour text box:
 installation de : https://www.npmjs.com/package/browserify
 
 Pour le son : https://www.bensound.com/royalty-free-music/track/inspire
+
+popup : Copyright (c) 2021 by Rex (https://codepen.io/rexrainbow/pen/qBdQRmq)
