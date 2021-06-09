@@ -30,7 +30,7 @@ class SceneEnfants extends Phaser.Scene {
     });
 
     boutonOui.on('pointerdown', () => {
-      choixJoueur(this, boutonOui, true, textBoxQuestion, reponseOui, 3, boutonNon, 'promotion', null, null);
+      choixJoueur(this, boutonOui, true, textBoxQuestion, reponseOui, 3, boutonNon, 'grossesse', null, null);
     });
 
     boutonNon.on('pointerdown', () => {
