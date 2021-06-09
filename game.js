@@ -54,17 +54,18 @@ class SceneDesign extends Phaser.Scene {
 }
 
 
+
 class PopUp extends Phaser.GameObjects.Container {
   constructor(scene, titre, content, x, y) {
     super(scene);
 
     scene.load.scenePlugin({
-      key: 'reyuiplugin',
+      key: 'rexuiplugin',
       url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
       sceneKey: 'rexUI',
     });
 
-    Alert(scene, titre, content, x);
+    Alert(scene, titre, content, x,y);
   }
 }
 
