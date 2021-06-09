@@ -15,6 +15,8 @@ class SceneMariage extends Phaser.Scene {
   }
 
   create() {
+
+    timeBar(this, 500, 400);
     let content = `Cela fait maintenant plusieurs mois que vous travaillez dans votre nouvelle entreprise. Malgré quelques déceptions, vous êtes globalement heureuse et satisfaite par votre lieu de travail.
     Toutesfois, quelque chose vous taraude l'esprit...\n\n\n\n\n\n
     Habitant depuis 2 ans avec votre petit-ami Mathieu, vous remarquez que ce dernier se comporte de manière suspecte... Lorsque vous lui en faite la remarque, il refuse d'en parler.
