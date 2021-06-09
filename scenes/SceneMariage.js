@@ -3,12 +3,8 @@ class SceneMariage extends Phaser.Scene {
     super('mariage');
   }
 
-  preload(){
-    this.load.scenePlugin({
-      key: 'rexuiplugin',
-      url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
-      sceneKey: 'rexUI',
-    });
+  preload() {
+    new SceneDesign(this, null, 'happyFace');
   }
 
   create() {
@@ -23,14 +19,46 @@ class SceneMariage extends Phaser.Scene {
     
     Acceptez-vous sa demande ?`;
 
-    new TextBox(this, content, 7);
+    let texte = new TextBox(this, content, 7);
 
-    /*let boutonOui = this.add.text(380, 500, 'OUI');
-    boutonOui.setInteractive();
-    boutonOui.on('pointerdown', () => this.scene.start('enfants'));*/
+    let decisionMariage = '';
+    //NB: les boutons apparaissent trop tôt
+    let boutonOui = creerBouton(this, true, 380, 500, 'OUI'/*, 'mariageOui'*/);
+    let boutonNon = creerBouton(this, true, 580, 500, 'NON'/*, 'mariageNon'*/);
+    
+    /*texte.on('pageend', () => {
+      if (this.isLastPage) {
+      boutonOui.setVisible(true);
+      boutonNon.setVisible(true);
+      }
+    });*/
 
-    new Bouton(this, true, 380, 500, 'OUI', 'mariageOui');
-    new Bouton(this, true, 580, 500, 'NON', 'mariageNon');
+    boutonOui.on('pointerdown', () => {
+      decisionMariage = true;
+      let réponse = `Vous acceptez sa demande avec grand plaisir ! Cela faisait quelques mois que vous y pensiez également, et vous êtes ravie de voir que vos envies sont similaires. Après l’excitation du début, et l’annonce à vos familles et amis respectifs, il faut désormais s’atteler aux préparatifs…
+      Mathieu, qui occupe lui aussi un poste important, vous fait remarquer qu’il n’a pas le temps de s’occuper des détails, et vous laisse donc en charge de la décoration. Lui-même insiste d’ailleurs sur son incapacité à faire des choix esthétiques, et souligne votre bon goût inné.\n
+      Vous n’avez pas le cœur de lui imposer cette tâche, et acceptez donc de prendre en charge cet aspect-là de la cérémonie… Toutefois, cela vous ajoute une énorme pression, et votre moral n’est pas au beau fixe…\n\n\n De plus, la fatigue s’accumule, et votre patron vous fait remarquer que votre travail baisse en qualité. Heureusement, le mariage arrive finalement et après une cérémonie splendide, vous revenez à votre rythme de vie initial. Tout rentre dans l’ordre et vous êtes à nouveau motivée.`;
+      détruireTextBox(texte);
+      new TextBox(this, réponse, 5);
+      changerPage(this, 700, 500, 'NEXT', 'enfants', [decisionMariage]); // VERIFIER LE PASSAGE DE LA VARIABLE A LA SCENE SUIVANTE
+      boutonOui.setVisible(false);
+      boutonNon.setVisible(false);
+      boutonOui.disableInteractive();
+      boutonNon.disableInteractive();
+    });
+
+    boutonNon.on('pointerdown', () => {
+      decisionMariage = false;
+      let réponse = `Même si vous aimez profondément Mathieu, vous ne vous sentez pas prête à faire le grand pas. D’ailleurs, vous pensez même ne jamais vouloir le faire car le mariage n’a jamais été un but en soi pour vous.\n\n\n
+      Vous refusez donc gentiment la proposition de votre petit-ami, tout en le rassurant sur votre amour : le mariage n’est pas une condition nécessaire à l’amour, et vos sentiments pour lui restent inchangés.\n Après quelques jours, Mathieu comprend et accepte votre choix, même si cela représente un sacrifice important pour lui, sa famille étant très attachée aux traditions.`;
+      détruireTextBox(texte);
+      new TextBox(this, réponse, 5);
+      changerPage(this, 700, 500, 'NEXT', 'enfants', [decisionMariage]);
+      boutonOui.setVisible(false);
+      boutonNon.setVisible(false);
+      boutonOui.disableInteractive();
+      boutonNon.disableInteractive();
+    });
 
   }
 }

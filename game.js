@@ -31,22 +31,33 @@ const config = {
   ],
 };
 
-class Bouton extends Phaser.GameObjects.Container {
-  constructor(name, visibilité, x, y, content, nomScene) {
-    super (name);
-    creerBouton(name, visibilité, x, y, content, nomScene);
+/*class Bouton extends Phaser.GameObjects.Container {
+  constructor(scene, visibilité, x, y, content, nomScene) {
+    super (scene);
+    creerBouton(scene, visibilité, x, y, content, nomScene);
   }
-}
+}*/
 
 class TextBox extends Phaser.GameObjects.Container {
   constructor(scene, content, maxLines) {
     super(scene);
 
-    createTextBox(scene, 200, 200, {
+    this.innerTextBox = createTextBox(scene, 200, 200, {
       wrapWidth: 400,
       maxLines: maxLines,
     }).start(content, 50);
   }
+
+  /* VARIANTE : on peut ajouter les autres fonctions comme ça dans la classe aussi, pour pas qu'on puisse les appeler en-dehors de la classe TextBox
+  destroyMe()
+  {
+    this.innerText.destroy();
+  } -> dans le code: destroyMe(textbox);
+  */ 
+}
+
+function détruireTextBox(textBox) {
+  textBox.innerTextBox.destroy();
 }
 
 const GetValue = Phaser.Utils.Objects.GetValue;
@@ -59,7 +70,7 @@ function createTextBox(scene, x, y, config) {
   let fixedWidth = GetValue(config, 'fixedWidth', 0);
   let fixedHeight = GetValue(config, 'fixedHeight', 0);
   let maxLines = GetValue(config, 'maxLines', 0)
-  console.log(scene.rexUI);
+  //console.log(scene.rexUI);
   let textBox = scene.rexUI.add
     .textBox({
       x: x,
@@ -71,7 +82,7 @@ function createTextBox(scene, x, y, config) {
 
       icon: scene.rexUI.add.roundRectangle(0, 0, 2, 2, 20, COLOR_DARK),
 
-      // text: getBuiltInText(scene, wrapWidth, fixedWidth, fixedHeight),
+      //text: getBuiltInText(scene, wrapWidth, fixedWidth, fixedHeight),
       text: getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines),
 
       action: scene.add
@@ -147,11 +158,11 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
   });
 }
 
-function creerBouton(name, visibilité, x, y, content, nomScene){
-  let bouton = name.add.text(x, y, content)
+function creerBouton(scene, visibilité, x, y, content/*, nomScene*/){
+  let bouton = scene.add.text(x, y, content);
   bouton.setInteractive();
   bouton.setVisible(visibilité);
-  bouton.on('pointerdown', () => name.scene.start(nomScene));
+  //bouton.on('pointerdown', () => name.scene.start(nomScene));
   return bouton;
 }
 
@@ -173,7 +184,10 @@ class SceneDesign extends Phaser.Scene {
     let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
     boutonMenu.setInteractive();
     boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
-    changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+    if (sceneSuivante !== null){
+      changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+    }
+    else {return undefined}
   }
 }
 

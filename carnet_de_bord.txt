@@ -1,8 +1,9 @@
 Problèmes à résoudre
 ---------------------
 
-- visibilité des boutons NEXT
+- visibilité des boutons NEXT 
     dans la fonction createtextbox? //Nadège
+    -> OK: gérer ça avec lors du clic sur les boutouns oui/non
 
 - affichage de la page ABOUT //About
     Page html 
@@ -12,7 +13,14 @@ Problèmes à résoudre
 
 - SceneMariage : 
     création deux sous-scènes ou event on.click ? //Nadège
+    -> OK: dans la même scène, le clic sur oui/non supprime la textbox courante pr afficher 
+    une nouvelle textbox avec la réponse
 
+- classe SceneDesign: ajout du paramètre image
+
+- les boutons oui/non apparaissent trop tôt
+    les faire apparaitre à la fin du défilement de la textbox, mais les solutions actuelles ne
+    fonctionnent pas... peut-être lié à un mauvais référencement à cause de la classe TextBox -_-
 
    
 GAME DESIGN

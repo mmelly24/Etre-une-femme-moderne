@@ -16,5 +16,9 @@ class SceneEnfants extends Phaser.Scene {
       boutonNon.setInteractive();
       //aller vers une scène qui illustre la pression sociale
       boutonNon.on('pointerdown', () => this.scene.start('pression'));
+
+
     }
+
+    
 }
