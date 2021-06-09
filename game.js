@@ -55,40 +55,11 @@ class SceneDesign extends Phaser.Scene {
   }
 }
 
-/*class Bouton extends Phaser.GameObjects.Container {
-  constructor(name, visibilité, x, y, content, nomScene) {
-    super(name);
-    creerBouton(name, visibilité, x, y, content, nomScene);
-  }
-}*/
-
 class Images extends Phaser.GameObjects.Image {
   constructor(scene, x, y, nomImage, scale) {
     super(scene);
     creerImage(scene, x, y, nomImage, scale);
   }
-}
-
-class TextBox extends Phaser.GameObjects.Container {
-  constructor(scene, content, maxLines) {
-    super(scene);
-
-    this.innerTextBox = createTextBox(scene, 200, 200, {
-      wrapWidth: 400,
-      maxLines: maxLines,
-    }).start(content, 50);
-  }
-
-  /* VARIANTE : on peut ajouter les autres fonctions comme ça dans la classe aussi, pour pas qu'on puisse les appeler en-dehors de la classe TextBox
-  destroyMe()
-  {
-    this.innerText.destroy();
-  } -> dans le code: destroyMe(textbox);
-  */
-}
-
-function détruireTextBox(textBox) {
-  textBox.innerTextBox.destroy();
 }
 
 class PopUp extends Phaser.GameObjects.Container {
@@ -111,6 +82,14 @@ const COLOR_LIGHT = 000000;
 const COLOR_DARK = 000000;
 
 //---------- Fonctions pour les textBoxes -------------
+
+function creerTextBox(scene, content, maxLines) {
+  let textBox = createTextBox(scene, 200, 200, {
+    wrapWidth: 400,
+    maxLines: maxLines,
+  }).start(content, 50);
+  return textBox;
+}
 
 function createTextBox(scene, x, y, config) {
   let wrapWidth = GetValue(config, 'wrapWidth', 0);
@@ -205,13 +184,6 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
   });
 }
 
-function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
-  let bouton = scene.add.text(x, y, content);
-  bouton.setInteractive();
-  bouton.setVisible(visibilité);
-  //bouton.on('pointerdown', () => name.scene.start(nomScene));
-  return bouton;
-}
 //--------- Fonctions pour les popUp ------------
 
 function CreateAlertDialog(scene) {
@@ -347,5 +319,13 @@ function creerImage(scene, x, y, nomImage, scale) {
   let imageChargee = scene.load.image(key, lien);
   return imageChargee;
 }*/
+
+function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
+  let bouton = scene.add.text(x, y, content);
+  bouton.setInteractive();
+  bouton.setVisible(visibilité);
+  //bouton.on('pointerdown', () => name.scene.start(nomScene));
+  return bouton;
+}
 
 let jeu = new Phaser.Game(config);
