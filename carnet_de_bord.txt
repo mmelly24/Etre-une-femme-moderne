@@ -44,7 +44,8 @@ GAME DESIGN
         - scène avion (évoque le déménagement)
     
     Pop-up informationnel : 
-        - voir doc "pop up phaser" //Marie --> class
+        - voir doc "pop up phaser"
+            -> OK, cf. fonction choixJoueur
 
     Faire Jauge : //Marie --> atlas
         - chronologie 
