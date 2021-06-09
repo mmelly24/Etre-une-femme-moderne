@@ -26,7 +26,7 @@ class SceneInstructions extends Phaser.Scene {
 
   create() {
 
-    timeBar(this, 500, 400, 500)
+    timeBar(this, 500, 400)
 
     let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
     Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
