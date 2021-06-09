@@ -29,6 +29,8 @@ class SceneInstructions extends Phaser.Scene {
 
     //Alert(this, 'salut', 'salut ca va', 500, 300);
     this.add.image(700, 150, 'happyFace').setScale(0.5);
+    boutonMenu(this);
+    changerPage(this, 700, 500, 'NEXT', 'mariage')
 
     creerTextBox(this, content, 6);
     //new Bouton(this, true, 200, 100, 'BACK TO MENU', 'accueil');

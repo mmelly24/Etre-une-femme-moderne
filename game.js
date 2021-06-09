@@ -29,7 +29,7 @@ const config = {
   ],
 };
 
-class SceneDesign extends Phaser.Scene {
+/*class SceneDesign extends Phaser.Scene {
   constructor(scene, sceneSuivante, image, lien) {
     super(scene);
 
@@ -51,11 +51,9 @@ class SceneDesign extends Phaser.Scene {
       changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
     } else return undefined;
   }
-}
+}*/
 
-
-
-class PopUp extends Phaser.GameObjects.Container {
+/*class PopUp extends Phaser.GameObjects.Container {
   constructor(scene, titre, content, x, y) {
     super(scene);
 
@@ -67,7 +65,7 @@ class PopUp extends Phaser.GameObjects.Container {
 
     Alert(scene, titre, content, x,y);
   }
-}
+}*/
 
 const GetValue = Phaser.Utils.Objects.GetValue;
 const COLOR_PRIMARY = 000000;
@@ -265,7 +263,6 @@ function SetAlertDialog(dialog, title, content) {
   return dialog;
 }
 
-
 function Alert(scene, title, content, x, y) {
   if (x === undefined) {
     x = 400;
@@ -301,7 +298,10 @@ function chargerPlugin(scene) {
     url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
     sceneKey: 'rexUI',
   });
-  scene.load.image('nextPage','https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png')
+  scene.load.image(
+    'nextPage',
+    'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
+  );
 }
 
 //--------- Autres fonctions -----------
@@ -313,15 +313,7 @@ function changerPage(scene, x, y, contenu, sceneSuivante) {
   return boutonNext;
 }
 
-function creerImage(scene, x, y, nomImage, scale) {
-  let image = scene.add.image(x, y, nomImage).setScale(scale);
-  return image;
-}
-
-/*function chargerImage(scene, key, lien) {
-  let imageChargee = scene.load.image(key, lien);
-  return imageChargee;
-}*/
+//---------- FONCTIONS QUI GERENT LES BOUTONS --------
 
 function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
   let bouton = scene.add.text(x, y, content);
@@ -330,5 +322,12 @@ function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
   //bouton.on('pointerdown', () => name.scene.start(nomScene));
   return bouton;
 }
+
+function boutonMenu(scene) {
+  let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
+  boutonMenu.setInteractive();
+  boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
+}
+
 
 let jeu = new Phaser.Game(config);

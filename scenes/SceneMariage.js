@@ -4,7 +4,8 @@ class SceneMariage extends Phaser.Scene {
   }
 
   preload() {
-    new SceneDesign(this, null, 'happyFace');
+    this.load.image('happyFace','assets/sprite_happy_face.png');
+    chargerPlugin(this);
   }
 
   create() {
