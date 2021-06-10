@@ -305,7 +305,7 @@ let countBar = 1;
 
 function timeBar(scene, x, y) {
   scene.add.image(750, 450, 'oldWoman').setScale(0.4)
-  scene.add.image(250, 450, 'happyFace').setScale(0.4)
+  scene.add.image(230, 450, 'happyFace').setScale(0.4)
   scene.zone = scene.add.zone((x = config.width / 2.05), (y = 450));
   let barContainer = scene.add.image(x, y, 'containerBar');
   let bar = scene.add.image(x, y, 'blueBar');
