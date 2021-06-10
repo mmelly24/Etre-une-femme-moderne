@@ -24,6 +24,15 @@ Problèmes à résoudre
     fonctionnent pas... peut-être lié à un mauvais référencement à cause de la classe TextBox -_-
     -> OK, c'était effectivement un problème de référence.
 
+- formatage de la popup informationnelle: le roundrectangle ne fonctionne pas.
+    - à cause du plugin spécial de rexUI à installer? pour l'instant, son installatin ne fonctionne pas.
+
+- gérer la transition entre les textbox et les popup.
+    -> OK.
+
+- la fonction choixJoueur est trop complexe, son usage trop spécifique
+    -> à éclater en de plus petites fonctions?
+
    
 GAME DESIGN
     Création des sprites:
