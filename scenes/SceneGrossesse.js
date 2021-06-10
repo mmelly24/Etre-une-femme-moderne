@@ -3,7 +3,37 @@ class SceneGrossesse extends Phaser.Scene {
     super('grossesse');
   }
 
+  preload() {
+    chargerPlugin(this);
+  }
+
   create() {
+    this.add.text(200, 100, 'SCENE GROSSESSE');
+
+    let content = "propos sur la grossesse en général"
+
+    let toastTexte1 = "Une femme sur dix subi des violences gynécologiques en Suisse."
+
+
+    let reponseTextBox = creerTextBox(this, content, 7)
+
+    reponseTextBox.on('pageend', () => {
+      if (reponseTextBox.isLastPage) {
+          this.time.addEvent({
+            delay: 2000,
+            callback: () => {
+              reponseTextBox.destroy();
+              creerToast(this, 'maternite', toastTexte1)
+            },
+            loop: false,
+          });
+    
+      } else changerPage(scene, 700, 500, 'NEXT', 'matenite');
+    });
+
+
+
+
 
     /* -----RENDU INUTILE PAR LES TEXTBOXES
     //test

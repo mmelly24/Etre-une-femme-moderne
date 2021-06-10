@@ -26,6 +26,7 @@ const config = {
     SceneRetour,
     ScenePression,
     SceneGrossesse,
+    SceneMaternite,
   ],
 };
 
