@@ -5,7 +5,7 @@ Problèmes à résoudre
     dans la fonction createtextbox? //Nadège
     -> OK: gérer ça avec lors du clic sur les boutouns oui/non
 
-- affichage de la page ABOUT //About
+! - affichage de la page ABOUT //About
     Page html 
     js texte 
     sous page accueil
@@ -26,28 +26,28 @@ Problèmes à résoudre
 
 - formatage de la popup informationnelle: le roundrectangle ne fonctionne pas.
     - à cause du plugin spécial de rexUI à installer? pour l'instant, son installatin ne fonctionne pas.
-    - Si le temps le permet : mettre une image de fond comme dans Cooking-for-the-king
+!    - Si le temps le permet : mettre une image de fond comme dans Cooking-for-the-king
 
 - gérer la transition entre les textbox et les popup.
     -> OK.
 
-- la fonction choixJoueur est trop complexe, son usage trop spécifique
-    - à éclater en de plus petites fonctions?
-
 - erreur obscure lors de la création de la popup dans la scene promotion
     - lié à l'utilisation de la fonction choixJoueur?
+        -> non résolu, donc abandon des fonctions popup...
 
-- comment stocker la décision de mariage pour la récupérer plus tard?
+! - comment stocker la décision de mariage pour la récupérer plus tard?
+    au pire, simplifier le scénario car la différence n'est pas très grande au niveau de la narration. 
+        Spécifier alors les conséquences dans un toast.
 
-- fixer la largeur de la popup à environ 400 -> annuler élargissement auto dès qu'il y a bcp de texte
-    - cf. fonction createAlertDialog?
+! - Baisser la timeBar --> augmenter l'apparition des réponses oui non pour éviter chevauchement !!! ----> Marie 
 
-- Baisser la timeBar --> augmenter l'apparition des réponses oui non pour éviter chevauchement !!! ----> Marie 
+! - gérer les temps de transition entre textbox et toast pour que le résultat soit lisible et fluide
+    à tenter: ajout de paramètres dans les fonctions correspondantes
 
    
 GAME DESIGN
     Création des sprites:
-        - petit ami 
+        - petit ami --> OK
         - parents
         - beaux-parents
         - collègues
@@ -55,14 +55,15 @@ GAME DESIGN
         - bébé
         - frère/soeur
 
-    Background : 
+    (Background : 
         - Bureau
         - intérieur appartement 
         - intérieur appartement précaire 
         - hopital
         - bureau de consultation psychologique
         - scène avion (évoque le déménagement)
-    
+    )
+
     Pop-up informationnel : 
         - voir doc "pop up phaser"
             -> OK, cf. fonction choixJoueur
