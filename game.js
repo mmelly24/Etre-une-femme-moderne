@@ -344,11 +344,11 @@ function choixJoueur(
     if (reponseTextBox.isLastPage) {
       if (popupTexte != null) {
         scene.time.addEvent({
-          delay: 5000,
+          delay: 2000,
           callback: () => {
             reponseTextBox.destroy();
             var toast = scene.rexUI.add.toast({
-              x: 400,
+              x: 500,
               y: 300,
             
               background: scene.rexUI.add.roundRectangle(0, 0, 2, 2, 20, COLOR_PRIMARY).setStrokeStyle(5, 0xd50000),
@@ -360,6 +360,11 @@ function choixJoueur(
                   right: 20,
                   top: 20,
                   bottom: 20,
+              },
+              duration: {
+                in: 200,
+                hold: 5000,
+                out: 200,
               },
             })
               .show(popupTexte)
