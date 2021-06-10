@@ -31,7 +31,12 @@ Problèmes à résoudre
     -> OK.
 
 - la fonction choixJoueur est trop complexe, son usage trop spécifique
-    -> à éclater en de plus petites fonctions?
+    - à éclater en de plus petites fonctions?
+
+- erreur obscure lors de la création de la popup dans la scene promotion
+    - lié à l'utilisation de la fonction choixJoueur?
+
+- comment stocker la décision de mariage pour la récupérer plus tard?
 
    
 GAME DESIGN
