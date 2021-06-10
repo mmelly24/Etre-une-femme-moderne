@@ -68,7 +68,8 @@ class SceneMariage extends Phaser.Scene {
     });
 
     let popupTitre = 'MARIAGE';
-    let popupTexte = 'XX% de la population suisse est mariée';
+    let popupTexte = `Le mariage reste un choix de vie largement adopté par la population
+    suisse: XX% est mariée`;
 
     /*boutonOui.on('pointerdown', () => {
       decisionMariage = true;
