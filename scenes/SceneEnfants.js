@@ -33,27 +33,32 @@ class SceneEnfants extends Phaser.Scene {
       }
     });
 
-    choixJoueur(
-      this,
-      boutonOui,
-      true,
-      textBoxQuestion,
-      reponseOui,
-      7,
-      boutonNon,
-      'grossesse',
-      popupTexte
-    );
-    choixJoueur(
-      this,
-      boutonNon,
-      true,
-      textBoxQuestion,
-      reponseNon,
-      7,
-      boutonOui,
-      'grossesse',
-      popupTexte
-    );
+    boutonOui.on('pointerdown', () => {
+      choixJoueur(
+        this,
+        boutonOui,
+        true,
+        textBoxQuestion,
+        reponseOui,
+        7,
+        boutonNon,
+        'grossesse',
+        popupTexte
+      );
+    });
+
+    boutonNon.on('pointerdown', () => {
+      choixJoueur(
+        this,
+        boutonNon,
+        true,
+        textBoxQuestion,
+        reponseNon,
+        7,
+        boutonOui,
+        'grossesse',
+        popupTexte
+      );
+    });
   }
 }
