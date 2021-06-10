@@ -11,6 +11,7 @@ class SceneEnfants extends Phaser.Scene {
   create() {
     this.add.text(200, 100, 'SCENE ENFANTS');
     this.add.image(700, 150, 'happyFace').setScale(0.5);
+    
 
     let content =
       'Les années passent, se pose la question des enfants. BLA BLA BLA Souaitez-vous avoir des enfants?';
