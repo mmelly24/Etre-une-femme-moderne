@@ -49,7 +49,7 @@ GAME DESIGN
     Création des sprites:
         - petit ami --> OK
         - père --> OK
-        - mère 
+        - mère --> OK
         - collègues
         - chefs --> OK
         - bébé --> OK
