@@ -48,8 +48,8 @@ Problèmes à résoudre
 GAME DESIGN
     Création des sprites:
         - petit ami --> OK
-        - parents
-        - beaux-parents
+        - père --> OK
+        - mère 
         - collègues
         - chefs --> OK
         - bébé --> OK
