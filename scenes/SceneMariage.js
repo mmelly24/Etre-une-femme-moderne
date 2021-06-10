@@ -15,8 +15,8 @@ class SceneMariage extends Phaser.Scene {
 
   create() {
     timeBar(this, 500, 400);
-    let content = `mariagle bla bla`;
-
+    let content = `mariagle question`;
+    this.add.text(200, 100, 'SCENE MARIAGE');
     this.add.image(700, 150, 'happyFace').setScale(0.5);
 
     let textBoxQuestion = creerTextBox(this, content, 7);
