@@ -293,10 +293,11 @@ function boutonMenu(scene) {
 }
 
 let countBar = 10; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
-function timeBar(scene, x, y, nom) {
-  scene.add.image(250, 450, nom).setScale(0.4)
+function timeBar(scene, x, y) {
+  scene.add.image(250, 450, 'oldWoman').setScale(0.4)
+  scene.add.image(750, 450, 'happyFace').setScale(0.4)
   countBar = countBar / 2;
-  scene.zone = scene.add.zone((x = config.width / 2), (y = 450));
+  scene.zone = scene.add.zone((x = config.width / 2.05), (y = 450));
   let barContainer = scene.add.image(x, y, 'containerBar');
   let bar = scene.add.image(x, y, 'blueBar');
 
