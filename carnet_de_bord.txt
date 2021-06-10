@@ -42,6 +42,8 @@ Problèmes à résoudre
 - fixer la largeur de la popup à environ 400 -> annuler élargissement auto dès qu'il y a bcp de texte
     - cf. fonction createAlertDialog?
 
+- Baisser la timeBar --> augmenter l'apparition des réponses oui non pour éviter chevauchement !!! ----> Marie 
+
    
 GAME DESIGN
     Création des sprites:
