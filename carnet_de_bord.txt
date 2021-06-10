@@ -26,6 +26,7 @@ Problèmes à résoudre
 
 - formatage de la popup informationnelle: le roundrectangle ne fonctionne pas.
     - à cause du plugin spécial de rexUI à installer? pour l'instant, son installatin ne fonctionne pas.
+    - Si le temps le permet : mettre une image de fond comme dans Cooking-for-the-king
 
 - gérer la transition entre les textbox et les popup.
     -> OK.
@@ -65,7 +66,7 @@ GAME DESIGN
             -> OK, cf. fonction choixJoueur
 
     Faire Jauge : //Marie --> atlas
-        - chronologie 
+        - chronologie ---> ok 
         - désillusion
 
     Loading Credits : 
