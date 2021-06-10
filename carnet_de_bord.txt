@@ -51,8 +51,8 @@ GAME DESIGN
         - parents
         - beaux-parents
         - collègues
-        - chefs
-        - bébé
+        - chefs --> OK
+        - bébé --> OK
         - frère/soeur
 
     (Background : 

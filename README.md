@@ -28,4 +28,8 @@ a ajouter :
 idée femme qui travaille : https://www.google.com/search?q=working+woman+pixel+art&tbm=isch&ved=2ahUKEwj77YOjsIrxAhUTs6QKHWDQDRYQ2-cCegQIABAA&oq=working+woman+pixel+art&gs_lcp=CgNpbWcQAzoGCAAQBxAeOggIABAHEAUQHjoICAAQCBAHEB5Q-4EGWOiJBmDJiwZoAHAAeACAAVaIAbsEkgEBOJgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=hpzAYPuSFZPmkgXgoLewAQ&bih=567&biw=1280&client=firefox-b-d#imgrc=ZbZvKs6_5QAgIM
 Sprite working woman : https://www.canstockphoto.com/people-cooperation-man-and-woman-pixel-71270690.html
 
+sprite baby inspiré de: https://www.brik.co/blogs/pixel-art/174044423-baby-boy-pixel-art 
+sprite boss inspiré de: https://fr.dreamstime.com/illustration/businessman.html 
+
 les Bars : sprites empruntés à Cooking-for-the-king (aucune demande de copyright mais bon)
+
