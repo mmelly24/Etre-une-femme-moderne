@@ -42,7 +42,7 @@ class SceneEnfants extends Phaser.Scene {
         reponseOui,
         7,
         boutonNon,
-        'grossesse',
+        'promotion',
         popupTexte
       );
     });
