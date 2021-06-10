@@ -144,10 +144,10 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
 //--------- Fonctions pour les popUp ------------
 let AlertDialog;
 
-function CreateAlertDialog(scene) {
+let CreateAlertDialog = function (scene) {
   let dialog = scene.rexUI.add
     .dialog({
-      width: 600,
+      width: 400,
       background: scene.rexUI.add
         .roundRectangle(0, 0, 100, 100, 20, 0xd50000)
         .setStrokeStyle(5, 0xd50000),
@@ -173,7 +173,7 @@ function CreateAlertDialog(scene) {
         fontSize: '24px',
       }),
 
-      /*actions: [
+      actions: [
         scene.rexUI.add.label({
           background: scene.rexUI.add.roundRectangle(0, 0, 0, 0, 20, 0x5e92f3),
 
@@ -188,7 +188,7 @@ function CreateAlertDialog(scene) {
             bottom: 10,
           },
         }),
-      ],*/
+      ],
 
       space: {
         title: 25,
@@ -209,10 +209,10 @@ function CreateAlertDialog(scene) {
         content: false, // Content is a pure text object
       },
     })
-    .on('button.over', function (button) {
+    .on('button.over', function (button, groupName, index, pointer, event) {
       button.getElement('background').setStrokeStyle(1, 0x003c8f);
     })
-    .on('button.out', function (button) {
+    .on('button.out', function (button, groupName, index, pointer, event) {
       button.getElement('background').setStrokeStyle();
     });
 
@@ -222,7 +222,7 @@ function CreateAlertDialog(scene) {
   return dialog;
 }
 
-function SetAlertDialog(dialog, title, content) {
+let SetAlertDialog = function (dialog, title, content) {
   if (title === undefined) {
     title = '';
   }
@@ -234,7 +234,7 @@ function SetAlertDialog(dialog, title, content) {
   return dialog;
 }
 
-function Alert(scene, title, content, x, y) {
+let Alert = function (scene, title, content, x, y) {
   if (x === undefined) {
     x = 400;
   }
@@ -249,7 +249,8 @@ function Alert(scene, title, content, x, y) {
 
   AlertDialog.setPosition(x, y).setVisible(true).layout();
 
-  return AlertDialog.moveFromPromise(1000, undefined, '-=400', 'Bounce')
+  return AlertDialog
+  .moveFromPromise(1000, undefined, '-=400', 'Bounce')
     .then(function () {
       return scene.rexUI.waitEvent(AlertDialog, 'button.click');
     })

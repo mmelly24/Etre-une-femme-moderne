@@ -38,6 +38,9 @@ Problèmes à résoudre
 
 - comment stocker la décision de mariage pour la récupérer plus tard?
 
+- fixer la largeur de la popup à environ 400 -> annuler élargissement auto dès qu'il y a bcp de texte
+    - cf. fonction createAlertDialog?
+
    
 GAME DESIGN
     Création des sprites:

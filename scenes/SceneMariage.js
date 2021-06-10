@@ -9,13 +9,11 @@ class SceneMariage extends Phaser.Scene {
     this.load.scenePlugin({
       key: 'rexuiplugin',
       url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
-      sceneKey: 'rexUI'
-    })
-    
+      sceneKey: 'rexUI',
+    });
   }
 
   create() {
-
     timeBar(this, 500, 400);
     let content = `Cela fait maintenant plusieurs mois que vous travaillez dans votre nouvelle entreprise. Malgré quelques déceptions, vous êtes globalement heureuse et satisfaite par votre lieu de travail.
     Toutesfois, quelque chose vous taraude l'esprit...\n\n\n\n\n\n
@@ -67,8 +65,10 @@ class SceneMariage extends Phaser.Scene {
       }
     });
 
+    //let popupTexte = null;
+    //let popupTitre = null;
     let popupTitre = 'MARIAGE';
-    let popupTexte = `Le mariage reste un choix de vie largement adopté par la population
+    let popupTexte = ` Le mariage reste un choix de vie largement adopté par la population 
     suisse: XX% est mariée`;
 
     /*boutonOui.on('pointerdown', () => {
@@ -119,12 +119,37 @@ class SceneMariage extends Phaser.Scene {
     });*/
 
     boutonOui.on('pointerdown', () => {
-    choixJoueur (this, boutonOui, true, textBoxQuestion, reponseOui, 10, boutonNon, 'enfants', popupTexte, popupTitre)
+      choixJoueur(
+        this,
+        boutonOui,
+        true,
+        textBoxQuestion,
+        reponseOui,
+        10,
+        boutonNon,
+        'enfants',
+        popupTexte,
+        popupTitre
+      );
     });
-    boutonNon.on('pointerdown', () => {
-        choixJoueur (this, boutonNon, false, textBoxQuestion, reponseNon, 10, boutonOui, 'enfants', popupTexte, popupTitre)
-      });
 
+    boutonNon.on('pointerdown', () => {
+      choixJoueur(
+        this,
+        boutonNon,
+        false,
+        textBoxQuestion,
+        reponseNon,
+        10,
+        boutonOui,
+        'enfants',
+        popupTexte,
+        popupTitre
+      );
+    });
+
+    
+    
     /*Alert(this, 'salut', 'salut ca va', 500, 300).then(() => {
         return Alert(this, 'chainage', 'test chainage', 500, 300);
       });*/
