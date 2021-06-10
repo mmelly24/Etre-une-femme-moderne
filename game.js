@@ -301,11 +301,11 @@ function boutonMenu(scene) {
 }
 
 //-----------FONCTIONS QUI GERENT LA TIMEBAR ---------
-let countBar = 10; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+let countBar = 1; 
+
 function timeBar(scene, x, y) {
-  scene.add.image(250, 450, 'oldWoman').setScale(0.4)
-  scene.add.image(750, 450, 'happyFace').setScale(0.4)
-  countBar = countBar / 2;
+  scene.add.image(750, 450, 'oldWoman').setScale(0.4)
+  scene.add.image(250, 450, 'happyFace').setScale(0.4)
   scene.zone = scene.add.zone((x = config.width / 2.05), (y = 450));
   let barContainer = scene.add.image(x, y, 'containerBar');
   let bar = scene.add.image(x, y, 'blueBar');
@@ -314,7 +314,10 @@ function timeBar(scene, x, y) {
   scene.barMask.visible = false;
   bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);
 
-  let stepWidth = scene.barMask.displayWidth / countBar;
+  let stepWidth = scene.barMask.displayWidth / countBar ;
+ 
+  countBar *= 1.2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+  
 
   scene.barMask.x -= stepWidth;
   //bar.x = stepWidth
