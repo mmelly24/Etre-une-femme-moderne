@@ -337,7 +337,6 @@ function choixJoueur(
   autreBouton,
   sceneSuivante,
   popupTexte,
-  popupTitre
 ) {
   textBoxQuestion.destroy();
   reponseTextBox = creerTextBox(scene, contenu, maxLines);
@@ -348,7 +347,24 @@ function choixJoueur(
           delay: 5000,
           callback: () => {
             reponseTextBox.destroy();
-            Alert(scene, popupTitre, popupTexte, 500, 300);
+            var toast = scene.rexUI.add.toast({
+              x: 400,
+              y: 300,
+            
+              background: scene.rexUI.add.roundRectangle(0, 0, 2, 2, 20, COLOR_PRIMARY).setStrokeStyle(5, 0xd50000),
+              text: scene.add.text(0, 0, '', {
+                  fontSize: '24px'
+              }),
+              space: {
+                  left: 20,
+                  right: 20,
+                  top: 20,
+                  bottom: 20,
+              },
+            })
+              .show(popupTexte)
+              .show('Phaser 3 is good')
+              .show('See you next time')
             changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
           },
           loop: false,

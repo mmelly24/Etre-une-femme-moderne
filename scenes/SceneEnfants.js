@@ -32,8 +32,8 @@ class SceneEnfants extends Phaser.Scene {
       }
     });
 
-
-    boutonOui.on('pointerdown', () => {
+    choixJoueur(this, boutonOui, true, textBoxQuestion, reponseOui, 7, boutonNon, 'grossesse', popupTexte)
+   /* boutonOui.on('pointerdown', () => {
       textBoxQuestion.destroy();
       reponseTextBox = creerTextBox(this, reponseOui, 7);
       reponseTextBox.on('pageend', () => {
@@ -61,7 +61,7 @@ class SceneEnfants extends Phaser.Scene {
                   .show(popupTexte)
                   .show('Phaser 3 is good')
                   .show('See you next time')
-                /*Alert(this, popupTitre, popupTexte, 500, 300);*/
+                
                 changerPage(this, 700, 500, 'NEXT', 'grossesse');
               },
               loop: false,
@@ -73,7 +73,7 @@ class SceneEnfants extends Phaser.Scene {
       boutonNon.setVisible(false);
       boutonOui.disableInteractive();
       boutonNon.disableInteractive();
-    });
+    });*/
 
 
 
