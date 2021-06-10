@@ -2,7 +2,7 @@ const config = {
   width: 1000,
   height: 600,
   type: Phaser.WEBGL,
-  backgroundColor: '#653592', //couleur test
+  //backgroundColor: '#653592', //couleur test
   physics: {
     default: 'arcade',
     arcade: {
@@ -54,19 +54,23 @@ function createTextBox(scene, x, y, config) {
     .textBox({
       x: x,
       y: y,
+/*code couleur : 
+      rouge : 0xd50000
+      vert : 0x00c853
+      bleu : 0x304ffe*/
 
       background: scene.rexUI.add
-        .roundRectangle(0, 0, 2, 2, 20, COLOR_PRIMARY)
-        .setStrokeStyle(2, COLOR_LIGHT),
+        .roundRectangle(0, 0, 2, 2, 20, 000000)
+        .setStrokeStyle(2, 0x304ffe),
 
-      icon: scene.rexUI.add.roundRectangle(0, 0, 2, 2, 20, COLOR_DARK),
+      icon: scene.rexUI.add.roundRectangle(0, 0, 2, 2, 20, 0x00c853),
 
       //text: getBuiltInText(scene, wrapWidth, fixedWidth, fixedHeight),
       text: getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines),
 
       action: scene.add
         .image(0, 0, 'nextPage')
-        .setTint(COLOR_LIGHT)
+        .setTint(0x00c853)
         .setVisible(false),
 
       space: {
@@ -145,13 +149,14 @@ function CreateAlertDialog(scene) {
     .dialog({
       width: 600,
       background: scene.rexUI.add
-        .roundRectangle(0, 0, 100, 100, 20, 0x003c8f)
-        .setStrokeStyle(5, 0x003c8f),
+        .roundRectangle(0, 0, 100, 100, 20, 0xd50000)
+        .setStrokeStyle(5, 0xd50000),
+        //.setFillStyle.Phaser.Display.Color.HexStringToColor('#7eff33').color,
 
       title: scene.rexUI.add.label({
         background: scene.rexUI.add
-          .roundRectangle(0, 0, 100, 40, 20, 0x003c8f)
-          .setStrokeStyle(2, 0x003c8f),
+          .roundRectangle(0, 0, 100, 40, 20, 0xd50000)
+          .setStrokeStyle(2, 0xd50000),
         text: scene.add.text(0, 0, '', {
           fontSize: '24px',
         }),
@@ -210,6 +215,9 @@ function CreateAlertDialog(scene) {
     .on('button.out', function (button) {
       button.getElement('background').setStrokeStyle();
     });
+
+    //dialog.setFillStyle.Phaser.Display.Color.HexStringToColor('#7eff33').color;
+    
 
   return dialog;
 }
@@ -292,11 +300,13 @@ function boutonMenu(scene) {
   boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
 }
 
+//-----------FONCTIONS QUI GERENT LA TIMEBAR ---------
 let countBar = 10; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
-function timeBar(scene, x, y, nom) {
-  scene.add.image(250, 450, nom).setScale(0.4)
+function timeBar(scene, x, y) {
+  scene.add.image(250, 450, 'oldWoman').setScale(0.4)
+  scene.add.image(750, 450, 'happyFace').setScale(0.4)
   countBar = countBar / 2;
-  scene.zone = scene.add.zone((x = config.width / 2), (y = 450));
+  scene.zone = scene.add.zone((x = config.width / 2.05), (y = 450));
   let barContainer = scene.add.image(x, y, 'containerBar');
   let bar = scene.add.image(x, y, 'blueBar');
 
@@ -311,6 +321,7 @@ function timeBar(scene, x, y, nom) {
 
   return bar + barContainer;
 }
+
 
 function choixJoueur(
   scene,
