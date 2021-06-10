@@ -12,7 +12,7 @@ class SceneMaternite extends Phaser.Scene {
       let content = "congé matenité et les effets : isolement, injonctions. Une question se pose alors : reprise du travail oui ou non ?";
       let reponseOui = "oui je veux reprendre le travail + conséquences";
       let reponseNon ="non, je veux m'occuper de mon enfant";
-      let popupTexte = "60% des familles en suisse sont composés d'une\n femme au foyer"
+      let toastTexte1 = "60% des familles en suisse sont composés d'une\n femme au foyer"
       let textBoxQuestion = creerTextBox(this, content, 7);
 
       let boutonOui = creerBouton(this, false, 380, 500, 'OUI');
@@ -35,7 +35,7 @@ class SceneMaternite extends Phaser.Scene {
           7,
           boutonNon,
           'retour',
-          popupTexte
+          toastTexte1
         );
       });
 
@@ -47,9 +47,9 @@ class SceneMaternite extends Phaser.Scene {
           textBoxQuestion,
           reponseNon,
           7,
-          boutonNon,
-          'retour',
-          popupTexte
+          boutonOui,
+          'mobilite',
+          toastTexte1
         );
       });
 
