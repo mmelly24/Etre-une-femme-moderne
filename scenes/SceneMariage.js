@@ -55,9 +55,8 @@ class SceneMariage extends Phaser.Scene {
 
     //let popupTexte = null;
     //let popupTitre = null;
-    let popupTitre = 'MARIAGE';
-    let popupTexte = ` Le mariage reste un choix de vie \n largement adopté par la population \n suisse: XX% est mariée`;
-
+    let toastTexte1 = 'MARIAGE';
+    let toastTexte2 = ` Le mariage reste un choix de vie \n largement adopté par la population \n suisse: XX% est mariée`;
 
     boutonOui.on('pointerdown', () => {
       choixJoueur(
@@ -69,7 +68,8 @@ class SceneMariage extends Phaser.Scene {
         10,
         boutonNon,
         'enfants',
-        popupTexte,
+        toastTexte1,
+        toastTexte2
       );
     });
 
@@ -83,7 +83,8 @@ class SceneMariage extends Phaser.Scene {
         10,
         boutonOui,
         'enfants',
-        popupTexte,
+        toastTexte1,
+        toastTexte2
       );
     });
   }

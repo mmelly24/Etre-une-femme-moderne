@@ -54,7 +54,7 @@ function createTextBox(scene, x, y, config) {
     .textBox({
       x: x,
       y: y,
-/*code couleur : 
+      /*code couleur : 
       rouge : 0xd50000
       vert : 0x00c853
       bleu : 0x304ffe*/
@@ -141,8 +141,165 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
   });
 }
 
-//--------- Fonctions pour les popUp ------------
-let AlertDialog;
+
+//--------- PLUGIN REXUI --------->
+
+function chargerPlugin(scene) {
+  scene.load.scenePlugin({
+    key: 'rexuiplugin',
+    url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+    sceneKey: 'rexUI',
+  });
+  scene.load.image(
+    'nextPage',
+    'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
+  );
+}
+
+//--------- Autres fonctions -----------
+
+function changerPage(scene, x, y, contenu, sceneSuivante) {
+  let boutonNext = scene.add.text(x, y, contenu);
+  boutonNext.setInteractive();
+  boutonNext.on('pointerdown', () => scene.scene.start(sceneSuivante));
+  return boutonNext;
+}
+
+//---------- FONCTIONS QUI GERENT LES BOUTONS --------
+
+function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
+  let bouton = scene.add.text(x, y, content);
+  bouton.setInteractive();
+  bouton.setVisible(visibilité);
+  //bouton.on('pointerdown', () => name.scene.start(nomScene));
+  return bouton;
+}
+
+function boutonMenu(scene) {
+  let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
+  boutonMenu.setInteractive();
+  boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
+}
+
+//-----------FONCTIONS QUI GERENT LA TIMEBAR ---------
+let countBar = 1;
+
+function timeBar(scene, x, y) {
+  scene.add.image(750, 450, 'oldWoman').setScale(0.4);
+  scene.add.image(230, 450, 'happyFace').setScale(0.4);
+  scene.zone = scene.add.zone((x = config.width / 2.05), (y = 450));
+  let barContainer = scene.add.image(x, y, 'containerBar');
+  let bar = scene.add.image(x, y, 'blueBar');
+
+  scene.barMask = scene.add.sprite(bar.x, bar.y, 'blueBar');
+  scene.barMask.visible = false;
+  bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);
+
+  let stepWidth = scene.barMask.displayWidth / countBar;
+
+  countBar *= 1.2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+
+  scene.barMask.x -= stepWidth;
+  //bar.x = stepWidth
+
+  return bar + barContainer;
+}
+
+//MAXIMUM TROIS TOASTS : SI NON DEFINI, PAS BESOIN DE METTRE NULL
+function choixJoueur(
+  scene,
+  nomBouton,
+  décisionJoueur,
+  textBoxQuestion,
+  contenu,
+  maxLines,
+  autreBouton,
+  sceneSuivante,
+  toastTexte1,
+  toastTexte2,
+  toastTexte3
+  ) {
+  textBoxQuestion.destroy();
+  reponseTextBox = creerTextBox(scene, contenu, maxLines);
+  reponseTextBox.on('pageend', () => {
+    if (reponseTextBox.isLastPage) {
+      if (toastTexte1 != null) {
+        scene.time.addEvent({
+          delay: 2000,
+          callback: () => {
+            reponseTextBox.destroy();
+            creerToast(scene, sceneSuivante, toastTexte1);
+          },
+          loop: false,
+        });
+      } 
+      if (toastTexte2 != null) {
+        scene.time.addEvent({
+          delay: 8500, 
+          callback: () => {
+            creerToast(scene, sceneSuivante, toastTexte2);
+          },
+        })
+      } if (toastTexte3 != null) {
+        scene.time.addEvent({
+          delay: 15000, 
+          callback: () => {
+            creerToast(scene, sceneSuivante, toastTexte3);
+          },
+        })
+
+      }
+    
+      else changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+    }
+  });
+  nomBouton.setVisible(false);
+  autreBouton.setVisible(false);
+  nomBouton.disableInteractive();
+  autreBouton.disableInteractive();
+
+  return;
+}
+
+function creerToast(
+  scene,
+  sceneSuivante,
+  toastTexte
+) {
+  var toast = scene.rexUI.add
+    .toast({
+      x: 500,
+      y: 300,
+
+      background: scene.rexUI.add
+        .roundRectangle(0, 0, 2, 2, 20, COLOR_PRIMARY)
+        .setStrokeStyle(5, 0xd50000),
+      text: scene.add.text(0, 0, '', {
+        fontSize: '24px',
+      }),
+      space: {
+        left: 20,
+        right: 20,
+        top: 20,
+        bottom: 20,
+      },
+      duration: {
+        in: 200, //TEMPS MIS POUR FADEIN
+        hold: 5000, //A MODIFIER SI BESOIN EN FONCTION DE L'INFORMATIONS
+        out: 200, //TEMPS MIS POUR FADEOUT
+      },
+    })
+    .show(toastTexte);
+    //.show(toastTexte2)
+    //.show(toastTexte3)
+  changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+}
+
+let jeu = new Phaser.Game(config);
+
+
+//--------- PLUGIN OBSOLETE : TRAVAIL NON EXPLOITE EN RAISON D'UNE ERREUR EN LIEN AVEC LES DIALOGUES DANS PHASER------------
+/*let AlertDialog;
 
 let CreateAlertDialog = function (scene) {
   let dialog = scene.rexUI.add
@@ -151,7 +308,7 @@ let CreateAlertDialog = function (scene) {
       background: scene.rexUI.add
         .roundRectangle(0, 0, 100, 100, 20, 0xd50000)
         .setStrokeStyle(5, 0xd50000),
-        //.setFillStyle.Phaser.Display.Color.HexStringToColor('#7eff33').color,
+      //.setFillStyle.Phaser.Display.Color.HexStringToColor('#7eff33').color,
 
       title: scene.rexUI.add.label({
         background: scene.rexUI.add
@@ -216,11 +373,10 @@ let CreateAlertDialog = function (scene) {
       button.getElement('background').setStrokeStyle();
     });
 
-    //dialog.setFillStyle.Phaser.Display.Color.HexStringToColor('#7eff33').color;
-    
+  //dialog.setFillStyle.Phaser.Display.Color.HexStringToColor('#7eff33').color;
 
   return dialog;
-}
+};
 
 let SetAlertDialog = function (dialog, title, content) {
   if (title === undefined) {
@@ -232,7 +388,7 @@ let SetAlertDialog = function (dialog, title, content) {
   dialog.getElement('title').text = title;
   dialog.getElement('content').text = content;
   return dialog;
-}
+};
 
 let Alert = function (scene, title, content, x, y) {
   if (x === undefined) {
@@ -249,8 +405,7 @@ let Alert = function (scene, title, content, x, y) {
 
   AlertDialog.setPosition(x, y).setVisible(true).layout();
 
-  return AlertDialog
-  .moveFromPromise(1000, undefined, '-=400', 'Bounce')
+  return AlertDialog.moveFromPromise(1000, undefined, '-=400', 'Bounce')
     .then(function () {
       return scene.rexUI.waitEvent(AlertDialog, 'button.click');
     })
@@ -261,128 +416,4 @@ let Alert = function (scene, title, content, x, y) {
       AlertDialog.setVisible(false);
       return Promise.resolve();
     });
-}
-//--------- PLUGIN REXUI --------->
-
-function chargerPlugin(scene) {
-  scene.load.scenePlugin({
-    key: 'rexuiplugin',
-    url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
-    sceneKey: 'rexUI',
-  });
-  scene.load.image(
-    'nextPage',
-    'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png'
-  );
-}
-
-//--------- Autres fonctions -----------
-
-function changerPage(scene, x, y, contenu, sceneSuivante) {
-  let boutonNext = scene.add.text(x, y, contenu);
-  boutonNext.setInteractive();
-  boutonNext.on('pointerdown', () => scene.scene.start(sceneSuivante));
-  return boutonNext;
-}
-
-//---------- FONCTIONS QUI GERENT LES BOUTONS --------
-
-function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
-  let bouton = scene.add.text(x, y, content);
-  bouton.setInteractive();
-  bouton.setVisible(visibilité);
-  //bouton.on('pointerdown', () => name.scene.start(nomScene));
-  return bouton;
-}
-
-function boutonMenu(scene) {
-  let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
-  boutonMenu.setInteractive();
-  boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
-}
-
-//-----------FONCTIONS QUI GERENT LA TIMEBAR ---------
-let countBar = 1; 
-
-function timeBar(scene, x, y) {
-  scene.add.image(750, 450, 'oldWoman').setScale(0.4)
-  scene.add.image(230, 450, 'happyFace').setScale(0.4)
-  scene.zone = scene.add.zone((x = config.width / 2.05), (y = 450));
-  let barContainer = scene.add.image(x, y, 'containerBar');
-  let bar = scene.add.image(x, y, 'blueBar');
-
-  scene.barMask = scene.add.sprite(bar.x, bar.y, 'blueBar');
-  scene.barMask.visible = false;
-  bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);
-
-  let stepWidth = scene.barMask.displayWidth / countBar ;
- 
-  countBar *= 1.2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
-  
-
-  scene.barMask.x -= stepWidth;
-  //bar.x = stepWidth
-
-  return bar + barContainer;
-}
-
-
-function choixJoueur(
-  scene,
-  nomBouton,
-  décisionJoueur,
-  textBoxQuestion,
-  contenu,
-  maxLines,
-  autreBouton,
-  sceneSuivante,
-  popupTexte,
-) {
-  textBoxQuestion.destroy();
-  reponseTextBox = creerTextBox(scene, contenu, maxLines);
-  reponseTextBox.on('pageend', () => {
-    if (reponseTextBox.isLastPage) {
-      if (popupTexte != null) {
-        scene.time.addEvent({
-          delay: 2000,
-          callback: () => {
-            reponseTextBox.destroy();
-            var toast = scene.rexUI.add.toast({
-              x: 500,
-              y: 300,
-            
-              background: scene.rexUI.add.roundRectangle(0, 0, 2, 2, 20, COLOR_PRIMARY).setStrokeStyle(5, 0xd50000),
-              text: scene.add.text(0, 0, '', {
-                  fontSize: '24px'
-              }),
-              space: {
-                  left: 20,
-                  right: 20,
-                  top: 20,
-                  bottom: 20,
-              },
-              duration: {
-                in: 200,
-                hold: 5000,
-                out: 200,
-              },
-            })
-              .show(popupTexte)
-              .show('Phaser 3 is good')
-              .show('See you next time')
-            changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
-          },
-          loop: false,
-        });
-      } else changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
-    }
-  });
-  nomBouton.setVisible(false);
-  autreBouton.setVisible(false);
-  nomBouton.disableInteractive();
-  autreBouton.disableInteractive();
-
-  return;
-}
-
-let jeu = new Phaser.Game(config);
+};*/
