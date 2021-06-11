@@ -26,7 +26,7 @@ class ScenePromotion extends Phaser.Scene {
     \n Dénouement: impacts sociaux et psy`;
 
     let reponseNon = `La situation vous semble sans issue, 
-    \nvous n'avez plus confiance en cotre hiérarchie, bla bla.
+    \nvous n'avez plus confiance en votre hiérarchie, bla bla.
     \n vous finissez par démissionner.
     \n Dénouement: impacts sociaux et psy`;
 
