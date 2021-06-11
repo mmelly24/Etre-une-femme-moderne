@@ -10,7 +10,7 @@ class SceneRejouer extends Phaser.Scene {
 
   create() {
     this.add.text(200, 150, 'SCENE REJOUER');
-    this.add.image(700, 150, 'happyFace').setScale(0.5);
+    //this.add.image(700, 150, 'happyFace').setScale(0.5);
 
     boutonMenu(this);
 

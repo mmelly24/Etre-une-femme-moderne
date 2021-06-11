@@ -40,7 +40,7 @@ class SceneInstructions extends Phaser.Scene {
     boutonMenu(this);
     //changerPage(this, 700, 500, 'NEXT', 'mariage');
 
-    let textBoxInstructions = creerTextBox(this, content, 12);
+    let textBoxInstructions = creerTextBox(this, content, 16);
     textBoxInstructions.on('pageend', () => {
       if (textBoxInstructions.isLastPage) {
         changerPage(this, 'SUIVANT', 'mariage');

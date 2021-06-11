@@ -38,7 +38,7 @@ const COLOR_DARK = 000000;
 //---------- Fonctions pour les textBoxes -------------
 
 function creerTextBox(scene, content, maxLines) {
-  let textBox = createTextBox(scene, 230, 150, {
+  let textBox = createTextBox(scene, 230, 110, {
     wrapWidth: 400,
     maxLines: maxLines,
   }).start(content, 50);
@@ -226,7 +226,7 @@ function choixJoueur(
     if (reponseTextBox.isLastPage) {
       if (toastTexte1 != null) {
         scene.time.addEvent({
-          delay: 2000,
+          delay: 5000,
           callback: () => {
             reponseTextBox.destroy();
             creerToast(scene, sceneSuivante, toastTexte1);
@@ -248,10 +248,9 @@ function choixJoueur(
             creerToast(scene, sceneSuivante, toastTexte3);
           },
         })
-
       }
-  
-    } else changerPage(scene, 'SUIVANT', sceneSuivante);
+      else changerPage(scene, 'SUIVANT', sceneSuivante);
+    } 
   });
   nomBouton.setVisible(false);
   autreBouton.setVisible(false);

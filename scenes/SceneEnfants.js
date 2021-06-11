@@ -10,24 +10,31 @@ class SceneEnfants extends Phaser.Scene {
 
   create() {
     this.add.text(200, 100, 'SCENE ENFANTS');
-    this.add.image(700, 150, 'happyFace').setScale(0.5);
+    //this.add.image(700, 150, 'happyFace').setScale(0.5);
+    timeBar(this, 500, 400); 
     
 
     let content =
-      'Les années passent, se pose la question des enfants. BLA BLA BLA Souaitez-vous avoir des enfants?';
-    let reponseOui =
-      "La décision est claire, tant pour vous que pour votre conjoint: c'est oui! BLA BLA BLA";
-    let reponseNon = `Après mûre réflexion, non.
-    \nVos parents sont très déçus. 
-    \nVos amis ne comprennent pas votre choix, etc.`;
+      `\n
+      \n
+      Les années passent et renforcent le couple que vous formez. Inévitablement, la question des enfants se pose.
+      \n
+      \n
+      \n`;
+
+    let reponseOui = ``;
+    
+      let reponseNon = `\nVous vivez parfaitement bien cette décision, mais elle crée beaucoup d’incompréhension autour de vous. Plus le temps passe, plus vos parents se font insistants. “Alors, c’est pour quand le petit-enfant? Tu es notre seule chance de devenir grand-parents… On espère que tu changeras d’avis.” 
+      C’est aussi le cas de vos amis. Autour de vous, c’est le baby-boom: chaque année apporte son lot de nouveaux-nés. \n\nVous devenez marraine, un rôle que vous prenez très à coeur mais qui apparemment est insuffisant. “Tu verras, tu changeras d’avis! Ton horloge biologique finira par se réveiller.” 
+      Impossible désormais de jouer avec un enfant sans entendre un “Ah, il faut te préparer Mathieu, ça va vouloir des gosses!”. Tout ça devient vraiment fatiguant… Vous aimez les enfants, mais ce n’est pas pour autant que vous voulez en élever! \n\n\n\nPour vous, l’épanouissement passe par les relations que vous avez déjà bâties - avec votre famille, Mathieu, vos amis. Il passe aussi par votre travail.\n\n\n`;
     
     let toastTexte =
-      "Seules x% des femmes en Suisse \nn'ont pas d'enfants au \ncours de leur vie";
+      "Ce choix reste rare en Suisse: \nseuls 9% des jeunes adultes (20-29 ans) ne \nsouhaitent pas avoir d'enfants. (OFS, 2019)";
     
-    let textBoxQuestion = creerTextBox(this, content, 3);
+    let textBoxQuestion = creerTextBox(this, content,16);
 
-    let boutonOui = creerBouton(this, false, 380, 500, 'OUI');
-    let boutonNon = creerBouton(this, false, 580, 500, 'NON');
+    let boutonOui = creerBouton(this, false, 280, 500, 'AVOIR DES ENFANTS');
+    let boutonNon = creerBouton(this, false, 530, 500, 'PAS D\'ENFANTS');
 
     textBoxQuestion.on('pageend', () => {
       if (textBoxQuestion.isLastPage) {
@@ -43,7 +50,7 @@ class SceneEnfants extends Phaser.Scene {
         true,
         textBoxQuestion,
         reponseOui,
-        7,
+        16,
         boutonNon,
         'grossesse',
         toastTexte
@@ -57,7 +64,7 @@ class SceneEnfants extends Phaser.Scene {
         false,
         textBoxQuestion,
         reponseNon,
-        7,
+        16,
         boutonOui,
         'promotion',
         toastTexte

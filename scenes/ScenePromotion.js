@@ -10,7 +10,7 @@ class ScenePromotion extends Phaser.Scene {
 
   create() {
     this.add.text(200, 100, 'SCENE PROMOTION');
-    this.add.image(700, 150, 'happyFace').setScale(0.5);
+    //this.add.image(700, 150, 'happyFace').setScale(0.5);
 
     let content =
       `\nQu'à cela ne tienne, vous êtes déterminée à faire carrière. -> dde promotion 
@@ -36,8 +36,8 @@ class ScenePromotion extends Phaser.Scene {
       
     let textBoxQuestion = creerTextBox(this, content, 7);
 
-    let boutonOui = creerBouton(this, false, 380, 500, 'OUI');
-    let boutonNon = creerBouton(this, false, 580, 500, 'NON');
+    let boutonOui = creerBouton(this, false, 380, 480, 'OUI');
+    let boutonNon = creerBouton(this, false, 580, 480, 'NON');
 
     textBoxQuestion.on('pageend', () => {
       if (textBoxQuestion.isLastPage) {
