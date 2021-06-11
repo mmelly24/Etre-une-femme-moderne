@@ -250,9 +250,8 @@ function choixJoueur(
         })
 
       }
-    
-      else changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
-    }
+  
+    } else changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
   });
   nomBouton.setVisible(false);
   autreBouton.setVisible(false);

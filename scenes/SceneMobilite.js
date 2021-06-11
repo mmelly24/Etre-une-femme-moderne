@@ -9,6 +9,7 @@ class SceneMobilite extends Phaser.Scene {
 
     create() {
       this.add.text(200, 100, 'SCENE MOBILITE');
+      timeBar(this, 500, 400);
       let content = "Mathieu recoit une offre pour travailler à l'étranger : suivez le vous ou pas ?";
       let reponseOui = "oui je veux le suivre + conséquence mobilité : mère celib, travail précaire, rejouer";
       let reponseNon ="non, je ne veux pas le suivre --> divorce ou séparation voir si on arrive à transmettre cette info";
