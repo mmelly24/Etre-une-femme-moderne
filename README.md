@@ -36,3 +36,8 @@ sprite boss inspiré de: https://fr.dreamstime.com/illustration/businessman.html
 
 les Bars : sprites empruntés à Cooking-for-the-king (aucune demande de copyright mais bon)
 
+
+
+Témoignage de violence obstétricales : 
+- https://www.rts.ch/info/suisse/10913353-en-suisse-aussi-des-femmes-denoncent-les-violences-obstetricales.html
+

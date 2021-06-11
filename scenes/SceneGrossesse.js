@@ -9,6 +9,7 @@ class SceneGrossesse extends Phaser.Scene {
 
   create() {
     this.add.text(200, 100, 'SCENE GROSSESSE');
+    timeBar(this, 500, 400);
 
     let content = "propos sur la grossesse en général"
 

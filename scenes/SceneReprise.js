@@ -8,7 +8,8 @@ class SceneReprise extends Phaser.Scene {
     }
     
     create() {
-      this.add.text(200, 100, 'SCENE Reprise');
+      this.add.text(200, 100, 'SCENE Reprise'); 
+      timeBar(this, 500, 400);
      /* 
       let count;
       console.log(count)
