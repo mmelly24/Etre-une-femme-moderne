@@ -22,7 +22,7 @@ class SceneEnfants extends Phaser.Scene {
       \n
       \n`;
 
-    let reponseOui = ``;
+    let reponseOui = `La décision est claire, tant pour vous que pour votre conjoint : c'est oui !`;
     
       let reponseNon = `\nVous vivez parfaitement bien cette décision, mais elle crée beaucoup d’incompréhension autour de vous. Plus le temps passe, plus vos parents se font insistants. “Alors, c’est pour quand le petit-enfant? Tu es notre seule chance de devenir grand-parents… On espère que tu changeras d’avis.” 
       C’est aussi le cas de vos amis. Autour de vous, c’est le baby-boom: chaque année apporte son lot de nouveaux-nés. \n\nVous devenez marraine, un rôle que vous prenez très à coeur mais qui apparemment est insuffisant. “Tu verras, tu changeras d’avis! Ton horloge biologique finira par se réveiller.” 
