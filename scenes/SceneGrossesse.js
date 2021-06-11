@@ -29,7 +29,7 @@ class SceneGrossesse extends Phaser.Scene {
             loop: false,
           });
     
-      } else changerPage(scene, 700, 500, 'NEXT', 'maternite');
+      } else changerPage(scene, 'SUIVANT', 'maternite');
     });
 
 

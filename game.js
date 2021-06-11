@@ -38,7 +38,7 @@ const COLOR_DARK = 000000;
 //---------- Fonctions pour les textBoxes -------------
 
 function creerTextBox(scene, content, maxLines) {
-  let textBox = createTextBox(scene, 200, 200, {
+  let textBox = createTextBox(scene, 230, 150, {
     wrapWidth: 400,
     maxLines: maxLines,
   }).start(content, 50);
@@ -159,8 +159,8 @@ function chargerPlugin(scene) {
 
 //--------- Autres fonctions -----------
 
-function changerPage(scene, x, y, contenu, sceneSuivante) {
-  let boutonNext = scene.add.text(x, y, contenu);
+function changerPage(scene, contenu, sceneSuivante) {
+  let boutonNext = scene.add.text(860, 535, contenu, {fontSize: '25px'});
   boutonNext.setInteractive();
   boutonNext.on('pointerdown', () => scene.scene.start(sceneSuivante));
   return boutonNext;
@@ -169,7 +169,7 @@ function changerPage(scene, x, y, contenu, sceneSuivante) {
 //---------- FONCTIONS QUI GERENT LES BOUTONS --------
 
 function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
-  let bouton = scene.add.text(x, y, content);
+  let bouton = scene.add.text(x, y, content, {fontSize: '20px'});
   bouton.setInteractive();
   bouton.setVisible(visibilité);
   //bouton.on('pointerdown', () => name.scene.start(nomScene));
@@ -177,7 +177,7 @@ function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
 }
 
 function boutonMenu(scene) {
-  let boutonMenu = scene.add.text(200, 100, 'BACK TO MENU');
+  let boutonMenu = scene.add.text(10, 10, 'RETOUR AU MENU', {fontSize: '25px'});
   boutonMenu.setInteractive();
   boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
 }
@@ -186,9 +186,9 @@ function boutonMenu(scene) {
 let countBar = 1;
 
 function timeBar(scene, x, y) {
-  scene.add.image(750, 450, 'oldWoman').setScale(0.4);
-  scene.add.image(230, 450, 'happyFace').setScale(0.4);
-  scene.zone = scene.add.zone((x = config.width / 2.05), (y = 450));
+  scene.add.image(750, 550, 'oldWoman').setScale(0.4);
+  scene.add.image(230, 550, 'happyFace').setScale(0.4);
+  scene.zone = scene.add.zone((x = config.width / 2.05), (y = 550));
   let barContainer = scene.add.image(x, y, 'containerBar');
   let bar = scene.add.image(x, y, 'blueBar');
 
@@ -251,7 +251,7 @@ function choixJoueur(
 
       }
   
-    } else changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+    } else changerPage(scene, 'SUIVANT', sceneSuivante);
   });
   nomBouton.setVisible(false);
   autreBouton.setVisible(false);
@@ -292,7 +292,7 @@ function creerToast(
     .show(toastTexte);
     //.show(toastTexte2)
     //.show(toastTexte3)
-  changerPage(scene, 700, 500, 'NEXT', sceneSuivante);
+  changerPage(scene, 'SUIVANT', sceneSuivante);
 }
 
 let jeu = new Phaser.Game(config);

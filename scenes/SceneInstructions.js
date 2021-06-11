@@ -36,14 +36,14 @@ class SceneInstructions extends Phaser.Scene {
       return Alert(this, 'chainage', 'test chainage', 500, 300);
     });*/
 
-    this.add.image(700, 150, 'happyFace').setScale(0.5);
+    //this.add.image(700, 150, 'happyFace').setScale(0.5);
     boutonMenu(this);
     //changerPage(this, 700, 500, 'NEXT', 'mariage');
 
-    let textBoxInstructions = creerTextBox(this, content, 6);
+    let textBoxInstructions = creerTextBox(this, content, 12);
     textBoxInstructions.on('pageend', () => {
       if (textBoxInstructions.isLastPage) {
-        changerPage(this, 700, 500, 'NEXT', 'mariage');
+        changerPage(this, 'SUIVANT', 'mariage');
       }
     });
 

@@ -35,14 +35,14 @@ class SceneMariage extends Phaser.Scene {
       this,
       false,
       380,
-      500,
+      480,
       'OUI' /*, 'mariageOui'*/
     );
     let boutonNon = creerBouton(
       this,
       false,
       580,
-      500,
+      480,
       'NON' /*, 'mariageNon'*/
     );
 
