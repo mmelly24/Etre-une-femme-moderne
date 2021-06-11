@@ -29,7 +29,7 @@ class SceneEnfants extends Phaser.Scene {
       Impossible désormais de jouer avec un enfant sans entendre un “Ah, il faut te préparer Mathieu, ça va vouloir des gosses!”. Tout ça devient vraiment fatiguant… Vous aimez les enfants, mais ce n’est pas pour autant que vous voulez en élever! \n\n\n\nPour vous, l’épanouissement passe par les relations que vous avez déjà bâties - avec votre famille, Mathieu, vos amis. Il passe aussi par votre travail.\n\n\n`;
     
     let toastTexte =
-      "Ce choix reste rare en Suisse: \nseuls 9% des jeunes adultes (20-29 ans) ne \nsouhaitent pas avoir d'enfants. (OFS, 2019)";
+      "La parentalité est la norme en Suisse: seuls 9% des jeunes adultes (20-29 ans) ne \nsouhaitent pas avoir d'enfants. (OFS, 2019)";
     
     let textBoxQuestion = creerTextBox(this, content,16);
 
