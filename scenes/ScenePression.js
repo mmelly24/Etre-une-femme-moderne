@@ -4,6 +4,7 @@ class ScenePression extends Phaser.Scene {
     }
 
     create() {
+      this.add.text(200, 100, 'SCENE PRESSION');
       let text;
       let count = 0;
 

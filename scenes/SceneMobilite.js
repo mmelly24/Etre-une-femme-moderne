@@ -8,9 +8,9 @@ class SceneMobilite extends Phaser.Scene {
     }
 
     create() {
-      this.add.text(200, 100, 'SCENE MATERNITE');
+      this.add.text(200, 100, 'SCENE MOBILITE');
       let content = "Mathieu recoit une offre pour travailler à l'étranger : suivez le vous ou pas ?";
-      let reponseOui = "oui je veux le suivre + conséquence mobilité";
+      let reponseOui = "oui je veux le suivre + conséquence mobilité : mère celib, travail précaire, rejouer";
       let reponseNon ="non, je ne veux pas le suivre --> divorce ou séparation voir si on arrive à transmettre cette info";
       let toastTexte1 = "Dans majorité des cas, femmes qui doivent suivre leur mari"
       let textBoxQuestion = creerTextBox(this, content, 7);
@@ -34,7 +34,7 @@ class SceneMobilite extends Phaser.Scene {
           reponseOui,
           7,
           boutonNon,
-          'rejouer',
+          'reprise',
           toastTexte1
         );
       });
@@ -48,7 +48,7 @@ class SceneMobilite extends Phaser.Scene {
           reponseNon,
           7,
           boutonOui,
-          'reprise',
+          'rejouer',
           toastTexte1
         );
       });
