@@ -54,7 +54,9 @@ class SceneGrossesse extends Phaser.Scene {
             callback: () => {
               creerToast(this, 'maternite', toastTexte2);
             },
-          });
+          })
+          changerPage(this, 'SUIVANT', 'maternite');
+          ;
         } 
       }
     });
