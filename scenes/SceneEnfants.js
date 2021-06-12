@@ -53,7 +53,7 @@ class SceneEnfants extends Phaser.Scene {
         16,
         boutonNon,
         'grossesse',
-        toastTexte
+        toastTexte,
       );
     });
 

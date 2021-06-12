@@ -224,7 +224,8 @@ function choixJoueur(
   reponseTextBox = creerTextBox(scene, contenu, maxLines);
   reponseTextBox.on('pageend', () => {
     if (reponseTextBox.isLastPage) {
-      if (toastTexte1 != null) {
+      if (toastTexte1 == null) {changerPage(scene, 'SUIVANT', sceneSuivante)}
+      else if (toastTexte1 != null) {
         scene.time.addEvent({
           delay: 5000,
           callback: () => {
@@ -234,22 +235,23 @@ function choixJoueur(
           loop: false,
         });
       } 
-      if (toastTexte2 != null) {
+      else if (toastTexte2 != null) {
         scene.time.addEvent({
           delay: 15000, 
           callback: () => {
             creerToast(scene, sceneSuivante, toastTexte2);
           },
         })
-      } if (toastTexte3 != null) {
+      } else if (toastTexte3 != null) {
         scene.time.addEvent({
           delay: 25000, 
           callback: () => {
             creerToast(scene, sceneSuivante, toastTexte3);
           },
         })
+        changerPage(scene, 'SUIVANT', sceneSuivante);
       }
-      else changerPage(scene, 'SUIVANT', sceneSuivante);
+      //else changerPage(scene, 'SUIVANT', sceneSuivante);
     } 
   });
   nomBouton.setVisible(false);
