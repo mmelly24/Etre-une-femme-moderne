@@ -206,6 +206,29 @@ function timeBar(scene, x, y) {
   return bar + barContainer;
 }
 
+//------- JAUGE DE DÉSILLLUSION -------
+function jaugeDesillusion(scene, x, y, imageSprite, imageBar) {
+  scene.add.image(910, 100, imageSprite).setScale(0.4);
+  scene.zone = scene.add.zone((x = 900), (y = config.height / 2.05));
+  let barContainer = scene.add.image(x, y, 'containerBar').setScale(0.7);
+  barContainer.angle = 90;
+  let bar = scene.add.image(x, y, imageBar).setScale(0.7);
+  bar.angle = 90;
+
+  scene.barMaskV = scene.add.sprite(bar.x, bar.y, 'jaugeVert');
+  scene.barMaskV.visible = false;
+  bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMaskV);
+
+  let stepHeight = scene.barMaskV.displayHeight / countBar;
+
+  countBar *= 1.2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+
+  scene.barMaskV.y -= stepHeight;
+  //bar.x = stepWidth
+
+  return bar + barContainer;
+}
+
 //MAXIMUM TROIS TOASTS : SI NON DEFINI, PAS BESOIN DE METTRE NULL
 function choixJoueur(
   scene,

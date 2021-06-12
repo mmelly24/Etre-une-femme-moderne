@@ -5,6 +5,7 @@ class SceneMariage extends Phaser.Scene {
 
   preload() {
     this.load.image('happyFace', 'assets/sprite_happy_face.png');
+    this. load.image('jaugeVert', 'assets/greenBar.png');
     chargerPlugin(this);
     this.load.scenePlugin({
       key: 'rexuiplugin',
@@ -18,6 +19,7 @@ class SceneMariage extends Phaser.Scene {
     let content = `mariagle question`;
     this.add.text(200, 100, 'SCENE MARIAGE');
     this.add.image(700, 150, 'happyFace').setScale(0.5);
+    jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert');
 
     let textBoxQuestion = creerTextBox(this, content, 7);
 
