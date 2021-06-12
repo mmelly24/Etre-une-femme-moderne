@@ -21,7 +21,6 @@ const config = {
     SceneMobilite,
     ScenePromotion,
     SceneRejouer,
-    SceneReprise,
     SceneGrossesse,
     SceneMaternite,
   ],
@@ -197,7 +196,7 @@ function timeBar(scene, x, y) {
   //console.log(scene.barMask.displayWidth);
   //console.log(stepWidth);
 
-  countBar *= 1.2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+  countBar *= 1.9; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
 
   scene.barMask.x -= stepWidth;
   //bar.x = stepWidth

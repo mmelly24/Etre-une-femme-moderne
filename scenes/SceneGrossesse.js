@@ -5,13 +5,20 @@ class SceneGrossesse extends Phaser.Scene {
 
   preload() {
     chargerPlugin(this);
+    this.load.image('enceinte', 'assets/sprite_pregnant_woman.png');
+    this.load.image('pere', 'assets/sprite_dad.png');
+    this.load.image('mere', 'assets/sprite_mom.png');
   }
 
   create() {
-    this.add.text(200, 100, 'SCENE GROSSESSE');
+    //this.add.text(200, 100, 'SCENE GROSSESSE');
     timeBar(this, 500, 400);
+    this.add.image(110, 150,'enceinte').setScale(0.4);
+    this.add.image(80, 350,'pere').setScale(0.2);
+    this.add.image(150, 350,'mere').setScale(0.25);
 
-    let content = 'grossesse'/*`\n\nAprès deux mois de tentatives, vous voilà enfin enceinte. La joie que vous avez éprouvée lorsque vous avez découvert un test de grossesse positif est indescriptible ! Vous vous empressez d'appeler vos parents, pour leur annoncer la bonne nouvelle.
+
+    let content = `\n\nAprès deux mois de tentatives, vous voilà enfin enceinte. La joie que vous avez éprouvée lorsque vous avez découvert un test de grossesse positif est indescriptible ! Vous vous empressez d'appeler vos parents, pour leur annoncer la bonne nouvelle.
     "Papa maman !! J'ai quelque chose à vous dire ! Mathieu et moi attendons un bébé... vous allez être grands-parents !!"\n
     \n\n"Oh ma chérie ! C’est fantastique !! Nous n’attendions que cela depuis que Mathieu et toi avez emménagé ensemble !"
     Après avoir annoncé la bonne nouvelle à vos parents et vos beaux-parents, vous gardez le secret pour les trois premiers mois, comme votre médecin vous l’a conseillé. Vous commencez toutefois à préparer l’arrivée du bébé, en achetant le matériel nécessaire.\n
@@ -31,32 +38,33 @@ class SceneGrossesse extends Phaser.Scene {
     \n\nLorsque vous arrivez au CHUV, le travail a déjà bien commencé. Vous êtes dilatée à 7cm. Plus que 3cm, et votre petit amour sera prêt à arriver ! La douleur est si intense que vous avez l’impression de vivre dans une autre dimension. Il vous est difficile de saisir ce qui se dit autour de vous, tant l’agitation des gens est accablante.\n\n\n\n\n\n\n\nLe personnel soignant préfère d’ailleurs s’adresser directement à Mathieu plutôt qu’à vous, qui êtes devenue, il semblerait, invisible aux yeux de tous.\n\n\n\n\n
     \n\n\n\n\n\n\n\nVous accouchez d’une magnifique petite fille, que vous nommez Emma.\n\n\n\n\n\n \n\n\nQuant à votre accouchement, il vous est encore difficile de revenir dessus... 
     Vous essayez d'oublier cette expérience traumatisante, mais des flash back vous accompagneront encore longtemps...
-    `;*/
+    `;
 
     let toastTexte1 = `Les violences obstétricales\nsont les comportements, actes, paroles\nou omissions commis par le personnel de santé\nqui ne sont pas justifiés\nmédicalement ou sont accomplis\nsans le consentement libre et éclairé\nd'une femme enceinte ou d'une jeune mère.\n(Wikipédia)`;
-    let toastTexte2 = `La transition à la parentalité\nannonce souvent des obstacles dans\nla carrière des femmes et a contrario\nun accelerateur de la carrière des hommes\nsur le modèle du "male breadwinner" (l'homme pourvoyeur)\nqui se doit de subvenir aux besoins\nde sa famille. (Le Goff & Girardin, 2016)`;
+    let toastTexte2 = `La transition à la parentalité\nannonce souvent des obstacles dans\nla carrière des femmes et a contrario\nun accelerateur de la carrière des hommes\nsur le modèle du "male breadwinner"\n(l'homme pourvoyeur)\nqui se doit de subvenir aux besoins\nde sa famille. (Le Goff & Girardin, 2016)`;
     reponseTextBox = creerTextBox(this, content, 16);
     reponseTextBox.on('pageend', () => {
       if (reponseTextBox.isLastPage) {
-        if (toastTexte1 != null) {
+        if (toastTexte1 == null) {changerPage(this, 'SUIVANT', 'maternite')}
+        else if (toastTexte1 != null) {
           this.time.addEvent({
             delay: 2000,
             callback: () => {
               reponseTextBox.destroy();
               creerToast(this, 'maternite', toastTexte1);
+              if (toastTexte2 == null) {changerPage(this, 'SUIVANT', 'maternite')}
             },
             loop: false,
           });
         }
         if (toastTexte2 != null) {
           this.time.addEvent({
-            delay: 12000,
+            delay: 15000,
             callback: () => {
               creerToast(this, 'maternite', toastTexte2);
+              changerPage(this, 'SUIVANT', 'maternite')
             },
-          })
-          changerPage(this, 'SUIVANT', 'maternite');
-          ;
+          });
         } 
       }
     });

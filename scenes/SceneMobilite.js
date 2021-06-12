@@ -5,10 +5,12 @@ class SceneMobilite extends Phaser.Scene {
 
     preload() {
       chargerPlugin(this);
+      this.load.image('boyfriend', 'assets/sprite_boyfriend_happyface.png');
     }
 
     create() {
-      this.add.text(200, 100, 'SCENE MOBILITE');
+      this.add.image(110, 250,'boyfriend').setScale(0.4);
+      //this.add.text(200, 100, 'SCENE MOBILITE');
       timeBar(this, 500, 400);
       let content = `\n\n\nEmma vient de fêter ses 12 ans. Que le temps passe vite ! Vous vous rappelez qu’il y a dix ans, presque jour pour jour, vous avez décidé de devenir mère au foyer pour vous consacrer entièrement à Emma. Et comme vous êtes fière de votre petite ! Vous l’aimez plus que tout au monde.\n\n\n 
       \n\n\nLa carrière de Mathieu, quant à elle, à évoluer de manière tout à fait surprenante. Le voilà maintenant vice-président de son entreprise. Vous êtes très fière de lui, et de tous les sacrifices qu’il a dû faire pour atteindre ce poste.\n\n\n\n
@@ -28,7 +30,7 @@ class SceneMobilite extends Phaser.Scene {
       Vous regardez par la fenêtre la pluie tomber en ce mois de février lugubre. Vous repensez à votre vie, avec le regard pointu que la vieillesse vous a permis d’acquérir. Vous fermez lentement vos yeux, en pensant à Emma. Vous ne savez pas ce que la vie lui réserve, mais vous n’envisagez pas son avenir sereinement… et si… et si elle avait été un garçon ?
       
       `;
-      let toastTexte1 = "Dans une carrière professionnelle, la mobilité géographique\nest beaucoup plus acceptée pour les hommes\nque pour les femmes. De ce fait,\nil est rare de voir une famille\ntout quitter pour permettre à la mère\nde poursuivre sa carrière professionnelle à l'étranger,\nconstituant ainsi un obstacle au développement\nde cette dernière.(Guillaume, Pochic, 2007)";
+      let toastTexte1 = "Dans une carrière professionnelle,\nla mobilité géographique est beaucoup\nplus acceptée pour les hommes\nque pour les femmes. De ce fait,\nil est rare de voir une famille\ntout quitter pour permettre à la mère\nde poursuivre sa carrière professionnelle\nà l'étranger, constituant ainsi\nun obstacle au développement\nde cette dernière.(Guillaume, Pochic, 2007)";
       let toastTexte2 = `En Suisse, une famille monoparentale\nsur six est touchée par la pauvreté.\nDans la plupart des cas, les enfants restent\navec leur mère. Il est difficile pour ces dernières\nde trouver un emploi adapté à leur horaire familiaux,\naugmentant dès lors leur situation précaire. (Caritas)`;
       let toastTexte3 = `A l'âge de la retraire, le taux de pauvreté\nchez les femmes est de 17.6%,\ncontre 11.4% chez les hommes (ARC) :\non estime que la retraite des femmes\nest de 37% inférieure à celle des hommes (CF).\nLes femmes ayant été mères au foyer sont\nparticulièrement touchées par ce phénomène :\nelles n'ont pas, ou plus, cotisé au 2ème pilier,\nréservé aux salariés.`
       let textBoxQuestion = creerTextBox(this, content, 16);

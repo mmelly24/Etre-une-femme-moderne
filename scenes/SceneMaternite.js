@@ -5,10 +5,12 @@ class SceneMaternite extends Phaser.Scene {
   
     preload() {
       chargerPlugin(this);
+      this.load.image('baby', 'assets/sprite_baby.png')
     }
   
     create() {
-      this.add.text(200, 100, 'SCENE MATERNITE');
+      this.add.image(110, 170,'baby').setScale(0.8);
+      //this.add.text(200, 100, 'SCENE MATERNITE');
       timeBar(this, 500, 400);
       let content = `\n\nVotre sortie de l'hôpital a été difficile à gérer. L’expérience traumatisante que vous avez vécue, ainsi que votre épuisement général vous rendent presque incapable de vous occupez correctement d’Emma lors des premiers jours. Vous n’avez toutefois par le choix de vous remettre rapidement : Mathieu n’a que 10 jours de congé paternité.\n\n
       \n\nCette difficulté s’accompagne alors d’un sentiment de culpabilité : vous qui venez de vivre “le plus beau jour de votre vie”, êtes en réalité dans un état dépressif, et vous avez l’impression de ne pas être à la hauteur pour vous occuper d’Emma.La reprise du travail par Mathieu accentue alors ce sentiment puisque vous êtes désormais la plupart du temps seule avec votre petite fille.
@@ -21,9 +23,9 @@ class SceneMaternite extends Phaser.Scene {
       \n\n\n\nBien que le nouveau poste de Mathieu vous offre une situation financière agréable, vous n’avez pas les moyens de vous payer une maman de jour 5 jours par semaine. Vous devez donc recommencer le travail à temps partiel. Vous entamez donc un 60%, et consacrez vos jeudis et vendredis à votre petite Emma.\n\n\n\nEn plus de cela, vous prenez en charge les tâches ménagères de votre maison : “Je sais ma chérie, j’aimerais pouvoir t’aider mais tu sais en ce moment avec le travail je suis épuisé.".Evidemment, pour Mathieu s’occuper de votre fille et travailler à 60% n’est pas source d’épuisement…. Vous chassez ces pensées négatives, en vous rappelant que tous les deux essayez de faire au mieux… Pour lui aussi ce n’est pas facile de tout gérer… \n\n
       \n\n\n\n\nToutefois, entre les repas, les rdv chez le médecin, les courses, le ménage, les invitations, vous commencez à ne plus savoir où donner de la tête.\n\n\n\n\n\n\n\n\n\n\nAu travail, la situation n’est pas au beau fixe non plus. Puisque vous devez vous dépêcher de récupérer Emma à la fin du travail, vous loupez de nombreuses sorties d’entreprise.\n\n\n\n\n\n\n\nEn plus de vous empêcher de créer de réels liens avec vos collègues, vous ratez une occasion d’obtenir une promotion : le poste pour lequel vous étiez en concurrence avec l’un de vos collègues a été pourvu lors d’une réunion imprévue et tardive à laquelle vous n’avez justement pas pu assister à cause d’Emma...\n\n\nAprès 2 ans dans cette situation, vous baissez les bras. L’épuisement constant que vous ressentez devient insoutenable, et vos parents vous font remarquer que vous ne passez plus assez de temps avec votre fille… Vous décidez de suivre leur conseil, et démissionnez donc de votre poste.`;
       let reponseNon =`\n\n\n\nVous devenez donc mère au foyer, et vous vous consacrez à Emma.\n\n\n`;
-      let toastTexte1 = `L'inégalité est moins forte lorsque\ndes structures d’accueil sont disponibles\npour la petite enfance, et les congés\nparentaux étendus constituent\nun agent facilitateur important pour\nle retour des femmes à la vie professionnelle.\nOr, en Suisse, ces deux éléments sont encore\npeu développés. (Bühlmann, Elcheroth, Tettamanti, 2016)`;
+      let toastTexte1 = `L'inégalité est moins forte\nlorsque des structures d’accueil\nsont disponibles pour la petite enfance,\net les congés parentaux étendus\nconstituent un agent facilitateur\nimportant pour le retour des femmes\nà la vie professionnelle.\nOr, en Suisse, ces deux éléments\nsont encore peu développés.\n(Bühlmann, Elcheroth, Tettamanti, 2016)`;
       let toastTexte2 = `En 2019, les hommes actifs en Suisse\nsont 82% à travailler à temps plein,\ncontre seulement 40% des femmes actives.\nCette distribution est considérée\ncomme la nouvelle division sexuée,\ndans laquelle les femmes doivent assumer\nune double journée de travail. (Stat. OFS, 2019)`;
-      let toastTexte3 = `On parle de "pafond de verre" pour désigner\nla barrière invisible bloquant l'accès des femmes\naux positions dirigeantes dans les entreprises.\nCette situation peut être engendrée par\ndes critères formels(par exemple la mobilité géographique,\nplus acceptée chez les hommes), informels ou représentationnels\n(les stéréotypes associent le pouvoir aux hommes)\n(Guillaume, Pochic, 2007)`
+      let toastTexte3 = `On parle de "pafond de verre"\npour désigner la barrière invisible\nbloquant l'accès des femmes\naux positions dirigeantes\ndans les entreprises.\nCette situation peut être engendrée\npar des critères formels\n(par exemple la mobilité géographique,\nplus acceptée chez les hommes),\ninformels ou représentationnels\n(les stéréotypes associent\nle pouvoir aux hommes)\n(Guillaume, Pochic, 2007)`
 
       let textBoxQuestion = creerTextBox(this, content, 16);
 
