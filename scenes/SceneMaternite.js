@@ -21,9 +21,11 @@ class SceneMaternite extends Phaser.Scene {
       \n\n\n\nBien que le nouveau poste de Mathieu vous offre une situation financière agréable, vous n’avez pas les moyens de vous payer une maman de jour 5 jours par semaine. Vous devez donc recommencer le travail à temps partiel. Vous entamez donc un 60%, et consacrez vos jeudis et vendredis à votre petite Emma.\n\n\n\nEn plus de cela, vous prenez en charge les tâches ménagères de votre maison : “Je sais ma chérie, j’aimerais pouvoir t’aider mais tu sais en ce moment avec le travail je suis épuisé.".Evidemment, pour Mathieu s’occuper de votre fille et travailler à 60% n’est pas source d’épuisement…. Vous chassez ces pensées négatives, en vous rappelant que tous les deux essayez de faire au mieux… Pour lui aussi ce n’est pas facile de tout gérer… \n\n
       \n\n\n\n\nToutefois, entre les repas, les rdv chez le médecin, les courses, le ménage, les invitations, vous commencez à ne plus savoir où donner de la tête.\n\n\n\n\n\n\n\n\n\n\nAu travail, la situation n’est pas au beau fixe non plus. Puisque vous devez vous dépêcher de récupérer Emma à la fin du travail, vous loupez de nombreuses sorties d’entreprise.\n\n\n\n\n\n\n\nEn plus de vous empêcher de créer de réels liens avec vos collègues, vous ratez une occasion d’obtenir une promotion : le poste pour lequel vous étiez en concurrence avec l’un de vos collègues a été pourvu lors d’une réunion imprévue et tardive à laquelle vous n’avez justement pas pu assister à cause d’Emma...\n\n\nAprès 2 ans dans cette situation, vous baissez les bras. L’épuisement constant que vous ressentez devient insoutenable, et vos parents vous font remarquer que vous ne passez plus assez de temps avec votre fille… Vous décidez de suivre leur conseil, et démissionnez donc de votre poste.`;
       let reponseNon =`Emma vient de fêter ses 12 ans. Que le temps passe vite ! Vous vous rappelez qu’il y a dix ans, presque jour pour jour, vous avez décidé de devenir mère au foyer pour vous consacrer entièrement à Emma. Et comme vous êtes fière de votre petite ! Vous l’aimez plus que tout au monde.`;
-      let toastTexte1 = `L'inégalité est moins forte lorsque\ndes structures d’accueil sont disponibles\npour la petite enfance, et les congés\nparentaux étendus constituent\nun agent facilitateur important pour\nle retour des femmes à la vie professionnelle.\nOr, en Suisse, ces deux éléments sont encore\npeu développés. (Bühlmann, Elcheroth, Tettamanti, 2016)`
-      let toastTexte2 = `En 2019, les hommes actifs en Suisse\n sont 82% à travailler à temps plein,\n contre seulement 40% des femmes actives.\nCette distribution est considérée\n comme la nouvelle division sexuée,\n dans laquelle les femmes doivent assumer\n une double journée de travai. (Stat. OFSP, 2019)`
+      let toastTexte1 = `L'inégalité est moins forte lorsque\ndes structures d’accueil sont disponibles\npour la petite enfance, et les congés\nparentaux étendus constituent\nun agent facilitateur important pour\nle retour des femmes à la vie professionnelle.\nOr, en Suisse, ces deux éléments sont encore\npeu développés. (Bühlmann, Elcheroth, Tettamanti, 2016)`;
+      let toastTexte2 = `En 2019, les hommes actifs en Suisse\nsont 82% à travailler à temps plein,\ncontre seulement 40% des femmes actives.\nCette distribution est considérée\ncomme la nouvelle division sexuée,\ndans laquelle les femmes doivent assumer\nune double journée de travai. (Stat. OFS, 2019)`;
+      console.log(toastTexte2)
       let textBoxQuestion = creerTextBox(this, content, 16);
+
 
       let boutonOui = creerBouton(this, false, 200, 480, 'REPRENDRE LE TRAVAIL');
       let boutonNon = creerBouton(this, false, 500, 480, 'S\'OCCUPER DE VOTRE FILLE');
@@ -46,7 +48,7 @@ class SceneMaternite extends Phaser.Scene {
           boutonNon,
           'retour',
           toastTexte1,
-          toastTexte2
+          toastTexte2,
         );
       });
 
@@ -61,7 +63,7 @@ class SceneMaternite extends Phaser.Scene {
           boutonOui,
           'mobilite',
           toastTexte1,
-          toastTexte2
+          toastTexte2,
         );
       });
 
