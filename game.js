@@ -208,22 +208,25 @@ function timeBar(scene, x, y) {
 
 //------- JAUGE DE DÉSILLLUSION -------
 function jaugeDesillusion(scene, x, y, imageSprite, imageBar) {
-  scene.add.image(910, 100, imageSprite).setScale(0.4);
-  scene.zone = scene.add.zone((x = 900), (y = config.height / 2.05));
+  scene.add.image(913, 100, imageSprite).setScale(0.4);
+  scene.zone = scene.add.zone((x = 913), (y = config.height / 2.05));
   let barContainer = scene.add.image(x, y, 'containerBar').setScale(0.7);
   barContainer.angle = 90;
-  let bar = scene.add.image(x, y, imageBar).setScale(0.7);
+  let bar = scene.add.image(x+3, y+5, imageBar).setScale(0.7);
   bar.angle = 90;
 
-  scene.barMaskV = scene.add.sprite(bar.x, bar.y, 'jaugeVert');
-  scene.barMaskV.visible = false;
-  bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMaskV);
+  scene.barMask = scene.add.sprite(bar.x, bar.y, imageBar).setScale(0.7);
+  scene.barMask.angle = 90;
+  scene.barMask.visible = false;
+  bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);
 
-  let stepHeight = scene.barMaskV.displayHeight / countBar;
+  let stepHeight = scene.barMask.displayHeight / countBar;
+  console.log(stepHeight);
 
-  countBar *= 1.2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+  countBar *= 2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
 
-  scene.barMaskV.y -= stepHeight;
+  scene.barMask.y -= stepHeight;
+  console.log(scene.barMask.y)
   //bar.x = stepWidth
 
   return bar + barContainer;
