@@ -177,7 +177,7 @@ function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
 }
 
 function boutonMenu(scene) {
-  let boutonMenu = scene.add.text(10, 10, 'RETOUR AU MENU', {fontSize: '25px'});
+  let boutonMenu = scene.add.text(20, 30, 'RETOUR AU MENU', {fontSize: '25px'});
   boutonMenu.setInteractive();
   boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
 }
