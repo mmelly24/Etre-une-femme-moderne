@@ -41,3 +41,7 @@ les Bars : sprites empruntés à Cooking-for-the-king (aucune demande de copyrig
 Témoignage de violence obstétricales : 
 - https://www.rts.ch/info/suisse/10913353-en-suisse-aussi-des-femmes-denoncent-les-violences-obstetricales.html
 
+
+Bibliographie : 
+Le Goff, J-M. & Girardin, N. (2016). Répartition des tâches domestiques et de soins aux enfants. Intentions et pratiques. In Le Goff, J-M. & Levy, R. (Dir.), Devenir parents, devenir inégaux. Transition à la parentalité et inégalités de genre (pp. 76-108). Zürich : Seismo. 
+
