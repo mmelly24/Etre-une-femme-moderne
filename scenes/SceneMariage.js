@@ -6,6 +6,8 @@ class SceneMariage extends Phaser.Scene {
   preload() {
     this.load.image('happyFace', 'assets/sprite_happy_face.png');
     this. load.image('jaugeVert', 'assets/greenBar.png');
+    this.load.image('boyfriend', 'assets/sprite_boyfriend_happyface.png');
+    
     chargerPlugin(this);
     this.load.scenePlugin({
       key: 'rexuiplugin',
@@ -16,6 +18,8 @@ class SceneMariage extends Phaser.Scene {
 
   create() {
     timeBar(this, 500, 400);
+    this.add.image(110, 250,'boyfriend').setScale(0.4);
+
     let content = `\nCela fait maintenant plusieurs mois que vous travaillez dans votre nouvelle entreprise. Malgré quelques déceptions, vous êtes globalement heureuse et satisfaite de votre lieu de travail.
     Mais quelque chose vous taraude l’esprit… Mathieu se comporte de manière étrange. Il paraît très stressé et s’isole beaucoup, il est scotché à son téléphone. \n\n\nLorsque vous lui en faites la remarque, il refuse d’en parler, ce qui contribue à augmenter votre sentiment de malaise.
     Une semaine plus tard, le mystère s’éclaircit. Alors que vous vous dirigez vers le lac pour profiter d'une belle soirée d'été, Mathieu vous emmène par surprise sur un bateau qu'il a privatisé. Là, avec grande cérémonie, il s'agenouille et vous demande en mariage! Vous ne l’avez pas du tout vu venir !`;

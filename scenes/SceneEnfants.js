@@ -6,13 +6,16 @@ class SceneEnfants extends Phaser.Scene {
   preload() {
     this.load.image('happyFace', 'assets/sprite_happy_face.png');
     chargerPlugin(this);
+    this.load.image('baby', 'assets/sprite_baby.png');
+    this. load.image('jaugeVert', 'assets/greenBar.png');
   }
 
   create() {
     //this.add.text(200, 100, 'SCENE ENFANTS');
     //this.add.image(700, 150, 'happyFace').setScale(0.5);
-    timeBar(this, 500, 400); 
-    
+    timeBar(this, 500, 400);
+    jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert');
+    this.add.image(110, 170,'baby').setScale(0.8);
 
     let content =
       `Les années passent et renforcent le couple que vous formez. Inévitablement, la question des enfants se pose.`;
@@ -25,8 +28,6 @@ class SceneEnfants extends Phaser.Scene {
     
     let toastTexte1 =
       "La parentalité est la norme en Suisse: \nseuls 9% des jeunes adultes (20-29 ans) ne \nsouhaitent pas avoir d'enfants. (OFS, 2019)";
-    
-    let toastTexte2 = `TEST AFFICHAGE TOAST2`;
     
     let textBoxQuestion = creerTextBox(this, content,5);
 
@@ -50,8 +51,7 @@ class SceneEnfants extends Phaser.Scene {
         5,
         boutonNon,
         'grossesse',
-        toastTexte1,
-        toastTexte2
+        toastTexte1
       );
     });
 
@@ -65,8 +65,7 @@ class SceneEnfants extends Phaser.Scene {
         16,
         boutonOui,
         'promotion',
-        toastTexte1,
-        toastTexte2
+        toastTexte1
       );
     });
   }
