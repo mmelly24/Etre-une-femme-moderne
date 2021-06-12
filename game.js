@@ -207,12 +207,12 @@ function timeBar(scene, x, y) {
 }
 
 //------- JAUGE DE DÉSILLLUSION -------
-function jaugeDesillusion(scene, x, y, couleur) {
-  scene.add.image(910, 100, 'happyFace').setScale(0.4);
+function jaugeDesillusion(scene, x, y, imageSprite, imageBar) {
+  scene.add.image(910, 100, imageSprite).setScale(0.4);
+  scene.zone = scene.add.zone((x = 900), (y = config.height / 2.05));
   let barContainer = scene.add.image(x, y, 'containerBar').setScale(0.7);
   barContainer.angle = 90;
-  scene.zone = scene.add.zone((x = 900), (y = config.height / 2.05));
-  let bar = scene.add.image(x, y, 'jaugeVert').setScale(0.7);
+  let bar = scene.add.image(x, y, imageBar).setScale(0.7);
   bar.angle = 90;
 
   scene.barMaskV = scene.add.sprite(bar.x, bar.y, 'jaugeVert');

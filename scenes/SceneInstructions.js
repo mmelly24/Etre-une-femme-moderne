@@ -30,7 +30,7 @@ class SceneInstructions extends Phaser.Scene {
 
   create() {
     timeBar(this, 500, 400);
-    jaugeDesillusion(this, 900, 290)
+    jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert')
     //Alert(this, 'test', 'test premier', 500, 300)
 
     let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
