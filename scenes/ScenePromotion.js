@@ -30,7 +30,7 @@ class ScenePromotion extends Phaser.Scene {
 
     let toastTexte1 = `En 2018, l’écart de salaire entre hommes et femmes \nest de 11.55% (secteurs public et privé confondus). \nIl monte à 18.55% chez les cadres supérieurs et moyens. \n(OFS, 2020)`;
     let toastTexte2 = `En 2019 en Suisse, seules 35% des positions dirigeantes \nsont occupées par des femmes. (OFS, 2020a)`;
-    let toastTexte3 = `La "ségrégation verticale" persiste: notre société accorde \nune valeur symbolique et monétaire plus élevée au \ntravail des hommes et les favorise dans l’accès \naux postes prestigieux et bien rémunérés. \n(Kergoat, 2004; Bereni et al., 2012)`;
+    let toastTexte3 = `La "ségrégation verticale" persiste: notre société accorde \nune valeur symbolique et monétaire plus élevée au \ntravail des hommes et les favorise dans l’accès \naux postes prestigieux et bien rémunérés. \n(Kergoat, 2014; Bereni et al., 2012)`;
 
     let textBoxQuestion = creerTextBox(this, content, 16);
 
