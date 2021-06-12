@@ -31,6 +31,8 @@ class SceneEnfants extends Phaser.Scene {
     let toastTexte =
       "La parentalité est la norme en Suisse: \nseuls 9% des jeunes adultes (20-29 ans) ne \nsouhaitent pas avoir d'enfants. (OFS, 2019)";
     
+    let toastTexte2 = `TEST AFFICHAGE TOAST2`;
+    
     let textBoxQuestion = creerTextBox(this, content,16);
 
     let boutonOui = creerBouton(this, false, 280, 500, 'AVOIR DES ENFANTS');
@@ -54,6 +56,7 @@ class SceneEnfants extends Phaser.Scene {
         boutonNon,
         'grossesse',
         toastTexte,
+        toastTexte2
       );
     });
 
@@ -67,7 +70,8 @@ class SceneEnfants extends Phaser.Scene {
         16,
         boutonOui,
         'promotion',
-        toastTexte
+        toastTexte,
+        toastTexte2
       );
     });
   }
