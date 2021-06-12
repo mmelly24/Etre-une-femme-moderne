@@ -23,7 +23,8 @@ class SceneMaternite extends Phaser.Scene {
       let reponseNon =`\n\n\n\nVous devenez donc mère au foyer, et vous vous consacrez à Emma.\n\n\n`;
       let toastTexte1 = `L'inégalité est moins forte lorsque\ndes structures d’accueil sont disponibles\npour la petite enfance, et les congés\nparentaux étendus constituent\nun agent facilitateur important pour\nle retour des femmes à la vie professionnelle.\nOr, en Suisse, ces deux éléments sont encore\npeu développés. (Bühlmann, Elcheroth, Tettamanti, 2016)`;
       let toastTexte2 = `En 2019, les hommes actifs en Suisse\nsont 82% à travailler à temps plein,\ncontre seulement 40% des femmes actives.\nCette distribution est considérée\ncomme la nouvelle division sexuée,\ndans laquelle les femmes doivent assumer\nune double journée de travail. (Stat. OFS, 2019)`;
-      
+      let toastTexte3 = `On parle de "pafond de verre" pour désigner\nla barrière invisible bloquant l'accès des femmes\naux positions dirigeantes dans les entreprises.\nCette situation peut être engendrée par des critères formels\n(par exemple la mobilité géographique, plus acceptée chez les hommes),\ninformels ou représentationnels (les stéréotypes associent le pouvoir aux hommes)\n(Guillaume, Pochic, 2007)`
+
       let textBoxQuestion = creerTextBox(this, content, 16);
 
 
@@ -49,6 +50,7 @@ class SceneMaternite extends Phaser.Scene {
           'mobilite',
           toastTexte1,
           toastTexte2,
+          toastTexte3
         );
       });
 
@@ -64,6 +66,7 @@ class SceneMaternite extends Phaser.Scene {
           'mobilite',
           toastTexte1,
           toastTexte2,
+          toastTexte3
         );
       });
 
