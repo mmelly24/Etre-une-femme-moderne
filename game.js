@@ -197,36 +197,41 @@ function timeBar(scene, x, y) {
   bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);
 
   let stepWidth = scene.barMask.displayWidth / countBar;
+  //console.log(scene.barMask.displayWidth);
+  //console.log(stepWidth);
 
   countBar *= 1.2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
 
   scene.barMask.x -= stepWidth;
   //bar.x = stepWidth
+  //console.log(scene.barMask.x);
 
   return bar + barContainer;
 }
 
 //------- JAUGE DE DÉSILLLUSION -------
+let countBarD = 1;
 function jaugeDesillusion(scene, x, y, imageSprite, imageBar) {
   scene.add.image(913, 100, imageSprite).setScale(0.4);
-  scene.zone = scene.add.zone((x = 913), (y = config.height / 2.05));
+  scene.zone = scene.add.zone((x = 900), (y = config.height / 2.05)).setScale(0.7);
   let barContainer = scene.add.image(x, y, 'containerBar').setScale(0.7);
   barContainer.angle = 90;
   let bar = scene.add.image(x+3, y+5, imageBar).setScale(0.7);
+  //bar.setVisible(false);
   bar.angle = 90;
 
-  scene.barMask = scene.add.sprite(bar.x, bar.y, imageBar).setScale(0.7);
+  scene.barMask = scene.add.sprite(bar.x, 500, imageBar).setScale(0.7);
   scene.barMask.angle = 90;
   scene.barMask.visible = false;
   bar.mask = new Phaser.Display.Masks.BitmapMask(scene, scene.barMask);
 
-  let stepHeight = scene.barMask.displayHeight / countBar;
-  console.log(stepHeight);
+  let stepHeight = scene.barMask.displayHeight / countBarD;
+  //console.log(stepHeight);
 
-  countBar *= 2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+  countBarD *= 2; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
 
   scene.barMask.y -= stepHeight;
-  console.log(scene.barMask.y)
+  //console.log(scene.barMask.y)
   //bar.x = stepWidth
 
   return bar + barContainer;
@@ -253,29 +258,33 @@ function choixJoueur(
       if (toastTexte1 == null) {changerPage(scene, 'SUIVANT', sceneSuivante)}
       else if (toastTexte1 != null) {
         scene.time.addEvent({
-          delay: 5000,
+          delay: 3000,
           callback: () => {
             reponseTextBox.destroy();
             creerToast(scene, sceneSuivante, toastTexte1);
+            if (toastTexte2 == null) {changerPage(scene, 'SUIVANT', sceneSuivante)}
           },
           loop: false,
         });
       } 
-      else if (toastTexte2 != null) {
+      if (toastTexte2 != null) {
         scene.time.addEvent({
           delay: 15000, 
           callback: () => {
             creerToast(scene, sceneSuivante, toastTexte2);
+            if (toastTexte3 == null) {changerPage(scene, 'SUIVANT', sceneSuivante)}
           },
         })
-      } else if (toastTexte3 != null) {
+      } 
+      if (toastTexte3 != null) {
         scene.time.addEvent({
-          delay: 25000, 
+          delay: 28000, 
           callback: () => {
             creerToast(scene, sceneSuivante, toastTexte3);
+            changerPage(scene, 'SUIVANT', sceneSuivante);
           },
         })
-        changerPage(scene, 'SUIVANT', sceneSuivante);
+        //changerPage(scene, 'SUIVANT', sceneSuivante);
       }
       //else changerPage(scene, 'SUIVANT', sceneSuivante);
     } 
@@ -311,7 +320,7 @@ function creerToast(
         bottom: 20,
       },
       duration: {
-        in: 200, //TEMPS MIS POUR FADEIN
+        in: 1000, //TEMPS MIS POUR FADEIN
         hold: 10000, //A MODIFIER SI BESOIN EN FONCTION DE L'INFORMATIONS
         out: 200, //TEMPS MIS POUR FADEOUT
       },
@@ -319,7 +328,7 @@ function creerToast(
     .show(toastTexte);
     //.show(toastTexte2)
     //.show(toastTexte3)
-  changerPage(scene, 'SUIVANT', sceneSuivante);
+  //changerPage(scene, 'SUIVANT', sceneSuivante);
 }
 
 let jeu = new Phaser.Game(config);

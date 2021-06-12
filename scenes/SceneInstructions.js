@@ -10,9 +10,8 @@ class SceneInstructions extends Phaser.Scene {
     this.load.image('containerBar', 'assets/containerBar.png');
     this.load.image('oldWoman', 'assets/sprite_old_woman_happy.png');
     this. load.image('jaugeVert', 'assets/greenBar.png');
-    this. load.image('jaugeRouge', 'assets/redBar.png');
-    this. load.image('jaugeVert', 'assets/greenBar.png');
-    this. load.image('jaugeJaune', 'assets/yellowBar.png');
+    this.load.image('workingWoman', 'assets/sprite_working_woman1.png');
+    
 
     chargerPlugin(this);
 
@@ -32,10 +31,11 @@ class SceneInstructions extends Phaser.Scene {
     timeBar(this, 500, 400);
     jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert')
     //Alert(this, 'test', 'test premier', 500, 300)
-
-    let content = `Vous incarnez une jeune femme de 25 ans, nommée Julie. Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
-    Quelques mois de recherche ont suffi à ce que vous trouviez un job, qui répond à toutes vos attentes. Vous avez hâte de commencer, et de rencontrer tous vos nouveaux collègues.
-    C’est désormais à vous de prendre les bonnes décisions, pour permettre à Julie de vivre une vie... extraordinaire !`;
+    this.add.image(120, 250,'workingWoman').setScale(0.5);
+    let content = `Vous incarnez Julie, une suissesse de 25 ans. Vous êtes en couple avec Mathieu depuis trois ans et venez d'emménager avec lui. 
+    Après un parcours universitaire exemplaire, vous entrez dans le monde du travail, plus motivée que jamais. 
+    Quelques mois de recherche ont suffi pour que vous trouviez un travail qui répond à toutes vos attentes. Vous avez hâte de commencer et de rencontrer vos nouveaux collègues.
+    \nC’est désormais à vous de prendre les bonnes décisions pour construire la vie de vos rêves!`;
 
     /*Alert(this, 'salut', 'salut ca va', 500, 300).then(() => {
       return Alert(this, 'chainage', 'test chainage', 500, 300);
