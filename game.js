@@ -261,15 +261,14 @@ function choixJoueur(
           loop: false,
         });
       } 
-      if (toastTexte2 != null) {
+      else if (toastTexte2 != null) {
         scene.time.addEvent({
           delay: 15000, 
           callback: () => {
             creerToast(scene, sceneSuivante, toastTexte2);
           },
         })
-      } 
-      if (toastTexte3 != null) {
+      } else if (toastTexte3 != null) {
         scene.time.addEvent({
           delay: 25000, 
           callback: () => {
