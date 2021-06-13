@@ -10,7 +10,6 @@ class SceneRejouer extends Phaser.Scene {
 
   create() {
     //this.add.text(200, 150, 'SCENE REJOUER');
-    //this.add.image(700, 150, 'happyFace').setScale(0.5);
 
     let toastTexte1 = `C'est le quotidien d'une femme moderne.`;
 
@@ -21,7 +20,6 @@ class SceneRejouer extends Phaser.Scene {
     \n3) Une femme ne peut être une mère investie et ambitieuse 
     \nprofessionnellement qu'au prix de sa santé physique et/ou mentale.`;
 
-    //creerToast(this, 'accueil', toastTexte1);
     this.rexUI.add
       .toast({
         x: 500,
@@ -41,7 +39,7 @@ class SceneRejouer extends Phaser.Scene {
         },
         duration: {
           in: 1000, //TEMPS MIS POUR FADEIN
-          hold: 4000, //A MODIFIER SI BESOIN EN FONCTION DE L'INFORMATIONS
+          hold: 4000, //A MODIFIER SI BESOIN EN FONCTION DE L'INFORMATION
           out: 200, //TEMPS MIS POUR FADEOUT
         },
       })
@@ -50,7 +48,6 @@ class SceneRejouer extends Phaser.Scene {
     this.time.addEvent({
       delay: 6000,
       callback: () => {
-        //creerToast(this, 'accueil', toastTexte2);
         this.rexUI.add
           .toast({
             x: 500,

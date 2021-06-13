@@ -10,7 +10,6 @@ const config = {
     },
   },
 
-  //ajouter les autres scènes au fur et à mesure
   scene: [
     SceneMenu,
     SceneAbout,
@@ -31,7 +30,7 @@ const COLOR_PRIMARY = 000000;
 const COLOR_LIGHT = 000000;
 const COLOR_DARK = 000000;
 
-//---------- Fonctions pour les textBoxes -------------
+//---------- AFFICHAGE DE LA NARRATION -------------
 
 function creerTextBox(scene, content, maxLines) {
   let textBox = createTextBox(scene, 230, 110, {
@@ -138,8 +137,7 @@ function getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight, maxLines) {
   });
 }
 
-
-//--------- PLUGIN REXUI --------->
+//--------- CHARGEMENT DU PLUGIN REXUI ---------
 
 function chargerPlugin(scene) {
   scene.load.scenePlugin({
@@ -153,19 +151,10 @@ function chargerPlugin(scene) {
   );
 }
 
-//--------- Autres fonctions -----------
-
-function changerPage(scene, contenu, sceneSuivante) {
-  let boutonNext = scene.add.text(860, 535, contenu, {fontSize: '25px'});
-  boutonNext.setInteractive();
-  boutonNext.on('pointerdown', () => scene.scene.start(sceneSuivante));
-  return boutonNext;
-}
-
-//---------- FONCTIONS QUI GERENT LES BOUTONS --------
+//---------- CREATION DES BOUTONS --------
 
 function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
-  let bouton = scene.add.text(x, y, content, {fontSize: '20px'});
+  let bouton = scene.add.text(x, y, content, { fontSize: '20px' });
   bouton.setInteractive();
   bouton.setVisible(visibilité);
   //bouton.on('pointerdown', () => name.scene.start(nomScene));
@@ -173,12 +162,14 @@ function creerBouton(scene, visibilité, x, y, content /*, nomScene*/) {
 }
 
 function boutonMenu(scene) {
-  let boutonMenu = scene.add.text(20, 30, 'RETOUR AU MENU', {fontSize: '25px'});
+  let boutonMenu = scene.add.text(20, 30, 'RETOUR AU MENU', {
+    fontSize: '25px',
+  });
   boutonMenu.setInteractive();
   boutonMenu.on('pointerdown', () => scene.scene.start('accueil'));
 }
 
-//-----------FONCTIONS QUI GERENT LA TIMEBAR ---------
+//----------- BARRE CHRONOLOGIQUE ---------
 let countBar = 1;
 
 function timeBar(scene, x, y, countBar) {
@@ -196,7 +187,7 @@ function timeBar(scene, x, y, countBar) {
   //console.log(scene.barMask.displayWidth);
   //console.log(stepWidth);
 
-  countBar *= countBar; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+  countBar *= countBar;
 
   scene.barMask.x -= stepWidth;
   //bar.x = stepWidth
@@ -205,15 +196,15 @@ function timeBar(scene, x, y, countBar) {
   return bar + barContainer;
 }
 
-//------- JAUGE DE DÉSILLLUSION -------
+//--------- JAUGE DE DÉSILLLUSION ---------
+
 let countBarD = 1;
 function jaugeDesillusion(scene, x, y, imageSprite, imageBar, countBarD) {
   scene.add.image(913, 100, imageSprite).setScale(0.4);
   scene.zone = scene.add.zone((x = 900), (y = config.height / 2)).setScale(0.7);
   let barContainer = scene.add.image(x, y, 'containerBar').setScale(0.7);
   barContainer.angle = 90;
-  let bar = scene.add.image(x+3, y, imageBar).setScale(0.7);
-  //bar.setVisible(false);
+  let bar = scene.add.image(x + 3, y, imageBar).setScale(0.7);
   bar.angle = 90;
 
   scene.barMask = scene.add.sprite(bar.x, bar.y, imageBar).setScale(0.7);
@@ -225,7 +216,7 @@ function jaugeDesillusion(scene, x, y, imageSprite, imageBar, countBarD) {
   //console.log(scene.barMask.displayWidth);
   //console.log(stepHeight);
 
-  countBarD /= countBarD; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+  countBarD /= countBarD;
 
   scene.barMask.y -= stepHeight;
   //console.log(scene.barMask.y)
@@ -234,7 +225,10 @@ function jaugeDesillusion(scene, x, y, imageSprite, imageBar, countBarD) {
   return bar + barContainer;
 }
 
-//MAXIMUM TROIS TOASTS : SI NON DEFINI, PAS BESOIN DE METTRE NULL
+//---------- GESTION DE LA DÉCISION DU JOUEUR ---------
+
+//NB: MAX TROIS TOASTS : SI NON DEFINI, PAS BESOIN DE METTRE NULL
+
 function choixJoueur(
   scene,
   nomBouton,
@@ -247,44 +241,49 @@ function choixJoueur(
   toastTexte1,
   toastTexte2,
   toastTexte3
-  ) {
+) {
   textBoxQuestion.destroy();
   reponseTextBox = creerTextBox(scene, contenu, maxLines);
   reponseTextBox.on('pageend', () => {
     if (reponseTextBox.isLastPage) {
-      if (toastTexte1 == null) {changerPage(scene, 'SUIVANT', sceneSuivante)}
-      else if (toastTexte1 != null) {
+      if (toastTexte1 == null) {
+        changerPage(scene, 'SUIVANT', sceneSuivante);
+      } else if (toastTexte1 != null) {
         scene.time.addEvent({
           delay: 3000,
           callback: () => {
             reponseTextBox.destroy();
             creerToast(scene, sceneSuivante, toastTexte1);
-            if (toastTexte2 == null) {changerPage(scene, 'SUIVANT', sceneSuivante)}
+            if (toastTexte2 == null) {
+              changerPage(scene, 'SUIVANT', sceneSuivante);
+            }
           },
           loop: false,
         });
-      } 
+      }
       if (toastTexte2 != null) {
         scene.time.addEvent({
-          delay: 25000, 
+          delay: 25000,
           callback: () => {
             creerToast(scene, sceneSuivante, toastTexte2);
-            if (toastTexte3 == null) {changerPage(scene, 'SUIVANT', sceneSuivante)}
+            if (toastTexte3 == null) {
+              changerPage(scene, 'SUIVANT', sceneSuivante);
+            }
           },
-        })
-      } 
+        });
+      }
       if (toastTexte3 != null) {
         scene.time.addEvent({
-          delay: 45000, 
+          delay: 47000,
           callback: () => {
             creerToast(scene, sceneSuivante, toastTexte3);
             changerPage(scene, 'SUIVANT', sceneSuivante);
           },
-        })
+        });
         //changerPage(scene, 'SUIVANT', sceneSuivante);
       }
       //else changerPage(scene, 'SUIVANT', sceneSuivante);
-    } 
+    }
   });
   nomBouton.setVisible(false);
   autreBouton.setVisible(false);
@@ -294,11 +293,9 @@ function choixJoueur(
   return;
 }
 
-function creerToast(
-  scene,
-  sceneSuivante,
-  toastTexte
-) {
+//--------- POP-UP INFORMATIONNELLE ---------
+
+function creerToast(scene, sceneSuivante, toastTexte) {
   var toast = scene.rexUI.add
     .toast({
       x: 500,
@@ -323,15 +320,23 @@ function creerToast(
       },
     })
     .show(toastTexte);
-    //.show(toastTexte2)
-    //.show(toastTexte3)
+  //.show(toastTexte2)
+  //.show(toastTexte3)
   //changerPage(scene, 'SUIVANT', sceneSuivante);
+}
+
+//--------- Autres fonctions -----------
+
+function changerPage(scene, contenu, sceneSuivante) {
+  let boutonNext = scene.add.text(860, 535, contenu, { fontSize: '25px' });
+  boutonNext.setInteractive();
+  boutonNext.on('pointerdown', () => scene.scene.start(sceneSuivante));
+  return boutonNext;
 }
 
 let jeu = new Phaser.Game(config);
 
-
-//--------- PLUGIN OBSOLETE : TRAVAIL NON EXPLOITE EN RAISON D'UNE ERREUR EN LIEN AVEC LES DIALOGUES DANS PHASER------------
+//--------- OBSOLETE : TRAVAIL NON EXPLOITE EN RAISON D'UNE ERREUR EN LIEN AVEC LES DIALOGS DANS PHASER ------------
 /*let AlertDialog;
 
 let CreateAlertDialog = function (scene) {

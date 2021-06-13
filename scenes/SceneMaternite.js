@@ -19,6 +19,7 @@ class SceneMaternite extends Phaser.Scene {
       jaugeDesillusion(this, 900, 290, 'stunnedFace', 'jaugeOrange', 1.3);
       //this.add.text(200, 100, 'SCENE MATERNITE');
       timeBar(this, 500, 400, 2.6);
+
       let content = `\n\nVotre sortie de l'hôpital a été difficile à gérer. L’expérience traumatisante que vous avez vécue, ainsi que votre épuisement général vous rendent presque incapable de vous occupez correctement d’Emma lors des premiers jours. Vous n’avez toutefois par le choix de vous remettre rapidement : Mathieu n’a que 10 jours de congé paternité.\n\n
       \n\nCette difficulté s’accompagne alors d’un sentiment de culpabilité : vous qui venez de vivre “le plus beau jour de votre vie”, êtes en réalité dans un état dépressif, et vous avez l’impression de ne pas être à la hauteur pour vous occuper d’Emma.La reprise du travail par Mathieu accentue alors ce sentiment puisque vous êtes désormais la plupart du temps seule avec votre petite fille.
       \n\n\n\n\nBien sûr, votre famille et vos amis passent de temps en temps. "Comme elle est mignonne cette petite !" "Combien pesait-elle à sa naissance ?" "Est-ce que tu la nourris suffisamment ?"... Tous se préoccupent beaucoup de la petite, et vous en oublient presque.\n\n\n\n\n
@@ -35,7 +36,6 @@ class SceneMaternite extends Phaser.Scene {
       let toastTexte3 = `On parle de "pafond de verre"\npour désigner la barrière invisible\nbloquant l'accès des femmes\naux positions dirigeantes\ndans les entreprises.\nCette situation peut être engendrée\npar des critères formels\n(par exemple la mobilité géographique,\nplus acceptée chez les hommes),\ninformels ou représentationnels\n(les stéréotypes associent\nle pouvoir aux hommes)\n(Guillaume, Pochic, 2007)`
 
       let textBoxQuestion = creerTextBox(this, content, 16);
-
 
       let boutonOui = creerBouton(this, false, 200, 480, 'REPRENDRE LE TRAVAIL');
       let boutonNon = creerBouton(this, false, 500, 480, 'S\'OCCUPER DE VOTRE FILLE');
@@ -79,11 +79,6 @@ class SceneMaternite extends Phaser.Scene {
           toastTexte3
         );
         jaugeDesillusion(this, 900, 290, 'basic', 'jaugeOrange', 1.9);
-      });
-
-
-
-
-  
+      }); 
     }
   }

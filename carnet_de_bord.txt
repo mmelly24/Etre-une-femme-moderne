@@ -5,11 +5,8 @@ Problèmes à résoudre
     dans la fonction createtextbox? //Nadège
     -> OK: gérer ça avec lors du clic sur les boutouns oui/non
 
-! - affichage de la page ABOUT //About
-    Page html 
-    js texte 
-    sous page accueil -> OK
-    Readme
+ - affichage de la page ABOUT 
+    -> OK
 
 - SceneMariage : 
     création deux sous-scènes ou event on.click ? //Nadège
@@ -38,11 +35,12 @@ Problèmes à résoudre
  (- comment stocker la décision de mariage pour la récupérer plus tard?)
     au pire, simplifier le scénario car la différence n'est pas très grande au niveau de la narration. 
         Spécifier alors les conséquences dans un toast.
+        -> OK
 
  - Baisser la timeBar --> augmenter l'apparition des réponses oui non pour éviter chevauchement !!!  
     -> OK
 
-! - gérer les temps de transition entre textbox et toast pour que le résultat soit lisible et fluide
+ - gérer les temps de transition entre textbox et toast pour que le résultat soit lisible et fluide
     à tenter: ajout de paramètres dans les fonctions correspondantes
         -> OK
 
@@ -52,7 +50,6 @@ GAME DESIGN
         - petit ami --> OK
         - père --> OK
         - mère --> OK
-        - collègues
         - chefs --> OK
         - bébé --> OK
 
@@ -69,10 +66,11 @@ GAME DESIGN
         - voir doc "pop up phaser"
             -> OK, cf. fonction choixJoueur
 
-    Faire Jauge : //Marie --> atlas
-        - chronologie ---> ok 
-        - désillusion 
+    Faire Jauge : 
+        - chronologie //Marie ---> ok 
+        - désillusion //Nadège --> ok
 
     Loading Credits : 
         - aligner les box au centre
+            -> OK
     

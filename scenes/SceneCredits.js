@@ -76,9 +76,6 @@ class SceneCredits extends Phaser.Scene {
   }
   create() {
     
-    /*let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
-    boutonMenu.setInteractive();
-    boutonMenu.on('pointerdown', () => this.scene.start('accueil'));*/
     this.add.image(200, 200, 'enceinte').setScale(0.7);
     this.add.image(800, 200, 'travailleuse').setScale(0.7);
 
