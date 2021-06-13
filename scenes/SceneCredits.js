@@ -75,6 +75,7 @@ class SceneCredits extends Phaser.Scene {
     this.load.image('travailleuse', 'assets/sprite_working_woman1.png');
   }
   create() {
+    
     /*let boutonMenu = this.add.text(200, 100, 'BACK TO MENU');
     boutonMenu.setInteractive();
     boutonMenu.on('pointerdown', () => this.scene.start('accueil'));*/

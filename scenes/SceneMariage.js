@@ -19,7 +19,7 @@ class SceneMariage extends Phaser.Scene {
   }
 
   create() {
-    timeBar(this, 500, 400);
+    timeBar(this, 500, 400, 1.5);
     this.add.image(110, 250,'boyfriend').setScale(0.4);
     jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert', 120);
 

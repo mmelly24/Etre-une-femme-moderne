@@ -28,7 +28,7 @@ class SceneInstructions extends Phaser.Scene {
   }
 
   create() {
-    timeBar(this, 500, 400);
+    timeBar(this, 500, 400, 1.3);
     jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert', 120);
     //Alert(this, 'test', 'test premier', 500, 300)
     this.add.image(120, 250,'workingWoman').setScale(0.5);

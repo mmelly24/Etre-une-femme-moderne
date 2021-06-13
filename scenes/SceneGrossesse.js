@@ -8,11 +8,15 @@ class SceneGrossesse extends Phaser.Scene {
     this.load.image('enceinte', 'assets/sprite_pregnant_woman.png');
     this.load.image('pere', 'assets/sprite_dad.png');
     this.load.image('mere', 'assets/sprite_mom.png');
+    this.load.image('basic', 'assets/sprite_basic_face.png');
+    this. load.image('jaugeOrange', 'assets/yellowBar.png');
+    
   }
 
   create() {
     //this.add.text(200, 100, 'SCENE GROSSESSE');
-    timeBar(this, 500, 400);
+    timeBar(this, 500, 400, 2.1);
+    jaugeDesillusion(this, 900, 290, 'basic', 'jaugeOrange', 1.9)
     this.add.image(110, 150,'enceinte').setScale(0.4);
     this.add.image(80, 350,'pere').setScale(0.2);
     this.add.image(150, 350,'mere').setScale(0.25);
@@ -41,7 +45,7 @@ class SceneGrossesse extends Phaser.Scene {
     `;
 
     let toastTexte1 = `Les violences obstétricales\nsont les comportements, actes, paroles\nou omissions commis par le personnel de santé\nqui ne sont pas justifiés\nmédicalement ou sont accomplis\nsans le consentement libre et éclairé\nd'une femme enceinte ou d'une jeune mère.\n(Wikipédia)`;
-    let toastTexte2 = `La transition à la parentalité\nannonce souvent des obstacles dans\nla carrière des femmes et a contrario\nun accelerateur de la carrière des hommes\nsur le modèle du "male breadwinner"\n(l'homme pourvoyeur)\nqui se doit de subvenir aux besoins\nde sa famille. (Le Goff & Girardin, 2016)`;
+    let toastTexte2 = `La transition à la parentalité\nannonce souvent des obstacles dans\nla carrière des femmes et a contrario\nun accélérateur de la carrière des hommes\nsur le modèle du "male breadwinner"\n(l'homme pourvoyeur)\nqui se doit de subvenir aux besoins\nde sa famille. (Le Goff & Girardin, 2016)`;
     reponseTextBox = creerTextBox(this, content, 16);
     reponseTextBox.on('pageend', () => {
       if (reponseTextBox.isLastPage) {
