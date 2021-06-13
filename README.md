@@ -61,18 +61,18 @@ Kergoat, D. (2014). "Division sexuelle du travail". In <i>Bihr</i>, A. & Pferffe
 <p>
 Maillochon, F. (2016). <i>La passion du mariage</i>. Paris: PUF. 
 </p>
-          <p>
-            Office fédéral de la statistique. (2019). <i>Souhait d'enfants, parentalité</i>. <a href="https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/familles/souhait-enfants-parentalite.html">Lien URL</a>.
-          </p>
-          <p>
-            Office fédéral de la statistique. (2020a). <i>Personnes actives occupées à plein temps et à temps partiel selon le sexe, la nationalité, les groupes d'âges, le type de famille</i>. <a href="https://www.bfs.admin.ch/bfs/fr/home/services/pour-medias.assetdetail.12647320.html">Lien URL</a>.  
-          </p>
-          <p>
-            Office fédéral de la statistique. (2020b). <i>Écart salarial.</i> <a href= https://www.bfs.admin.ch/bfs/fr/home/statistiques/travail-remuneration/salaires-revenus-cout-travail/niveau-salaires-suisse/ecart-salarial.html>Lien URL</a>.
-          </p>
-          <p>
-            Office fédéral des assurances sociales. (2020). <i>Ecart de rentes en Suisse. Différences entre les rentes de vieillesse des femmes et des hommes</i> <a href="https://www.admin.ch/gov/fr/accueil/documentation/communiques.msg-id-62620.html">Lien URL.</a>
-          </p>
-          <p>
-            Sapin, M., Spini, D. & Widmer, E. (2014). <i>Les parcours de vie de l’adolescence au grand âge (2e éd.)</i>. Lausanne : PPUR.
-          </p>
+<p>
+Office fédéral de la statistique. (2019). <i>Souhait d'enfants, parentalité</i>. <a href="https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/familles/souhait-enfants-parentalite.html">Lien URL</a>.
+</p>
+<p>
+Office fédéral de la statistique. (2020a). <i>Personnes actives occupées à plein temps et à temps partiel selon le sexe, la nationalité, les groupes d'âges, le type de famille</i>. <a href="https://www.bfs.admin.ch/bfs/fr/home/services/pour-medias.assetdetail.12647320.html">Lien URL</a>.  
+</p>
+<p>
+Office fédéral de la statistique. (2020b). <i>Écart salarial.</i> <a href= https://www.bfs.admin.ch/bfs/fr/home/statistiques/travail-remuneration/salaires-revenus-cout-travail/niveau-salaires-suisse/ecart-salarial.html>Lien URL</a>.
+</p>
+<p>
+Office fédéral des assurances sociales. (2020). <i>Ecart de rentes en Suisse. Différences entre les rentes de vieillesse des femmes et des hommes</i> <a href="https://www.admin.ch/gov/fr/accueil/documentation/communiques.msg-id-62620.html">Lien URL.</a>
+</p>
+<p>
+Sapin, M., Spini, D. & Widmer, E. (2014). <i>Les parcours de vie de l’adolescence au grand âge (2e éd.)</i>. Lausanne : PPUR.
+</p>
