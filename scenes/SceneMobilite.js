@@ -37,7 +37,7 @@ class SceneMobilite extends Phaser.Scene {
       
       `;
       let toastTexte1 = "Dans une carrière professionnelle,\nla mobilité géographique est beaucoup\nplus acceptée pour les hommes\nque pour les femmes. De ce fait,\nil est rare de voir une famille\ntout quitter pour permettre à la mère\nde poursuivre sa carrière professionnelle\nà l'étranger, constituant ainsi\nun obstacle au développement\nde cette dernière.(Guillaume, Pochic, 2007)";
-      let toastTexte2 = `En Suisse, une famille monoparentale\nsur six est touchée par la pauvreté.\nDans la plupart des cas, les enfants restent\navec leur mère. Il est difficile pour ces dernières\nde trouver un emploi adapté à leur horaire familiaux,\naugmentant dès lors leur situation précaire. (Caritas, 2020)`;
+      let toastTexte2 = `En Suisse, une famille monoparentale\nsur six est touchée par la pauvreté.\nDans la plupart des cas, les enfants\nrestent avec leur mère.\nIl est difficile pour ces dernières\nde trouver un emploi adapté\nà leur horaire familiaux,\naugmentant dès lors leur situation précaire.\n(Caritas, 2020)`;
       let toastTexte3 = `A l'âge de la retraire, le taux de pauvreté\nchez les femmes est de 17.6%,\ncontre 11.4% chez les hommes (ARC) :\non estime que la retraite des femmes\nest de 37% inférieure à celle des hommes (CF).\nLes femmes ayant été mères au foyer sont\nparticulièrement touchées par ce phénomène :\nelles n'ont pas, ou plus, cotisé au 2ème pilier,\nréservé aux salariés.`
       let textBoxQuestion = creerTextBox(this, content, 16);
 
