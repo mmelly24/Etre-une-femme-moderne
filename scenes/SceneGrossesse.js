@@ -63,7 +63,7 @@ class SceneGrossesse extends Phaser.Scene {
         }
         if (toastTexte2 != null) {
           this.time.addEvent({
-            delay: 15000,
+            delay: 25000,
             callback: () => {
               creerToast(this, 'maternite', toastTexte2);
               changerPage(this, 'SUIVANT', 'maternite')

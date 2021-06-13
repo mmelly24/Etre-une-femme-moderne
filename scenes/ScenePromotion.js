@@ -17,7 +17,7 @@ class ScenePromotion extends Phaser.Scene {
     //this.add.text(200, 100, 'SCENE PROMOTION');
     //this.add.image(700, 150, 'happyFace').setScale(0.5);
     this.add.image(100, 200, 'boss').setScale(0.5);
-    timeBar(this, 500, 400);
+
     jaugeDesillusion(this, 900, 290, 'stunnedFace', 'jaugeJaune', 1.9);
 
     let content =`\nVotre travail est très prenant, mais il vous enrichit énormément. Il a beaucoup de sens pour vous, vous avez le sentiment de faire avancer votre domaine. Vos chefs sont très contents de votre travail. C’est gratifiant!
