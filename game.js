@@ -266,7 +266,7 @@ function choixJoueur(
       } 
       if (toastTexte2 != null) {
         scene.time.addEvent({
-          delay: 15000, 
+          delay: 25000, 
           callback: () => {
             creerToast(scene, sceneSuivante, toastTexte2);
             if (toastTexte3 == null) {changerPage(scene, 'SUIVANT', sceneSuivante)}
@@ -318,7 +318,7 @@ function creerToast(
       },
       duration: {
         in: 1000, //TEMPS MIS POUR FADEIN
-        hold: 10000, //A MODIFIER SI BESOIN EN FONCTION DE L'INFORMATIONS
+        hold: 20000, //A MODIFIER SI BESOIN EN FONCTION DE L'INFORMATIONS
         out: 200, //TEMPS MIS POUR FADEOUT
       },
     })
