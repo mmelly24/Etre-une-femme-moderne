@@ -33,16 +33,18 @@ Problèmes à résoudre
 - erreur obscure lors de la création de la popup dans la scene promotion
     - lié à l'utilisation de la fonction choixJoueur?
         -> non résolu, donc abandon des fonctions popup...
+            -> OK.
 
  (- comment stocker la décision de mariage pour la récupérer plus tard?)
     au pire, simplifier le scénario car la différence n'est pas très grande au niveau de la narration. 
         Spécifier alors les conséquences dans un toast.
 
- - Baisser la timeBar --> augmenter l'apparition des réponses oui non pour éviter chevauchement !!! ----> Marie 
+ - Baisser la timeBar --> augmenter l'apparition des réponses oui non pour éviter chevauchement !!!  
     -> OK
 
 ! - gérer les temps de transition entre textbox et toast pour que le résultat soit lisible et fluide
     à tenter: ajout de paramètres dans les fonctions correspondantes
+        -> OK
 
    
 GAME DESIGN
@@ -69,7 +71,7 @@ GAME DESIGN
 
     Faire Jauge : //Marie --> atlas
         - chronologie ---> ok 
-        - désillusion //Nadège
+        - désillusion 
 
     Loading Credits : 
         - aligner les box au centre
