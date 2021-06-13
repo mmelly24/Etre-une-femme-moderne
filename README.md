@@ -15,7 +15,7 @@ Affiner la jauge d'énergie de Julie en fonction du déroulement de la narration
 ## Dialogues
 Ajouter les citations des personnages non joueurs sous forme de bulles. Affiner aussi l'apparition de leurs sprites.
 
-## Enrichir l'histoire 
+## Histoire 
 Enrichir l'histoire en détaillant certaines thématiques, telles que la retraite ou la vie de mère célibataire/divorcée.
 
 ## Ambiance sonore
