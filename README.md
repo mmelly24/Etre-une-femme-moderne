@@ -22,47 +22,45 @@ Enrichir l'histoire en détaillant certaines thématiques, telles que la retrait
 
 # Crédits
 _Pour le code :_
-- Inspiration du code de Emanuele Feronato pour la timeBar : https://www.emanueleferonato.com/2019/04/24/add-a-nice-time-bar-energy-bar-mana-bar-whatever-bar-to-your-html5-games-using-phaser-3-masks/
--Plugin pour les textBox : https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-textbox/
+<ul>
+<li>Inspiration du code de <a href="https://www.emanueleferonato.com/2019/04/24/add-a-nice-time-bar-energy-bar-mana-bar-whatever-bar-to-your-html5-games-using-phaser-3-masks/">Emanuele Feronato</a> pour la time bar</li>
+<li><a href="https://rexrainbow.github.io/phaser3-rex-notes/docs/site/ui-textbox/">Plugin pour les textBox</a></li>
+</ul>
 
 _Pour les sprites et la musique :_ 
-Tous les sprites utilisés dans ce travail ont été créés par les autrices du jeu, Nadège Pio et Marie Melly. Toutefois, certains sont nés de l'inspiration d'autres sprites, cités ci-dessous :
-- Femme enceinte : https://www.pinterest.com/pin/195695546285515175/
-- Femme au travail : https://www.canstockphoto.com/people-cooperation-man-and-woman-pixel-71270690.html
-- Bébé : https://www.brik.co/blogs/pixel-art/174044423-baby-boy-pixel-art
-- Patron : https://fr.dreamstime.com/illustration/businessman.html
-- Personnes âgées : https://www.shutterstock.com/fr/image-vector/vector-8-bit-pixel-art-elderly-534940771
-- Petit-ami : https://www.stockunlimited.com/vector-illustration/pixel-art-man-fashion_2009467.html
-- Musique : https://www.bensound.com/royalty-free-music/track/inspire
+
+<p>Tous les sprites utilisés dans ce travail ont été créés par les autrices du jeu, Nadège Pio et Marie Melly. Toutefois, certains sont nés de l'inspiration d'autres sprites, cités ci-dessous :<p>
+<ul>
+<li><a href="https://www.pinterest.com/pin/195695546285515175/">Femme enceinte</a></li>
+<li><a href="https://www.canstockphoto.com/people-cooperation-man-and-woman-pixel-71270690.html">Femme au travail</a></li>
+<li><a href="https://www.brik.co/blogs/pixel-art/174044423-baby-boy-pixel-art">Bébé</a></li>
+<li><a href="https://fr.dreamstime.com/illustration/businessman.html">Patron</a></li>
+<li><a href="https://www.shutterstock.com/fr/image-vector/vector-8-bit-pixel-art-elderly-534940771">Personnes âgées</a></li>
+<li><a href = "https://www.stockunlimited.com/vector-illustration/pixel-art-man-fashion_2009467.html">Petit-ami</a></li>
+<li>Musique téléchargée sur le site <a href="https://www.bensound.com/royalty-free-music/track/inspire">Besound</a></li>
+</ul>
 
 # Bibliographie
-Bereni, L., Chauvin, S., Jaunait, A., Revillard, A. (2012).<i> Introduction aux études sur le genre</i>. Louvain-la-Neuve : De Boeck Supérieur.
-          </p>
-          <p>
-            Bühlmann, F., Elcheroth, G. & Tettamanti, M. (2016). "Le premier enfant en contexte – l’institutionnalisation du conflit ?". In Le Goff, J-M. & Levy, R. (Dir.), <i>Devenir parents, devenir inégaux. Transition à la parentalité et inégalités de genre</i> (pp. 262-284). Zürich : Seismo.
-          </p>
-          <p>
-            Caritas. (2020). <i>La situation des familles monoparentales</i>. <a href="https://www.caritas.ch/fr/ce-que-nous-disons/nos-actions/proteger-les-familles-monoparentales-de-la-pauvrete/la-situation-des-familles-monoparentales.html">Lien URL.</a>
-          </p>
-          <p>
-            Conti J. (2019). "En Suisse aussi, des femmes dénoncent les violences obstétricales". <i>RTS</i>. <a href="https://www.rts.ch/info/suisse/10913353-en-suisse-aussi-des-femmes-denoncent-les-violences-obstetricales.html">Lien URL.</a>
-          </p>
-          <p>
-            Giroud, V. (2020). "Retraite, femmes et argent: l'inégalité jusque dans la pauvreté". <i>ARCINFO</i>. <a href="https://www.arcinfo.ch/dossiers/droits-des-femmes-allons-plus-loin/articles/retraite-femmes-et-argent-l-inegalite-jusque-dans-la-pauvrete-910667">Lien URL</a>.
-          </p>
-          <p>
-            Guillaume, C. & Pochic, S. (2007).<i>La fabrication organisationnelle des dirigeants. Un regard sur le plafond de verre. Travail, genre et sociétés</i>, 17, 79-103.
-          </p>
-          <p>
-            Kergoat, D. (2014). "Division sexuelle du travail". In <i>Bihr</i>, A. & Pferfferkorn, R. (Dir.), Dictionnaire des inégalités, Paris : Armand Colin.
-          </p>
-          <p>Le Goff, J-M. & Girardin, N. (2016). <i>Répartition des tâches domestiques et de soins aux enfants.
-            Intentions et pratiques</i>. In Le Goff, J-M. & Levy, R. (Dir.), Devenir parents, devenir inégaux. 
-            Transition à la parentalité et inégalités de genre (pp. 76-108). Zürich : Seismo.
-          </p>
-          <p>
-            Maillochon, F. (2016). <i>La passion du mariage</i>. Paris: PUF. 
-          </p>
+<p>Bereni, L., Chauvin, S., Jaunait, A., Revillard, A. (2012).<i> Introduction aux études sur le genre</i>. Louvain-la-Neuve : De Boeck Supérieur.</p>
+<p>
+Bühlmann, F., Elcheroth, G. & Tettamanti, M. (2016). "Le premier enfant en contexte – l’institutionnalisation du conflit ?". In Le Goff, J-M. & Levy, R. (Dir.), <i>Devenir parents, devenir inégaux. Transition à la parentalité et inégalités de genre</i> (pp. 262-284). Zürich : Seismo.</p>
+<p>
+Caritas. (2020). <i>La situation des familles monoparentales</i>. <a href="https://www.caritas.ch/fr/ce-que-nous-disons/nos-actions/proteger-les-familles-monoparentales-de-la-pauvrete/la-situation-des-familles-monoparentales.html">Lien URL.</a></p>
+<p>
+Conti J. (2019). "En Suisse aussi, des femmes dénoncent les violences obstétricales". <i>RTS</i>. <a href="https://www.rts.ch/info/suisse/10913353-en-suisse-aussi-des-femmes-denoncent-les-violences-obstetricales.html">Lien URL.</a></p>
+<p>
+Giroud, V. (2020). "Retraite, femmes et argent: l'inégalité jusque dans la pauvreté". <i>ARCINFO</i>. <a href="https://www.arcinfo.ch/dossiers/droits-des-femmes-allons-plus-loin/articles/retraite-femmes-et-argent-l-inegalite-jusque-dans-la-pauvrete-910667">Lien URL</a>.</p>
+<p>
+Guillaume, C. & Pochic, S. (2007).<i>La fabrication organisationnelle des dirigeants. Un regard sur le plafond de verre. Travail, genre et sociétés</i>, 17, 79-103.
+</p>
+<p>
+Kergoat, D. (2014). "Division sexuelle du travail". In <i>Bihr</i>, A. & Pferfferkorn, R. (Dir.), Dictionnaire des inégalités, Paris : Armand Colin.
+</p>
+<p>Le Goff, J-M. & Girardin, N. (2016). <i>Répartition des tâches domestiques et de soins aux enfants. Intentions et pratiques</i>. In Le Goff, J-M. & Levy, R. (Dir.), Devenir parents, devenir inégaux. Transition à la parentalité et inégalités de genre (pp. 76-108). Zürich : Seismo.
+</p>
+<p>
+Maillochon, F. (2016). <i>La passion du mariage</i>. Paris: PUF. 
+</p>
           <p>
             Office fédéral de la statistique. (2019). <i>Souhait d'enfants, parentalité</i>. <a href="https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/familles/souhait-enfants-parentalite.html">Lien URL</a>.
           </p>
