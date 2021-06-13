@@ -1,6 +1,12 @@
 # Etre-une-femme-moderne
+Créatrices : Nadège pio et Marie Melly.
+
 Projet de jeu vidéo 2D, développé dans le cadre d'un cours dispensé par l'UNIL et dirigé par le professeur Isaac Pante. 
 Le jeu *Être une femme moderne* a été créé dans le but de sensibiliser sur la situation des femmes en ce 21ème siècle, en Suisse. Pour ce faire, il s'agit d'incarner une femme "moderne" afin de mette en lumière les choix qu'elle peut être amenée à faire au cours de sa vie, et les conséquences que cela peut engendrer.
+
+Comme ce sujet est extrêmement complexe, il est important de garder à l'esprit que ce jeu ne présente qu'une réalité parmi tant d'autres. Il a pour but principal d'attirer l'attention du joueur sur une problématique particulière. Nous ne pouvons qu'encourager le joueur à prendre connaissance des textes et statistiques utilisés pour construire le savoir théorique de ce jeu, et cités dans la bibliographie ci-dessous.
+
+
 
 #Section 1
 
