@@ -22,16 +22,3 @@ a ajouter :
 les Bars : sprites empruntés à Cooking-for-the-king (aucune demande de copyright mais bon)
 
 
-
-Témoignage de violence obstétricales : 
-- https://www.rts.ch/info/suisse/10913353-en-suisse-aussi-des-femmes-denoncent-les-violences-obstetricales.html
-
-https://www.caritas.ch/fr/ce-que-nous-disons/nos-actions/proteger-les-familles-monoparentales-de-la-pauvrete/la-situation-des-familles-monoparentales.html
-https://www.arcinfo.ch/dossiers/droits-des-femmes-allons-plus-loin/articles/retraite-femmes-et-argent-l-inegalite-jusque-dans-la-pauvrete-910667
-
-https://www.admin.ch/gov/fr/accueil/documentation/communiques.msg-id-62620.html
-https://www.troisiemepilier.ch/mere-au-foyer-combien-allez-vous-toucher-a-la-retraite/
-
-Bibliographie : 
-Le Goff, J-M. & Girardin, N. (2016). Répartition des tâches domestiques et de soins aux enfants. Intentions et pratiques. In Le Goff, J-M. & Levy, R. (Dir.), Devenir parents, devenir inégaux. Transition à la parentalité et inégalités de genre (pp. 76-108). Zürich : Seismo. 
-
