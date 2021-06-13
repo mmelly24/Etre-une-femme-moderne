@@ -181,7 +181,7 @@ function boutonMenu(scene) {
 //-----------FONCTIONS QUI GERENT LA TIMEBAR ---------
 let countBar = 1;
 
-function timeBar(scene, x, y) {
+function timeBar(scene, x, y, countBar) {
   scene.add.image(750, 550, 'oldWoman').setScale(0.4);
   scene.add.image(230, 550, 'happyFace').setScale(0.4);
   scene.zone = scene.add.zone((x = config.width / 2.05), (y = 550));
@@ -196,7 +196,7 @@ function timeBar(scene, x, y) {
   //console.log(scene.barMask.displayWidth);
   //console.log(stepWidth);
 
-  countBar *= 1.9; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
+  countBar *= countBar; //A DETERMINER EN FONCTION DU NOMBRE DE FOIS QUE L'ON VA APPELER CETTE FONCTION
 
   scene.barMask.x -= stepWidth;
   //bar.x = stepWidth
