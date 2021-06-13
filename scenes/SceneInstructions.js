@@ -9,7 +9,7 @@ class SceneInstructions extends Phaser.Scene {
     this.load.image('blueBar', 'assets/blueBar.png');
     this.load.image('containerBar', 'assets/containerBar.png');
     this.load.image('oldWoman', 'assets/sprite_old_woman_happy.png');
-    this. load.image('jaugeVert', 'assets/greenBar.png');
+    this.load.image('jaugeVert', 'assets/greenBar.png');
     this.load.image('workingWoman', 'assets/sprite_working_woman1.png');
     
 
@@ -29,7 +29,7 @@ class SceneInstructions extends Phaser.Scene {
 
   create() {
     timeBar(this, 500, 400);
-    jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert')
+    jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert', 120);
     //Alert(this, 'test', 'test premier', 500, 300)
     this.add.image(120, 250,'workingWoman').setScale(0.5);
     let content = `Vous incarnez Julie, une suissesse de 25 ans. Vous êtes en couple avec Mathieu depuis trois ans et venez d'emménager avec lui. 
