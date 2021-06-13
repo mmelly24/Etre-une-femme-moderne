@@ -8,13 +8,14 @@ class SceneEnfants extends Phaser.Scene {
     chargerPlugin(this);
     this.load.image('baby', 'assets/sprite_baby.png');
     this. load.image('jaugeVert', 'assets/greenBar.png');
+    this.load.image('stunnedFace', 'assets/sprite_stunned_face.png');
   }
 
   create() {
     //this.add.text(200, 100, 'SCENE ENFANTS');
     //this.add.image(700, 150, 'happyFace').setScale(0.5);
     timeBar(this, 500, 400);
-    jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert');
+    jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert', 120);
     this.add.image(110, 170,'baby').setScale(0.8);
 
     let content =
@@ -67,6 +68,7 @@ class SceneEnfants extends Phaser.Scene {
         'promotion',
         toastTexte1
       );
+      jaugeDesillusion(this, 900, 290, 'stunnedFace', 'jaugeVert', 2.5);
     });
   }
 }

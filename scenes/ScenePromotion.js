@@ -5,7 +5,11 @@ class ScenePromotion extends Phaser.Scene {
 
   preload() {
     this.load.image('happyFace', 'assets/sprite_happy_face.png');
+    this.load.image('stunnedFace', 'assets/sprite_stunned_face.png');
+    this.load.image('cryingFace', 'assets/sprite_tears_face.png');
     this.load.image('boss', 'assets/sprite_boss.png');
+    this.load.image('jaugeJaune', 'assets/yellowBar.png');
+    this.load.image('jaugeRouge', 'assets/redbar.png');
     chargerPlugin(this);
   }
 
@@ -14,7 +18,7 @@ class ScenePromotion extends Phaser.Scene {
     //this.add.image(700, 150, 'happyFace').setScale(0.5);
     this.add.image(100, 200, 'boss').setScale(0.5);
     timeBar(this, 500, 400);
-    jaugeDesillusion(this, 900, 290, 'happyFace', 'jaugeVert');
+    jaugeDesillusion(this, 900, 290, 'stunnedFace', 'jaugeJaune', 1.9);
 
     let content =`\nVotre travail est très prenant, mais il vous enrichit énormément. Il a beaucoup de sens pour vous, vous avez le sentiment de faire avancer votre domaine. Vos chefs sont très contents de votre travail. C’est gratifiant!
     Les années passent et votre importance grandit au sein de la boîte. Vous avez gagné en responsabilités mais votre salaire n’a pas évolué en conséquence. \n\n\n\nLes bruits de couloir laissent aussi entendre qu’on vous paie moins que vos homologues masculins. “C’est la relève, il faut les garder dans l’entreprise.” Vous explique votre chef quand vous abordez timidement le sujet. Vous réalisez alors qu’on n’envisage même pas de vous promouvoir, vous! Presque sur un coup de tête, vous demandez à être promue. \n\n\n“Ah mais tu ne veux pas d’enfants? Ce sera vraiment dur de t’en occuper si tu deviens manager, c’est pour ça que je ne te l’ai jamais proposé. Je ne voulais pas te placer face à ce choix difficile!”
@@ -61,6 +65,7 @@ class ScenePromotion extends Phaser.Scene {
         toastTexte2,
         toastTexte3
       );
+      jaugeDesillusion(this, 900, 290, 'cryingFace', 'jaugeRouge', 1.1);
     });
 
     boutonNon.on('pointerdown', () => {
@@ -77,6 +82,7 @@ class ScenePromotion extends Phaser.Scene {
         toastTexte2,
         toastTexte3
       );
+      jaugeDesillusion(this, 900, 290, 'cryingFace', 'jaugeRouge', 1.1);
     });
   }
 }
