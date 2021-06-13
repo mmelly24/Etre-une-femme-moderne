@@ -17,6 +17,7 @@ class SceneMobilite extends Phaser.Scene {
       this.add.image(110, 250,'boyfriend').setScale(0.4);
       //this.add.text(200, 100, 'SCENE MOBILITE');
       timeBar(this, 500, 400, 4);
+      
       let content = `\n\n\nEmma vient de fêter ses 12 ans. Que le temps passe vite ! Vous vous rappelez qu’il y a dix ans, presque jour pour jour, vous avez décidé de devenir mère au foyer pour vous consacrer entièrement à Emma. Et comme vous êtes fière de votre petite ! Vous l’aimez plus que tout au monde.\n\n\n 
       \n\n\nLa carrière de Mathieu, quant à elle, a évolué de manière tout à fait surprenante. Le voilà maintenant vice-président de son entreprise. Vous êtes très fière de lui, et de tous les sacrifices qu’il a dû faire pour atteindre ce poste.\n\n\n\n
       \n\n\n\n\n"Julie, Julie !!! Mon patron vient de me faire une proposition in-croy-able !!! Il me propose de partir au Japon travailler 5 ans pour diriger la chaîne de production qui est située là-bas !! Tu te rends compte ?"\n\n\n\n
