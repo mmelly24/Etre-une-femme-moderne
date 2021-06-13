@@ -24,15 +24,6 @@ Pour le son : https://www.bensound.com/royalty-free-music/track/inspire
 popup : Copyright (c) 2021 by Rex (https://codepen.io/rexrainbow/pen/qBdQRmq)
 
 a ajouter :
- crédit femme enceinte inspiré de https://www.pinterest.com/pin/195695546285515175/
-
-
-Sprite working woman inspiré de : https://www.canstockphoto.com/people-cooperation-man-and-woman-pixel-71270690.html
-sprite dad inspiré de : https://www.shutterstock.com/fr/image-vector/vector-8-bit-pixel-art-elderly-534940771
-
-
-sprite baby inspiré de: https://www.brik.co/blogs/pixel-art/174044423-baby-boy-pixel-art 
-sprite boss inspiré de: https://fr.dreamstime.com/illustration/businessman.html 
 
 les Bars : sprites empruntés à Cooking-for-the-king (aucune demande de copyright mais bon)
 
