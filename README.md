@@ -26,7 +26,7 @@ les Bars : sprites empruntés à Cooking-for-the-king (aucune demande de copyrig
 
 # Améliorations possibles et fonctionnalités à implémenter
 ## Introduire une perspective intersectionnelle
-Dans notre prototype, nous avons fait de Julie une femme au statut privilégié d'un point de vue socio-économique. Le but était de montrer que même pour un femme partant avec "toutes les cartes en main", la situation reste difficile. Il serait intéressant d'introduire d'autres profils, variant selon des appartenances de genre, de race ou de classe sociale. Le/la joueur-euse pourrait alors sélectionner l'un de ses profils, qui donnerait accès - ou non - à des ressources spécifiques mobilisables comme des "jokers" pendant le jeu (réseau social, ressources financières, etc.). Le/la joueur-eus pourrait alors expérimenter la diversité et la complexité des inégalités touchant les femmes.
+Dans notre prototype, nous avons fait de Julie une femme au statut privilégié d'un point de vue socio-économique. Le but était de montrer que même pour un femme partant avec "toutes les cartes en main", la situation reste difficile. Il serait intéressant d'introduire d'autres *profils*, variant selon des appartenances de genre, de race ou de classe sociale. Le/la joueur-euse pourrait alors sélectionner l'un de ses profils, qui donnerait accès - ou non - à des *ressources* spécifiques mobilisables comme des "jokers" pendant le jeu (réseau social, ressources financières, etc.). Le/la joueur-eus pourrait alors expérimenter la diversité et la complexité des inégalités touchant les femmes.
 
 ## Jauge d'énergie
 Affiner la jauge d'énergie de Julie en fonction du déroulement de la narration.
