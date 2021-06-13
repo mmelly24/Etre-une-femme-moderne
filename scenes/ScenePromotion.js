@@ -41,8 +41,8 @@ class ScenePromotion extends Phaser.Scene {
 
     let textBoxQuestion = creerTextBox(this, content, 16);
 
-    let boutonOui = creerBouton(this, false, 220, 470, 'DÉNONCER VOS COLLABORATEURS');
-    let boutonNon = creerBouton(this, false, 600, 470, 'DÉMISSIONNER');
+    let boutonOui = creerBouton(this, false, 235, 480, 'DÉNONCER VOS COLLABORATEURS');
+    let boutonNon = creerBouton(this, false, 615, 480, 'DÉMISSIONNER');
 
     textBoxQuestion.on('pageend', () => {
       if (textBoxQuestion.isLastPage) {
