@@ -10,9 +10,13 @@ Page d'instruction
 
 <img width="675" alt="Capture d’écran 2021-06-27 123540" src="https://user-images.githubusercontent.com/72981225/123541452-fb5f3200-d744-11eb-96b1-f5480c045f49.png">
 
+
+
 PopUp informationnel
 
 <img width="665" alt="Capture d’écran 2021-06-27 123655" src="https://user-images.githubusercontent.com/72981225/123541465-09ad4e00-d745-11eb-97f2-5e79e41e13e3.png">
+
+
 
 
 Choix de vie à faire
