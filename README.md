@@ -28,7 +28,7 @@ Ajouter les citations des personnages non joueurs sous forme de bulles. Affiner 
 ## Histoire 
 Enrichir l'histoire en détaillant certaines thématiques, telles que la retraite ou la vie de mère célibataire/divorcée.
 
-## Ambiance sonore
+## Sound design
 Implémenter une musique de fond qui change selon le développement de la narration et les décisions prises.
 Implémenter des effets sonores pour signaler l'affichage des pop-up informationnelles. 
 
